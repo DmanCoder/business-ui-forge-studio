@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Mobile applications diagram: three phone screens showing a navigation view, a list view and a detail view as one mobile interface system, beside a compact component kit.">
+  <!-- Original UI Forge Studio artwork. Static — no animation. -->
+  <rect x="0" y="0" width="1200" height="750" fill="#faf9f6"/>
+  <path d="M48 62 V48 H62" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M1138 48 H1152 V62" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M1152 688 V702 H1138" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M62 702 H48 V688" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <text x="52" y="696" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" fill="#c9c6bd">S / 05</text>
+  <text x="1148" y="696" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" text-anchor="end" fill="#c9c6bd">SERVICE SYSTEM</text>
+  <text x="88" y="116" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" letter-spacing="2.52" fill="#1e6fff">SERVICE / 05</text>
+  <text x="88" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="46" fill="#0b1220">Mobile applications</text>
+  <text x="88" y="208" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" letter-spacing="2.52" fill="#555d6a">MOBILE INTERFACE SYSTEM</text>
+  <path d="M1103.24 94 H1112.76 V103.24 H1122 V112.76 H1112.76 V122 H1103.24 V112.76 H1094 V103.24 H1103.24 Z" fill="#1e6fff"/>
+  <line x1="88" y1="236" x2="1112" y2="236" stroke="#e8e6e0" stroke-width="1.5"/>
+  <rect x="180" y="300" width="190" height="330" fill="#ffffff" rx="22" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="249" y="312" width="52" height="8" fill="#e8e6e0" rx="4"/>
+  <rect x="196" y="334" width="79" height="8" fill="#0b1220" rx="4"/>
+  <rect x="330" y="332" width="24" height="12" fill="#1e6fff" rx="6"/>
+  <rect x="196" y="362" width="158" height="85.8" fill="#e8f0ff" rx="4"/>
+  <rect x="196" y="445.2" width="110.6" height="9" fill="#0b1220" rx="4"/>
+  <rect x="196" y="465.2" width="158" height="7" fill="#8a93a3" rx="4"/>
+  <rect x="196" y="481.2" width="134.29999999999998" height="7" fill="#8a93a3" rx="4"/>
+  <line x1="180" y1="590" x2="370" y2="590" stroke="#e8e6e0" stroke-width="1.5"/>
+  <circle cx="227.5" cy="610" r="5" fill="#1e6fff"/>
+  <circle cx="275" cy="610" r="5" fill="#c9c6bd"/>
+  <circle cx="322.5" cy="610" r="5" fill="#c9c6bd"/>
+  <text x="180" y="662" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" fill="#555d6a">NAV</text>
+  <rect x="470" y="300" width="190" height="330" fill="#ffffff" rx="22" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="539" y="312" width="52" height="8" fill="#e8e6e0" rx="4"/>
+  <rect x="486" y="334" width="79" height="8" fill="#0b1220" rx="4"/>
+  <rect x="620" y="332" width="24" height="12" fill="#1e6fff" rx="6"/>
+  <rect x="486" y="362" width="158" height="85.8" fill="#e8f0ff" rx="4"/>
+  <rect x="486" y="445.2" width="110.6" height="9" fill="#0b1220" rx="4"/>
+  <rect x="486" y="465.2" width="158" height="7" fill="#8a93a3" rx="4"/>
+  <rect x="486" y="481.2" width="134.29999999999998" height="7" fill="#8a93a3" rx="4"/>
+  <line x1="470" y1="590" x2="660" y2="590" stroke="#e8e6e0" stroke-width="1.5"/>
+  <circle cx="517.5" cy="610" r="5" fill="#1e6fff"/>
+  <circle cx="565" cy="610" r="5" fill="#c9c6bd"/>
+  <circle cx="612.5" cy="610" r="5" fill="#c9c6bd"/>
+  <text x="470" y="662" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" fill="#555d6a">LIST</text>
+  <rect x="760" y="300" width="190" height="330" fill="#ffffff" rx="22" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="829" y="312" width="52" height="8" fill="#e8e6e0" rx="4"/>
+  <rect x="776" y="334" width="79" height="8" fill="#0b1220" rx="4"/>
+  <rect x="910" y="332" width="24" height="12" fill="#1e6fff" rx="6"/>
+  <rect x="776" y="362" width="158" height="85.8" fill="#e8f0ff" rx="4"/>
+  <rect x="776" y="445.2" width="110.6" height="9" fill="#0b1220" rx="4"/>
+  <rect x="776" y="465.2" width="158" height="7" fill="#8a93a3" rx="4"/>
+  <rect x="776" y="481.2" width="134.29999999999998" height="7" fill="#8a93a3" rx="4"/>
+  <line x1="760" y1="590" x2="950" y2="590" stroke="#e8e6e0" stroke-width="1.5"/>
+  <circle cx="807.5" cy="610" r="5" fill="#1e6fff"/>
+  <circle cx="855" cy="610" r="5" fill="#c9c6bd"/>
+  <circle cx="902.5" cy="610" r="5" fill="#c9c6bd"/>
+  <text x="760" y="662" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" fill="#555d6a">DETAIL</text>
+  <rect x="1000" y="300" width="112" height="330" fill="#faf9f6" rx="6" stroke="#e8e6e0" stroke-width="1.5"/>
+  <text x="1018" y="328" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" fill="#555d6a">KIT</text>
+  <rect x="1018" y="348" width="76" height="44" fill="#ffffff" rx="4" stroke="#e8e6e0" stroke-width="1.5"/>
+  <path d="M1033.96 364 H1038.04 V367.96 H1042 V372.04 H1038.04 V376 H1033.96 V372.04 H1030 V367.96 H1033.96 Z" fill="#4c8bff"/>
+  <rect x="1018" y="414" width="76" height="44" fill="#ffffff" rx="4" stroke="#e8e6e0" stroke-width="1.5"/>
+  <path d="M1033.96 430 H1038.04 V433.96 H1042 V438.04 H1038.04 V442 H1033.96 V438.04 H1030 V433.96 H1033.96 Z" fill="#4c8bff"/>
+  <rect x="1018" y="480" width="76" height="44" fill="#ffffff" rx="4" stroke="#e8e6e0" stroke-width="1.5"/>
+  <path d="M1033.96 496 H1038.04 V499.96 H1042 V504.04 H1038.04 V508 H1033.96 V504.04 H1030 V499.96 H1033.96 Z" fill="#4c8bff"/>
+  <rect x="1018" y="546" width="76" height="44" fill="#ffffff" rx="4" stroke="#e8e6e0" stroke-width="1.5"/>
+  <path d="M1033.96 562 H1038.04 V565.96 H1042 V570.04 H1038.04 V574 H1033.96 V570.04 H1030 V565.96 H1033.96 Z" fill="#4c8bff"/>
+</svg>

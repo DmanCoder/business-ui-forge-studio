@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Demo interface for the fictional Apex Sprint Lab performance app: a dark application shell with a sidebar, a plan-to-review workflow and placeholder session rows — a concept UI with no real performance data. Fictional demo, not client work.">
+  <!-- Original UI Forge Studio artwork. Static — no animation. -->
+  <rect x="0" y="0" width="1600" height="1000" fill="#0d1526"/>
+  <rect x="120" y="90" width="1360" height="800" fill="#101a2c" stroke="#22304a" stroke-width="2"/>
+  <rect x="120" y="90" width="1360" height="44" fill="#0b1424" stroke="#22304a" stroke-width="2"/>
+  <circle cx="146" cy="112" r="6" fill="#22304a"/>
+  <circle cx="168" cy="112" r="6" fill="#22304a"/>
+  <circle cx="190" cy="112" r="6" fill="#22304a"/>
+  <text x="150" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#ffffff">Apex Sprint Lab</text>
+  <rect x="1290" y="162" width="74" height="10" fill="#8fa3c4" rx="5"/>
+  <rect x="1384" y="156" width="72" height="24" fill="#1e6fff" rx="12"/>
+  <line x1="120" y1="210" x2="1480" y2="210" stroke="#22304a" stroke-width="1.5"/>
+  <rect x="120" y="210" width="190" height="680" fill="#16233b" stroke="#22304a" stroke-width="1.5"/>
+  <rect x="148" y="250" width="130" height="12" fill="#22304a" rx="6"/>
+  <rect x="148" y="292" width="130" height="12" fill="#1e6fff" rx="6"/>
+  <rect x="148" y="334" width="130" height="12" fill="#22304a" rx="6"/>
+  <rect x="148" y="376" width="130" height="12" fill="#22304a" rx="6"/>
+  <rect x="148" y="418" width="130" height="12" fill="#22304a" rx="6"/>
+  <rect x="148" y="460" width="130" height="12" fill="#22304a" rx="6"/>
+  <text x="360" y="280" font-family="Georgia, 'Times New Roman', serif" font-size="30" fill="#ffffff">Training overview</text>
+  <rect x="360" y="310" width="150" height="44" fill="#101a2c" rx="6" stroke="#1e6fff" stroke-width="2"/>
+  <text x="435" y="336" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="0.5" text-anchor="middle" fill="#1554cb">PLAN</text>
+  <line x1="510" y1="332" x2="562" y2="332" stroke="#22304a" stroke-width="2"/>
+  <path d="M560 327 L570 332 L560 337" fill="none" stroke="#22304a" stroke-width="2"/>
+  <rect x="570" y="310" width="150" height="44" fill="#101a2c" rx="6" stroke="#8fa3c4" stroke-width="2"/>
+  <text x="645" y="336" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="0.5" text-anchor="middle" fill="#ffffff">SESSION</text>
+  <line x1="720" y1="332" x2="772" y2="332" stroke="#22304a" stroke-width="2"/>
+  <path d="M770 327 L780 332 L770 337" fill="none" stroke="#22304a" stroke-width="2"/>
+  <rect x="780" y="310" width="150" height="44" fill="#101a2c" rx="6" stroke="#8fa3c4" stroke-width="2"/>
+  <text x="855" y="336" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="0.5" text-anchor="middle" fill="#ffffff">REVIEW</text>
+  <rect x="360" y="410" width="1000" height="90" fill="#16233b" rx="6" stroke="#22304a" stroke-width="1.5"/>
+  <rect x="388" y="438" width="220" height="12" fill="#ffffff" rx="6"/>
+  <rect x="388" y="462" width="420" height="8" fill="#8fa3c4" rx="4"/>
+  <rect x="1260" y="438" width="60" height="34" fill="#1b2942" rx="6"/>
+  <rect x="360" y="520" width="1000" height="90" fill="#16233b" rx="6" stroke="#22304a" stroke-width="1.5"/>
+  <rect x="388" y="548" width="220" height="12" fill="#ffffff" rx="6"/>
+  <rect x="388" y="572" width="420" height="8" fill="#8fa3c4" rx="4"/>
+  <rect x="1260" y="548" width="60" height="34" fill="#1b2942" rx="6"/>
+  <rect x="360" y="630" width="1000" height="90" fill="#16233b" rx="6" stroke="#22304a" stroke-width="1.5"/>
+  <rect x="388" y="658" width="220" height="12" fill="#ffffff" rx="6"/>
+  <rect x="388" y="682" width="420" height="8" fill="#8fa3c4" rx="4"/>
+  <rect x="1260" y="658" width="60" height="34" fill="#1b2942" rx="6"/>
+  <text x="120" y="958" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" letter-spacing="4" fill="#8fa3c4">DEMO — FICTIONAL BRAND · NOT CLIENT WORK</text>
+
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000" role="img" aria-label="Demo responsive views for the fictional Meridian Motors garage: three phone screens showing home, services and booking. Fictional demo, not client work.">
+  <!-- Original UI Forge Studio artwork. Static — no animation. -->
+  <rect x="0" y="0" width="1500" height="1000" fill="#faf9f6"/>
+  <rect x="340" y="120" width="220" height="720" fill="#ffffff" rx="30" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="420" y="136" width="60" height="8" fill="#c9c6bd" rx="4"/>
+  <text x="362" y="186" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#0b1220">Meridian</text>
+  <rect x="500" y="170" width="40" height="16" fill="#c98a2b" rx="8"/>
+  <rect x="362" y="212" width="176" height="150" fill="#eef1f4" rx="6"/>
+  <rect x="362" y="382" width="140" height="12" fill="#0b1220" rx="6"/>
+  <rect x="362" y="406" width="176" height="8" fill="#8a93a3" rx="4"/>
+  <rect x="362" y="424" width="160" height="8" fill="#8a93a3" rx="4"/>
+  <rect x="362" y="750" width="176" height="40" fill="#c98a2b" rx="20"/>
+  <line x1="340" y1="798" x2="560" y2="798" stroke="#c9c6bd" stroke-width="1.5"/>
+  <circle cx="395" cy="818" r="5" fill="#c98a2b"/>
+  <circle cx="450" cy="818" r="5" fill="#c9c6bd"/>
+  <circle cx="505" cy="818" r="5" fill="#c9c6bd"/>
+  <rect x="640" y="120" width="220" height="720" fill="#ffffff" rx="30" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="720" y="136" width="60" height="8" fill="#c9c6bd" rx="4"/>
+  <text x="662" y="186" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#0b1220">Meridian</text>
+  <rect x="800" y="170" width="40" height="16" fill="#c98a2b" rx="8"/>
+  <rect x="662" y="212" width="176" height="300" fill="#eef1f4" rx="6"/>
+  <path d="M743.88 342 H756.12 V353.88 H768 V366.12 H756.12 V378 H743.88 V366.12 H732 V353.88 H743.88 Z" fill="#c98a2b"/>
+  <rect x="662" y="540" width="140" height="12" fill="#0b1220" rx="6"/>
+  <rect x="662" y="564" width="176" height="8" fill="#8a93a3" rx="4"/>
+  <rect x="662" y="582" width="160" height="8" fill="#8a93a3" rx="4"/>
+  <rect x="662" y="750" width="176" height="40" fill="#c98a2b" rx="20"/>
+  <line x1="640" y1="798" x2="860" y2="798" stroke="#c9c6bd" stroke-width="1.5"/>
+  <circle cx="695" cy="818" r="5" fill="#c98a2b"/>
+  <circle cx="750" cy="818" r="5" fill="#c9c6bd"/>
+  <circle cx="805" cy="818" r="5" fill="#c9c6bd"/>
+  <rect x="940" y="120" width="220" height="720" fill="#ffffff" rx="30" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="1020" y="136" width="60" height="8" fill="#c9c6bd" rx="4"/>
+  <text x="962" y="186" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#0b1220">Meridian</text>
+  <rect x="1100" y="170" width="40" height="16" fill="#c98a2b" rx="8"/>
+  <rect x="962" y="212" width="176" height="150" fill="#eef1f4" rx="6"/>
+  <rect x="962" y="382" width="140" height="12" fill="#0b1220" rx="6"/>
+  <rect x="962" y="406" width="176" height="8" fill="#8a93a3" rx="4"/>
+  <rect x="962" y="424" width="160" height="8" fill="#8a93a3" rx="4"/>
+  <rect x="962" y="750" width="176" height="40" fill="#c98a2b" rx="20"/>
+  <line x1="940" y1="798" x2="1160" y2="798" stroke="#c9c6bd" stroke-width="1.5"/>
+  <circle cx="995" cy="818" r="5" fill="#c98a2b"/>
+  <circle cx="1050" cy="818" r="5" fill="#c9c6bd"/>
+  <circle cx="1105" cy="818" r="5" fill="#c9c6bd"/>
+  <text x="60" y="958" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" letter-spacing="4" fill="#6b675c">DEMO — FICTIONAL BRAND · NOT CLIENT WORK</text>
+
+</svg>

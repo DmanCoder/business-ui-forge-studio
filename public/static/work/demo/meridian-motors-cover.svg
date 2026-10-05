@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Abstract layout study for the fictional Meridian Motors workshop website. Demonstration artwork, not client work.">
+  <!-- Original demonstration artwork for a fictional brand. No animation. -->
+  <rect width="1600" height="1000" fill="#faf9f6"/>
+
+  <!-- Browser frame -->
+  <rect x="120" y="70" width="1360" height="810" fill="#ffffff" stroke="#d9d7d2" stroke-width="2"/>
+  <rect x="120" y="70" width="1360" height="52" fill="#faf9f6" stroke="#d9d7d2" stroke-width="2"/>
+  <circle cx="156" cy="96" r="7" fill="#d9d7d2"/>
+  <circle cx="182" cy="96" r="7" fill="#d9d7d2"/>
+  <circle cx="208" cy="96" r="7" fill="#d9d7d2"/>
+  <rect x="560" y="83" width="480" height="26" rx="13" fill="#f0eeea"/>
+
+  <!-- Dark workshop header band -->
+  <rect x="120" y="122" width="1360" height="180" fill="#1a2230"/>
+  <text x="176" y="200" font-family="Helvetica, Arial, sans-serif" font-size="34" font-weight="bold" letter-spacing="6" fill="#ffffff">MERIDIAN MOTORS</text>
+  <rect x="176" y="228" width="120" height="6" fill="#c98a2b"/>
+  <rect x="1020" y="176" width="72" height="10" rx="5" fill="#7c8494"/>
+  <rect x="1120" y="176" width="72" height="10" rx="5" fill="#7c8494"/>
+  <rect x="1240" y="158" width="196" height="46" rx="6" fill="#c98a2b"/>
+  <rect x="1288" y="177" width="100" height="9" rx="4.5" fill="#1a2230"/>
+
+  <!-- Service hierarchy rows -->
+  <text x="176" y="368" font-family="Helvetica, Arial, sans-serif" font-size="20" letter-spacing="4" fill="#6b675c">SERVICES</text>
+  <g>
+    <line x1="176" y1="392" x2="880" y2="392" stroke="#0b1220" stroke-width="2"/>
+    <rect x="176" y="420" width="260" height="16" rx="8" fill="#0b1220"/>
+    <rect x="176" y="452" width="420" height="9" rx="4.5" fill="#b7b3a8"/>
+    <rect x="800" y="420" width="80" height="12" rx="6" fill="#c98a2b"/>
+  </g>
+  <g>
+    <line x1="176" y1="502" x2="880" y2="502" stroke="#e8e6e1" stroke-width="2"/>
+    <rect x="176" y="530" width="220" height="16" rx="8" fill="#0b1220"/>
+    <rect x="176" y="562" width="380" height="9" rx="4.5" fill="#b7b3a8"/>
+    <rect x="800" y="530" width="80" height="12" rx="6" fill="#c98a2b"/>
+  </g>
+  <g>
+    <line x1="176" y1="612" x2="880" y2="612" stroke="#e8e6e1" stroke-width="2"/>
+    <rect x="176" y="640" width="300" height="16" rx="8" fill="#0b1220"/>
+    <rect x="176" y="672" width="440" height="9" rx="4.5" fill="#b7b3a8"/>
+    <rect x="800" y="640" width="80" height="12" rx="6" fill="#c98a2b"/>
+  </g>
+  <g>
+    <line x1="176" y1="722" x2="880" y2="722" stroke="#e8e6e1" stroke-width="2"/>
+    <rect x="176" y="750" width="240" height="16" rx="8" fill="#0b1220"/>
+    <rect x="176" y="782" width="400" height="9" rx="4.5" fill="#b7b3a8"/>
+    <rect x="800" y="750" width="80" height="12" rx="6" fill="#c98a2b"/>
+  </g>
+
+  <!-- Quote-request panel -->
+  <rect x="944" y="344" width="480" height="472" fill="#f4f3ef" stroke="#e8e6e1" stroke-width="2"/>
+  <rect x="984" y="388" width="220" height="16" rx="8" fill="#0b1220"/>
+  <rect x="984" y="418" width="320" height="9" rx="4.5" fill="#8a8578"/>
+  <g>
+    <rect x="984" y="462" width="400" height="46" fill="#ffffff" stroke="#d9d7d2" stroke-width="2"/>
+    <rect x="1002" y="480" width="140" height="9" rx="4.5" fill="#b7b3a8"/>
+  </g>
+  <g>
+    <rect x="984" y="526" width="400" height="46" fill="#ffffff" stroke="#d9d7d2" stroke-width="2"/>
+    <rect x="1002" y="544" width="180" height="9" rx="4.5" fill="#b7b3a8"/>
+  </g>
+  <g>
+    <rect x="984" y="590" width="400" height="46" fill="#ffffff" stroke="#d9d7d2" stroke-width="2"/>
+    <rect x="1002" y="608" width="160" height="9" rx="4.5" fill="#b7b3a8"/>
+  </g>
+  <g>
+    <rect x="984" y="654" width="400" height="76" fill="#ffffff" stroke="#d9d7d2" stroke-width="2"/>
+    <rect x="1002" y="672" width="220" height="9" rx="4.5" fill="#b7b3a8"/>
+  </g>
+  <rect x="984" y="756" width="400" height="48" rx="6" fill="#1a2230"/>
+  <rect x="1128" y="776" width="112" height="9" rx="4.5" fill="#c98a2b"/>
+
+  <!-- Demo label -->
+  <text x="120" y="946" font-family="Helvetica, Arial, sans-serif" font-size="22" letter-spacing="4" fill="#6b675c">DEMO — FICTIONAL BRAND · NOT CLIENT WORK</text>
+</svg>

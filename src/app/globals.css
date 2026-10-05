@@ -1,0 +1,261 @@
+@import 'tailwindcss';
+
+/* ---------------------------------------------------------------------------
+   UI Forge Studio design tokens — "editorial ledger" system
+   Rem convention: html { font-size: 62.5% } → 1rem = 10px (1.6rem = 16px).
+   No animation: state changes are immediate. No `transition` or `animation`
+   declarations may be added to this file for visual properties.
+   Full reference: docs/UI-FORGE-DESIGN-SYSTEM.md
+--------------------------------------------------------------------------- */
+@theme {
+  --color-*: initial;
+
+  /* Brand palette */
+  --color-paper: #faf9f6;
+  --color-ink: #0b1220;
+  --color-blue: #1e6fff;
+  --color-blue-deep: #1554cb;
+  --color-blue-bright: #4c8bff;
+  --color-blue-soft: #7fa8ff;
+  --color-muted: #555d6a;
+  --color-muted-dark: #8a93a3;
+  --color-line: #e8e6e0;
+  --color-edge: #c9c6bd;
+  --color-white: #ffffff;
+
+  /* Feedback */
+  --color-error: #b42318;
+  --color-error--light: #fdf3f2;
+  --color-success: #037e70;
+  --color-success--light: #f3fcfb;
+
+  /* Legacy semantic aliases (retained shared components: rich text renderers
+     kept for the Contentful migration). Mapped onto the palette. */
+  --color-primary: #1e6fff;
+  --color-primary--light: #e8f0ff;
+  --color-border: #e8e6e0;
+  --color-body-copy: #555d6a;
+  --color-body-copy--dark: #0b1220;
+  --color-body-copy--grey: #8a93a3;
+  --color-body-copy--light: #ffffff;
+  --color-background-primary: #ffffff;
+  --color-background-secondary: #faf9f6;
+  --color-background-tertiary: #0b1220;
+  --color-background-quaternary: #e8e6e0;
+
+  /* Typography */
+  --font-display: var(--font-instrument-serif), Georgia, 'Times New Roman', serif;
+  --font-body: var(--font-instrument-sans), system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 500px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --spacing-*: initial;
+  /* Numeric spacing scale base. With the 62.5% rem convention (1rem = 10px),
+     0.4rem keeps Tailwind's visual default of 4px per step (p-4 = 16px). */
+  --spacing: 0.4rem;
+  --spacing-vh: var(--vh);
+}
+
+/* Tailwind v4 compatibility: default border color */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-line, currentcolor);
+  }
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+  }
+
+  html {
+    /* Instant anchor jumps — smooth scrolling is banned site-wide */
+    scroll-behavior: auto;
+
+    /* 62.5% of 16px = 10px, so 1.6rem = 16px */
+    font-size: 62.5%;
+  }
+
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    box-sizing: border-box;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-body);
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    letter-spacing: -0.02em;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  ol {
+    list-style: auto;
+    padding: 0;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 0;
+  }
+
+  figure {
+    display: inline;
+    width: 100%;
+    margin: 0;
+  }
+
+  a,
+  a:visited {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  ::selection {
+    background-color: var(--color-blue);
+    color: #fff;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--color-blue);
+    outline-offset: 2px;
+  }
+
+  textarea,
+  select,
+  input {
+    font-family: var(--font-body);
+  }
+
+  input[type='checkbox'] {
+    accent-color: var(--color-blue);
+  }
+
+  ::placeholder {
+    color: rgba(11, 18, 32, 0.35);
+    opacity: 1;
+  }
+
+  /* Sticky-header anchor offset for in-article headings */
+  [id] {
+    scroll-margin-top: 8.4rem;
+  }
+}
+
+/* Site container: wider editorial canvas with fluid gutters */
+@utility container-site {
+  max-width: 132rem;
+  margin-inline: auto;
+  padding-inline: clamp(2rem, 4vw, 4.8rem);
+  width: 100%;
+}
+
+/* Reading column for long-form articles */
+@utility container-prose {
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: clamp(2rem, 4vw, 4.8rem);
+  width: 100%;
+}
+
+@utility container-narrow {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: clamp(2rem, 4vw, 4.8rem);
+  width: 100%;
+}
+
+/* Standard vertical rhythm for page sections */
+@utility section-pad {
+  padding-block: clamp(6.4rem, 10vh, 11.2rem);
+}
+
+/* Uppercase tracked micro label — the "ledger" metadata voice */
+@utility meta-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* Oversized editorial numerals and statements */
+@utility font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Tabular numerals for indices, dates and counters */
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Third-party exception: Google reCAPTCHA injects an inline fade transition
+   on its challenge popup. The widget stays (functional security control);
+   its animation does not. */
+body > div:has(iframe[src*='recaptcha']) {
+  transition: none !important;
+}
+
+/* Defensive kill switch: even OS-level or third-party styles must not animate */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Netlify form registration</title>
+  </head>
+  <body>
+    <!--
+      Static form-detection file for Netlify Forms with the Next.js runtime v5.
+      The live form (src/components/forms/StartProjectForm.tsx) POSTs urlencoded
+      data to this path with form-name=project-inquiry.
+    -->
+    <form
+      name="project-inquiry"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      action="/thank-you"
+    >
+      <input type="hidden" name="form-name" value="project-inquiry" />
+      <input type="hidden" name="bot-field" />
+      <input type="hidden" name="name" />
+      <input type="hidden" name="email" />
+      <input type="hidden" name="business" />
+      <input type="hidden" name="website" />
+      <input type="hidden" name="type" />
+      <input type="hidden" name="about" />
+      <input type="hidden" name="need" />
+      <input type="hidden" name="goals" />
+      <input type="hidden" name="func" />
+      <input type="hidden" name="users" />
+      <input type="hidden" name="timeline" />
+      <input type="hidden" name="budget" />
+      <input type="hidden" name="heard" />
+      <input type="hidden" name="details" />
+      <input type="hidden" name="consent" />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="760" viewBox="0 0 1000 760" role="img" aria-label="Start a project schematic: a three-step enquiry model — Brief, Recommendation, Proposal — shown as one input-to-output path.">
+  <!-- Original UI Forge Studio artwork. Static — no animation. -->
+  <rect x="0" y="0" width="1000" height="760" fill="#faf9f6"/>
+  <path d="M48 62 V48 H62" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M938 48 H952 V62" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M952 698 V712 H938" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M62 712 H48 V698" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <text x="52" y="706" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" fill="#c9c6bd">ENQUIRY</text>
+  <text x="948" y="706" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" text-anchor="end" fill="#c9c6bd">INPUT → OUTPUT</text>
+  <text x="88" y="120" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" letter-spacing="2.52" fill="#1e6fff">HOW ENQUIRIES WORK</text>
+  <text x="88" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#0b1220">Brief to proposal</text>
+  <line x1="88" y1="202" x2="912" y2="202" stroke="#e8e6e0" stroke-width="1.5"/>
+  <rect x="88" y="268" width="824" height="116" fill="#ffffff" rx="6" stroke="#c9c6bd" stroke-width="2"/>
+  <text x="128" y="342" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#1e6fff">01</text>
+  <text x="228" y="322" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#0b1220">Brief</text>
+  <text x="228" y="352" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.34" fill="#555d6a">You describe the situation</text>
+  <path d="M868.6 316 H875.4 V322.6 H882 V329.4 H875.4 V336 H868.6 V329.4 H862 V322.6 H868.6 Z" fill="#1e6fff"/>
+  <line x1="500" y1="384" x2="500" y2="408" stroke="#c9c6bd" stroke-width="2"/>
+  <path d="M495 406 L500 416 L505 406" fill="none" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="88" y="416" width="824" height="116" fill="#ffffff" rx="6" stroke="#c9c6bd" stroke-width="2"/>
+  <text x="128" y="490" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#1e6fff">02</text>
+  <text x="228" y="470" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#0b1220">Recommendation</text>
+  <text x="228" y="500" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.34" fill="#555d6a">We suggest the right approach</text>
+  <path d="M868.6 464 H875.4 V470.6 H882 V477.4 H875.4 V484 H868.6 V477.4 H862 V470.6 H868.6 Z" fill="#1e6fff"/>
+  <line x1="500" y1="532" x2="500" y2="556" stroke="#c9c6bd" stroke-width="2"/>
+  <path d="M495 554 L500 564 L505 554" fill="none" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="88" y="564" width="824" height="116" fill="#ffffff" rx="6" stroke="#c9c6bd" stroke-width="2"/>
+  <text x="128" y="638" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#1e6fff">03</text>
+  <text x="228" y="618" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#0b1220">Proposal</text>
+  <text x="228" y="648" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.34" fill="#555d6a">A clear scope and price</text>
+  <path d="M868.6 612 H875.4 V618.6 H882 V625.4 H875.4 V632 H868.6 V625.4 H862 V618.6 H868.6 Z" fill="#1e6fff"/>
+</svg>

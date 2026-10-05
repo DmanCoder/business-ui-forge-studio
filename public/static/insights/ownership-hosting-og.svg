@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="UI Forge Studio insight cover — Website ownership &amp; hosting explained. Original editorial diagram artwork on a warm off-white stage.">
+  <!-- Original UI Forge Studio artwork. Static — no animation. -->
+  <rect x="0" y="0" width="1200" height="630" fill="#faf9f6"/>
+  <path d="M40 54 V40 H54" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M1146 40 H1160 V54" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M1160 576 V590 H1146" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M54 590 H40 V576" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M68.94 83 H75.06 V88.94 H81 V95.06 H75.06 V101 H68.94 V95.06 H63 V88.94 H68.94 Z" fill="#1e6fff"/>
+  <text x="90" y="97" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" letter-spacing="2" fill="#0b1220">UI FORGE STUDIO</text>
+  <path d="M1123.92 88 H1132.08 V95.92 H1140 V104.08 H1132.08 V112 H1123.92 V104.08 H1116 V95.92 H1123.92 Z" fill="#1e6fff"/>
+  <text x="64" y="158" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="2.34" fill="#1e6fff">INSIGHT · OWNERSHIP</text>
+  <text x="64" y="206" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#0b1220">Website ownership</text>
+  <text x="64" y="258" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#0b1220">&amp; hosting explained</text>
+  <line x1="64" y1="282" x2="1136" y2="282" stroke="#e8e6e0" stroke-width="1.5"/>
+  <text x="64" y="322" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" fill="#555d6a">THE LAYERS YOU OWN</text>
+  <rect x="64" y="342" width="1072" height="42" fill="#e8f0ff" rx="4" stroke="#1e6fff" stroke-width="2"/>
+  <path d="M89.28 355 H94.72 V360.28 H100 V365.72 H94.72 V371 H89.28 V365.72 H84 V360.28 H89.28 Z" fill="#1554cb"/>
+  <text x="116" y="369" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#0b1220">Domain</text>
+  <text x="1116" y="368" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="end" fill="#555d6a">your name</text>
+  <rect x="64" y="392" width="1072" height="42" fill="#ffffff" rx="4" stroke="#c9c6bd" stroke-width="2"/>
+  <path d="M89.28 405 H94.72 V410.28 H100 V415.72 H94.72 V421 H89.28 V415.72 H84 V410.28 H89.28 Z" fill="#c9c6bd"/>
+  <text x="116" y="419" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#0b1220">Hosting</text>
+  <text x="1116" y="418" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="end" fill="#555d6a">where it runs</text>
+  <rect x="64" y="442" width="1072" height="42" fill="#ffffff" rx="4" stroke="#c9c6bd" stroke-width="2"/>
+  <path d="M89.28 455 H94.72 V460.28 H100 V465.72 H94.72 V471 H89.28 V465.72 H84 V460.28 H89.28 Z" fill="#c9c6bd"/>
+  <text x="116" y="469" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#0b1220">Code</text>
+  <text x="1116" y="468" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="end" fill="#555d6a">the build</text>
+  <rect x="64" y="492" width="1072" height="42" fill="#ffffff" rx="4" stroke="#c9c6bd" stroke-width="2"/>
+  <path d="M89.28 505 H94.72 V510.28 H100 V515.72 H94.72 V521 H89.28 V515.72 H84 V510.28 H89.28 Z" fill="#c9c6bd"/>
+  <text x="116" y="519" font-family="Georgia, 'Times New Roman', serif" font-size="20" fill="#0b1220">Content</text>
+  <text x="1116" y="518" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" text-anchor="end" fill="#555d6a">your words</text>
+  <text x="64" y="590" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" fill="#555d6a">uiforge.studio</text>
+  <text x="1136" y="590" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="11" letter-spacing="1.98" text-anchor="end" fill="#8a93a3">ORIGINAL EDITORIAL ARTWORK</text>
+</svg>

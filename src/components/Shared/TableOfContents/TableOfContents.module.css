@@ -1,0 +1,33 @@
+.nestedList ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: item;
+}
+
+.nestedList li {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  column-gap: 0.75rem;
+  align-items: baseline;
+  counter-increment: item;
+  margin: 0.6rem 0;
+}
+
+.nestedList li::before {
+  content: counters(item, '.') '. ';
+  font-variant-numeric: tabular-nums;
+}
+
+.nestedList li > * {
+  grid-column: 2;
+}
+
+.nestedList ol ol {
+  counter-reset: item;
+  padding-left: 1.5rem;
+}
+
+.nestedList > ol > li::before {
+  font-size: 1.8rem;
+}

@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+bash .husky/check-branch.sh && echo "Branch check passed" || exit 1
+npx lint-staged && echo "Lint-staged passed" || exit 1
+npm run type-check && echo "Type check passed" || exit 1

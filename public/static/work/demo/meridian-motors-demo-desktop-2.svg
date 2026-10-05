@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-label="Demo interface for the fictional Meridian Motors garage: a service-booking page with a stepper, a details form and a booking-summary panel. Fictional demo, not client work.">
+  <!-- Original UI Forge Studio artwork. Static — no animation. -->
+  <rect x="0" y="0" width="1600" height="1000" fill="#faf9f6"/>
+  <rect x="120" y="90" width="1360" height="800" fill="#ffffff" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="120" y="90" width="1360" height="44" fill="#faf9f6" stroke="#c9c6bd" stroke-width="2"/>
+  <circle cx="146" cy="112" r="6" fill="#c9c6bd"/>
+  <circle cx="168" cy="112" r="6" fill="#c9c6bd"/>
+  <circle cx="190" cy="112" r="6" fill="#c9c6bd"/>
+  <text x="150" y="180" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#0b1220">Meridian Motors</text>
+  <rect x="1290" y="162" width="74" height="10" fill="#8a93a3" rx="5"/>
+  <rect x="1384" y="156" width="72" height="24" fill="#c98a2b" rx="12"/>
+  <line x1="120" y1="210" x2="1480" y2="210" stroke="#c9c6bd" stroke-width="1.5"/>
+  <text x="180" y="290" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#0b1220">Book a service</text>
+  <rect x="180" y="320" width="560" height="10" fill="#8a93a3" rx="5"/>
+  <circle cx="200" cy="390" r="18" fill="#c98a2b" stroke="#c9c6bd" stroke-width="2"/>
+  <circle cx="290" cy="390" r="18" fill="#faf9f6" stroke="#c9c6bd" stroke-width="2"/>
+  <circle cx="380" cy="390" r="18" fill="#faf9f6" stroke="#c9c6bd" stroke-width="2"/>
+  <line x1="218" y1="390" x2="380" y2="390" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="180" y="450" width="620" height="380" fill="#faf9f6" rx="6" stroke="#c9c6bd" stroke-width="1.5"/>
+  <rect x="210" y="490" width="560" height="40" fill="#ffffff" rx="4" stroke="#c9c6bd" stroke-width="1.5"/>
+  <rect x="210" y="556" width="560" height="40" fill="#ffffff" rx="4" stroke="#c9c6bd" stroke-width="1.5"/>
+  <rect x="210" y="622" width="560" height="40" fill="#ffffff" rx="4" stroke="#c9c6bd" stroke-width="1.5"/>
+  <rect x="210" y="688" width="560" height="40" fill="#ffffff" rx="4" stroke="#c9c6bd" stroke-width="1.5"/>
+  <rect x="210" y="758" width="200" height="44" fill="#c98a2b" rx="22"/>
+  <rect x="880" y="450" width="500" height="380" fill="#eef1f4" rx="6"/>
+  <text x="910" y="500" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#0b1220">Your booking</text>
+  <line x1="910" y1="540" x2="1350" y2="540" stroke="#c9c6bd" stroke-width="1.5"/>
+  <rect x="910" y="550" width="200" height="10" fill="#8a93a3" rx="5"/>
+  <rect x="1260" y="550" width="90" height="10" fill="#0b1220" rx="5"/>
+  <line x1="910" y1="596" x2="1350" y2="596" stroke="#c9c6bd" stroke-width="1.5"/>
+  <rect x="910" y="606" width="200" height="10" fill="#8a93a3" rx="5"/>
+  <rect x="1260" y="606" width="90" height="10" fill="#0b1220" rx="5"/>
+  <line x1="910" y1="652" x2="1350" y2="652" stroke="#c9c6bd" stroke-width="1.5"/>
+  <rect x="910" y="662" width="200" height="10" fill="#8a93a3" rx="5"/>
+  <rect x="1260" y="662" width="90" height="10" fill="#0b1220" rx="5"/>
+  <line x1="910" y1="708" x2="1350" y2="708" stroke="#c9c6bd" stroke-width="1.5"/>
+  <rect x="910" y="718" width="200" height="10" fill="#8a93a3" rx="5"/>
+  <rect x="1260" y="718" width="90" height="10" fill="#0b1220" rx="5"/>
+  <text x="120" y="958" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="22" letter-spacing="4" fill="#6b675c">DEMO — FICTIONAL BRAND · NOT CLIENT WORK</text>
+
+</svg>

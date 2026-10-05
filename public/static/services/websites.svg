@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Websites service diagram: a desktop browser layout and a mobile layout beside a page-hierarchy tree branching from Home to Work, Services and Insights, with responsive breakpoint markers.">
+  <!-- Original UI Forge Studio artwork. Static — no animation. -->
+  <rect x="0" y="0" width="1200" height="750" fill="#faf9f6"/>
+  <path d="M48 62 V48 H62" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M1138 48 H1152 V62" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M1152 688 V702 H1138" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <path d="M62 702 H48 V688" fill="none" stroke="#c9c6bd" stroke-width="1.5"/>
+  <text x="52" y="696" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" fill="#c9c6bd">S / 01</text>
+  <text x="1148" y="696" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" text-anchor="end" fill="#c9c6bd">SERVICE SYSTEM</text>
+  <text x="88" y="116" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" letter-spacing="2.52" fill="#1e6fff">SERVICE / 01</text>
+  <text x="88" y="172" font-family="Georgia, 'Times New Roman', serif" font-size="46" fill="#0b1220">Websites</text>
+  <text x="88" y="208" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="14" letter-spacing="2.52" fill="#555d6a">PAGE HIERARCHY · RESPONSIVE ARCHITECTURE</text>
+  <path d="M1103.24 94 H1112.76 V103.24 H1122 V112.76 H1112.76 V122 H1103.24 V112.76 H1094 V103.24 H1103.24 Z" fill="#1e6fff"/>
+  <line x1="88" y1="236" x2="1112" y2="236" stroke="#e8e6e0" stroke-width="1.5"/>
+  <rect x="120" y="300" width="560" height="340" fill="#ffffff" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="120" y="300" width="560" height="27.2" fill="#faf9f6" stroke="#c9c6bd" stroke-width="2"/>
+  <circle cx="134.96" cy="313.6" r="4.352" fill="#c9c6bd"/>
+  <circle cx="148.56" cy="313.6" r="4.352" fill="#c9c6bd"/>
+  <circle cx="162.16" cy="313.6" r="4.352" fill="#c9c6bd"/>
+  <rect x="299.20000000000005" y="308.16" width="201.6" height="10.88" fill="#e8e6e0" rx="5.44"/>
+  <rect x="138" y="345.2" width="100.8" height="8" fill="#0b1220" rx="4"/>
+  <rect x="583.6" y="343.2" width="78.4" height="14" fill="#1e6fff" rx="7"/>
+  <rect x="138" y="379.2" width="280" height="14" fill="#0b1220" rx="4"/>
+  <rect x="138" y="401.2" width="212.8" height="8" fill="#8a93a3" rx="4"/>
+  <rect x="411.2" y="373.2" width="235.2" height="142.79999999999998" fill="#e8f0ff" rx="4"/>
+  <rect x="138" y="538" width="145.6" height="74.8" fill="#faf9f6" rx="3" stroke="#e8e6e0" stroke-width="1.5"/>
+  <rect x="306" y="538" width="145.6" height="74.8" fill="#faf9f6" rx="3" stroke="#e8e6e0" stroke-width="1.5"/>
+  <rect x="474" y="538" width="145.6" height="74.8" fill="#faf9f6" rx="3" stroke="#e8e6e0" stroke-width="1.5"/>
+  <rect x="720" y="320" width="150" height="300" fill="#ffffff" rx="22" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="769" y="332" width="52" height="8" fill="#e8e6e0" rx="4"/>
+  <rect x="736" y="354" width="59" height="8" fill="#0b1220" rx="4"/>
+  <rect x="830" y="352" width="24" height="12" fill="#1e6fff" rx="6"/>
+  <rect x="736" y="382" width="118" height="78" fill="#e8f0ff" rx="4"/>
+  <rect x="736" y="452" width="82.6" height="9" fill="#0b1220" rx="4"/>
+  <rect x="736" y="472" width="118" height="7" fill="#8a93a3" rx="4"/>
+  <rect x="736" y="488" width="100.3" height="7" fill="#8a93a3" rx="4"/>
+  <line x1="720" y1="580" x2="870" y2="580" stroke="#e8e6e0" stroke-width="1.5"/>
+  <circle cx="757.5" cy="600" r="5" fill="#1e6fff"/>
+  <circle cx="795" cy="600" r="5" fill="#c9c6bd"/>
+  <circle cx="832.5" cy="600" r="5" fill="#c9c6bd"/>
+  <rect x="920" y="300" width="160" height="40" fill="#ffffff" rx="6" stroke="#1e6fff" stroke-width="2"/>
+  <text x="1000" y="324" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="0.5" text-anchor="middle" fill="#1554cb">HOME</text>
+  <line x1="940" y1="340" x2="940" y2="400" stroke="#c9c6bd" stroke-width="2"/>
+  <line x1="940" y1="400" x2="960" y2="400" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="960" y="380" width="140" height="40" fill="#ffffff" rx="6" stroke="#0b1220" stroke-width="2"/>
+  <text x="1030" y="404" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="0.5" text-anchor="middle" fill="#0b1220">WORK</text>
+  <line x1="940" y1="340" x2="940" y2="466" stroke="#c9c6bd" stroke-width="2"/>
+  <line x1="940" y1="466" x2="960" y2="466" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="960" y="446" width="140" height="40" fill="#ffffff" rx="6" stroke="#0b1220" stroke-width="2"/>
+  <text x="1030" y="470" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="0.5" text-anchor="middle" fill="#0b1220">SERVICES</text>
+  <line x1="940" y1="340" x2="940" y2="532" stroke="#c9c6bd" stroke-width="2"/>
+  <line x1="940" y1="532" x2="960" y2="532" stroke="#c9c6bd" stroke-width="2"/>
+  <rect x="960" y="512" width="140" height="40" fill="#ffffff" rx="6" stroke="#0b1220" stroke-width="2"/>
+  <text x="1030" y="536" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="13" letter-spacing="0.5" text-anchor="middle" fill="#0b1220">INSIGHTS</text>
+  <text x="120" y="672" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" fill="#8a93a3">375</text>
+  <text x="400" y="672" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" text-anchor="middle" fill="#8a93a3">768</text>
+  <text x="680" y="672" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace" font-size="12" letter-spacing="2.16" text-anchor="end" fill="#8a93a3">1440  BREAKPOINTS</text>
+</svg>
