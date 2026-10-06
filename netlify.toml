@@ -4,17 +4,5 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[[headers]]
-  for = "https://deploy-preview*/**"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-    Content-Security-Policy = "default-src 'none'; frame-ancestors 'none'; sandbox"
-
-# Non-production branch deploys must not be indexed.
-# Replace the host below with the real branch-deploy host once the Netlify
-# site for UI Forge Studio exists.
-[[headers]]
-  for = "https://develop--ui-forge-studio.netlify.app/**"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-    Content-Security-Policy = "default-src 'none'; frame-ancestors 'none'; sandbox"
+# Preview and branch builds are protected in the Next.js metadata, robots and
+# response-header layers whenever NEXT_PUBLIC_ENVIRONMENT is not "production".

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import type { Metadata } from 'next';
 
@@ -18,9 +19,9 @@ import {
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Services';
+const PAGE_TITLE = 'Web design and development services Australia';
 const PAGE_DESCRIPTION =
-  'Services organised around what your business needs — describe your situation and we will recommend the right approach.';
+  'Website design, redesign, Shopify, HubSpot, web application, mobile app and website maintenance services for Australian businesses.';
 const PAGE_PATH = '/services';
 
 export async function generateStaticParams() {
@@ -124,6 +125,14 @@ export default async function ServicesPage(props: PageTypes) {
                     />
                   </figure>
                 )}
+                <p className='mt-[3.2rem]'>
+                  <Link
+                    href={category.href}
+                    className='text-ink decoration-blue hover:text-blue text-[1.5rem] font-semibold underline decoration-2 underline-offset-[0.6rem]'
+                  >
+                    {category.linkLabel} →
+                  </Link>
+                </p>
               </div>
             </div>
           </article>

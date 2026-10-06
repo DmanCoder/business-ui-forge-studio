@@ -2,8 +2,8 @@
 
 export const HERO = {
   eyebrow: 'Founder-led digital studio · Australia',
-  heading: 'Websites and digital products forged around your business.',
-  lead: 'UI Forge Studio combines thoughtful design with modern development to create fast, professional websites, web applications and mobile experiences shaped around your goals.',
+  heading: 'Custom websites and digital products, designed and built around your business.',
+  lead: 'UI Forge Studio is an Australian web design and development studio for businesses that need a clearer website, a better online store or a digital product shaped around a real workflow.',
 };
 
 export const STATEMENT =
@@ -38,6 +38,7 @@ export const PROBLEMS = [
 
 export const BUILD_FEATURED = {
   title: 'Custom websites',
+  href: '/services/web-design-development',
   badge: 'Our recommended path for growth',
   body: 'For businesses that need more flexibility, performance and room to grow. Built with modern technology such as Next.js, your website is structured for speed, search visibility and a seamless experience across devices, with no restrictive templates.',
 };
@@ -45,22 +46,27 @@ export const BUILD_FEATURED = {
 export const BUILD_CARDS = [
   {
     title: 'E-commerce',
+    href: '/services/shopify-development',
     body: 'Shopify store development for most stores, and custom Shopify storefronts for established brands that have outgrown theme constraints.',
   },
   {
     title: 'HubSpot websites',
+    href: '/services/hubspot-websites',
     body: 'Websites and landing pages that live where your marketing does, with forms, contact data and reporting connected from day one.',
   },
   {
     title: 'Web applications',
+    href: '/services/web-app-development',
     body: 'Client portals, dashboards, booking systems and internal tools, where your team or customers get real work done.',
   },
   {
     title: 'Mobile applications',
+    href: '/services/mobile-app-development',
     body: 'One consistent app experience across iOS and Android with React Native, without running two separate projects.',
   },
   {
     title: 'Ongoing care',
+    href: '/services/website-maintenance',
     body: 'Maintenance, monitoring, content updates and improvements, so your site keeps performing after launch.',
   },
 ];

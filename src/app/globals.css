@@ -13,8 +13,8 @@
   /* Brand palette */
   --color-paper: #faf9f6;
   --color-ink: #0b1220;
-  --color-blue: #1e6fff;
-  --color-blue-deep: #1554cb;
+  --color-blue: #1554cb;
+  --color-blue-deep: #0f3f9e;
   --color-blue-bright: #4c8bff;
   --color-blue-soft: #7fa8ff;
   --color-muted: #555d6a;
@@ -31,7 +31,7 @@
 
   /* Legacy semantic aliases (retained shared components: rich text renderers
      kept for the Contentful migration). Mapped onto the palette. */
-  --color-primary: #1e6fff;
+  --color-primary: #1554cb;
   --color-primary--light: #e8f0ff;
   --color-border: #e8e6e0;
   --color-body-copy: #555d6a;

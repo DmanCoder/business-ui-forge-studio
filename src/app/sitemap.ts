@@ -2,8 +2,9 @@
 import { MetadataRoute } from 'next';
 
 import { BASE_URL } from '@src/config/site';
-import { getPublishedArticles, getCategories } from '@src/lib/insights';
+import { getPublishedArticles } from '@src/lib/insights';
 import { getPublishedCaseStudies, shouldIndexTestimonialsPage } from '@src/lib/caseStudies';
+import { SERVICE_SLUGS } from '@src/content/service-pages';
 
 const STATIC_ROUTES: { path: string; priority: number }[] = [
   { path: '/', priority: 1 },
@@ -17,7 +18,6 @@ const STATIC_ROUTES: { path: string; priority: number }[] = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const articles = await getPublishedArticles();
-  const categories = await getCategories();
   const caseStudies = await getPublishedCaseStudies();
 
   const staticEntries = STATIC_ROUTES.map(({ path, priority }) => ({
@@ -33,10 +33,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
-  const categoryEntries = categories.map((category) => ({
-    url: new URL(`/insights/categories/${category.slug}`, BASE_URL).toString(),
+  const serviceEntries = SERVICE_SLUGS.map((slug) => ({
+    url: new URL(`/services/${slug}`, BASE_URL).toString(),
     changeFrequency: 'monthly' as const,
-    priority: 0.5,
+    priority: 0.8,
   }));
 
   // /testimonials enters the sitemap only on real verified content — a
@@ -64,9 +64,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [
     ...staticEntries,
+    ...serviceEntries,
     ...testimonialsEntries,
     ...caseStudyEntries,
     ...articleEntries,
-    ...categoryEntries,
   ];
 }

@@ -24,9 +24,9 @@ import {
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'About';
+const PAGE_TITLE = 'About the founder-led studio';
 const PAGE_DESCRIPTION =
-  'UI Forge Studio exists because too many businesses end up with websites that look fine in a mock-up and disappoint in the real world: slow, awkward on phones, hard to update, invisible in search.';
+  'Meet UI Forge Studio, a founder-led Australian web design and development studio where the same person shapes the strategy, interface and frontend build.';
 
 /** Honest studio facts — no invented scale. */
 const STUDIO_LEDGER = [

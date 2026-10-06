@@ -14,9 +14,9 @@ import { START_INTRO } from '@src/content/start-project';
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Start a project';
+const PAGE_TITLE = 'Start a web design or development project';
 const PAGE_DESCRIPTION =
-  'Tell us about your project. No jargon needed — describe your business and what you want to achieve, and we will come back with questions and a recommended approach.';
+  'Tell UI Forge Studio about your website, Shopify, HubSpot, web app or mobile app project and receive a considered response within two business days.';
 
 /** Expectation-setting: what happens after the form is sent. */
 const NEXT_STEPS = [

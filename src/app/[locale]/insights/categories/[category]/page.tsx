@@ -31,6 +31,8 @@ export async function generateMetadata(props: CategoryPageProps): Promise<Metada
     title: `${category.name} — Insights`,
     description: `Articles in ${category.name} — practical, plain-language guidance on websites, e-commerce and digital products.`,
     path: `/insights/categories/${category.slug}`,
+    noIndex: true,
+    followOnNoIndex: true,
   });
 }
 

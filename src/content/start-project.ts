@@ -21,23 +21,21 @@ export const LABELS = {
   website: 'Existing website',
   websiteHint: '(if you have one)',
   type: 'Type of project',
-  about: 'What does your business do?',
-  need: 'What needs to be created or improved?',
-  goals: 'Main goals',
-  func: 'Functionality you know you need',
+  brief: 'What are you trying to change or make possible?',
+  briefHint:
+    'A short answer is enough. Helpful context includes what your business does, what is not working, the outcome you want and any must-have functionality.',
   users: 'Who are your customers or users?',
   timeline: 'Desired timeline',
   budget: 'Approximate budget',
   budgetHint: '(AUD, helps us recommend the right approach)',
   heard: 'How did you hear about us?',
-  details: "Anything else you'd like to add?",
   optional: '(optional)',
 };
 
 export const PLACEHOLDERS = {
   website: 'https://',
-  goals: 'e.g. more enquiries, look more professional, sell online',
-  func: 'e.g. bookings, payments, member login',
+  brief:
+    'For example: our current site is difficult to update and does not explain our new service. We need clearer enquiry paths and a CMS our marketing team can use.',
 };
 
 export const PROJECT_TYPES = [
@@ -68,6 +66,7 @@ export const VALIDATION = {
   name: 'Please add your name.',
   email: 'Please add a valid email address.',
   type: 'Choose the closest option. "Not sure yet" is completely fine.',
+  brief: 'Please add a short project brief so we can give you a useful response.',
   consent: 'Please tick this box so we are allowed to reply to you.',
 };
 

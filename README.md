@@ -52,7 +52,7 @@ A template with every variable is provided in `.env.example` — copy it to
 - `src/config/site.ts` — brand, contact, navigation single source of truth.
 - `src/content/…` — static page copy modules.
 - `src/lib/seo.ts` — metadata + JSON-LD builders (ProfessionalService, WebSite, WebPage,
-  BlogPosting, Breadcrumb).
+  Service, BlogPosting, Breadcrumb).
 - `src/lib/insights/…` — Insights data layer. Currently serves typed local article
   content; swap to Contentful once entries exist (see `docs/CONTENTFUL-MIGRATION.md`).
 - `src/components/ui|layout|insights|forms` — design-system primitives, chrome, insights
@@ -74,10 +74,13 @@ The Netlify form name is `project-inquiry`.
 - `docs/UI-FORGE-DESIGN-RESEARCH.md` — Mobbin research + direction
 - `docs/UI-FORGE-DESIGN-SYSTEM.md` — tokens and component rules
 - `docs/CONTENTFUL-MIGRATION.md` — CMS follow-up work before production
+- `docs/site-upgrade/` — October 2026 full-site audit, SEO strategy, design research,
+  implementation record and content roadmap
 
 ## Pre-launch checklist (external actions)
 
-- Complete Privacy and Terms content (currently structural stubs, `noindex`).
+- Have the Privacy Policy, Website Terms and Disclaimer reviewed by an Australian lawyer;
+  the current noindex pages are tailored interim drafts, not legal advice.
 - Set the founder name (`src/config/site.ts` `FOUNDER_NAME`) and, if confirmed, the
   studio region.
 - Create the Contentful Insights entries (or keep the local fallback) — see

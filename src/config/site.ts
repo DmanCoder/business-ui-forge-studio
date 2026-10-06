@@ -3,12 +3,12 @@
 
 export const SITE_NAME = 'UI Forge Studio';
 
-export const SITE_TAGLINE = 'Websites and digital products forged around your business';
+export const SITE_TAGLINE = 'Web design and development for Australian businesses';
 
 export const SITE_DESCRIPTION =
-  'Founder-led Australian digital studio: websites, e-commerce, web applications and mobile apps, designed and built by the same hands.';
+  'Founder-led Australian web design and development studio for custom websites, Shopify, HubSpot, web applications, mobile apps and ongoing support.';
 
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'http://localhost:3000';
+export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://uiforgestudio.com.au';
 
 export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hello@uiforgestudio.com.au';
 
@@ -43,11 +43,13 @@ export const NAV_ITEMS = [
 export const CTA_ITEM = { label: 'Start a project', href: '/start-a-project' } as const;
 
 export const FOOTER_SERVICES = [
-  { label: 'Custom websites', href: '/services' },
-  { label: 'E-commerce', href: '/services' },
-  { label: 'Web applications', href: '/services' },
-  { label: 'Mobile applications', href: '/services' },
-  { label: 'Ongoing care', href: '/services' },
+  { label: 'Web design & development', href: '/services/web-design-development' },
+  { label: 'Website redesign', href: '/services/website-redesign' },
+  { label: 'Shopify development', href: '/services/shopify-development' },
+  { label: 'HubSpot websites', href: '/services/hubspot-websites' },
+  { label: 'Web applications', href: '/services/web-app-development' },
+  { label: 'Mobile applications', href: '/services/mobile-app-development' },
+  { label: 'Website maintenance', href: '/services/website-maintenance' },
 ] as const;
 
 export const NETLIFY_FORM_NAME = 'project-inquiry';

@@ -49,15 +49,7 @@ npm run dev
 /work      → internal /en/work
 ```
 
-Canonicals stay locale-free. `ALLOWED_LOCALES` currently contains only `en`. Legacy BlackBoltGuitar routes return permanent `308` redirects. Live checks confirmed:
-
-| Legacy route | Redirect |
-|---|---|
-| `/about-me` | `/about` |
-| `/contact` | `/start-a-project` |
-| `/blogs` | `/insights` |
-| `/categories/websites` | `/insights/categories/websites` |
-| `/en/about-me` | `/about` |
+Canonicals stay locale-free. `ALLOWED_LOCALES` currently contains only `en`. There are no legacy redirects: the site is new and not yet on a live domain, so URL paths can change freely.
 
 ## Public route inventory
 

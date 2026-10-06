@@ -19,7 +19,7 @@ const UI_FORGE_STUDIO_SITE: CaseStudySource = {
   title: 'UI Forge Studio — designing and building our own site',
   seoTitle: 'Case study: the UI Forge Studio website | UI Forge Studio',
   metaDescription:
-    'How UI Forge Studio designed and built its own website: an editorial design system with zero animation, a typed CMS-ready content layer, structured SEO, and accessibility as a default.',
+    'How UI Forge Studio designed and built its own website: an editorial system with zero animation, dedicated service architecture, structured SEO and accessibility as a default.',
   summary:
     'Our own site, rebuilt from the ground up: an editorial design system with zero animation, a typed CMS-ready content layer, and the same standards we apply to client work.',
   status: 'internal',
@@ -107,7 +107,7 @@ const UI_FORGE_STUDIO_SITE: CaseStudySource = {
     },
     {
       label: 'SEO & migration',
-      body: 'Clean locale-free canonicals with hreflang, JSON-LD for the organisation, pages, articles and breadcrumbs, a generated sitemap, and permanent redirects mapping every legacy URL to its new home.',
+      body: 'Clean locale-free canonicals with hreflang, service-specific landing pages, JSON-LD for the organisation, services, pages, articles and breadcrumbs, a generated sitemap, and permanent redirects mapping legacy URLs to their new home.',
     },
   ],
   designAndBuild: [
@@ -133,7 +133,7 @@ const UI_FORGE_STUDIO_SITE: CaseStudySource = {
     'A consistent editorial design system documented in the repository and applied across every route.',
     'Zero animation site-wide, verified in a dedicated audit — premium feel carried by typography and composition.',
     'A typed content layer that is CMS-ready: swapping in Contentful requires no page changes.',
-    'Structured SEO across the site: canonicals, hreflang, JSON-LD, sitemap, and complete legacy redirects.',
+    'Structured SEO across the site: intent-specific service pages, canonicals, hreflang, JSON-LD, sitemap, and reviewed legacy redirects.',
     'Every pre-existing security and SEO defect found in the audit was fixed during the rebuild.',
   ],
   published: true,

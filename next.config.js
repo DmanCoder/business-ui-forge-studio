@@ -11,31 +11,6 @@ const nextConfig = {
       { protocol: 'https', hostname: 'images.pexels.com' },
     ],
   },
-  async redirects() {
-    // Legacy BlackBoltGuitar routes → UI Forge Studio routes.
-    const legacyMap = [
-      { source: '/blogs', destination: '/insights' },
-      { source: '/blogs/:slug', destination: '/insights/:slug' },
-      { source: '/categories/:category', destination: '/insights/categories/:category' },
-      { source: '/about-me', destination: '/about' },
-      { source: '/contact', destination: '/start-a-project' },
-      { source: '/privacy-policy', destination: '/privacy' },
-      { source: '/terms-and-conditions', destination: '/terms' },
-      { source: '/disclaimer', destination: '/' },
-      { source: '/editorial-guidelines', destination: '/' },
-      { source: '/tools/guitar-chord-diagram-generator', destination: '/' },
-    ];
-
-    return legacyMap.flatMap(({ source, destination }) => [
-      { source, destination, permanent: true },
-      // Locale-prefixed variants of the same legacy routes.
-      {
-        source: `/:locale(en|es)${source}`,
-        destination,
-        permanent: true,
-      },
-    ]);
-  },
   async rewrites() {
     return [
       { source: '/', destination: '/en' }, // All other paths (except locales & system paths) → /en/:path*
@@ -49,12 +24,11 @@ const nextConfig = {
   async headers() {
     return [
       {
-        source: '/_next/image(.*)',
-        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
-      },
-      {
         source: '/(.*)', // Apply these headers to all routes
         headers: [
+          ...(process.env.NEXT_PUBLIC_ENVIRONMENT !== 'production'
+            ? [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }]
+            : []),
           {
             key: 'Content-Security-Policy',
             value: "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;",

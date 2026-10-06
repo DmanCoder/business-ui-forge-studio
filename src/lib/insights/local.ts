@@ -127,7 +127,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       {
         t: 'callout',
         title: 'How we quote',
-        x: 'After a discovery conversation, UI Forge Studio provides a written proposal covering the recommended approach, scope, timeline and investment — with the assumptions spelled out, so you can compare it fairly against any other quote. The [process page](#/process) shows where that step fits.',
+        x: 'After a discovery conversation, UI Forge Studio provides a written proposal covering the recommended approach, scope, timeline and investment — with the assumptions spelled out, so you can compare it fairly against any other quote. The [web design and development service](#/services/web-design-development) explains what a complete website engagement can include, and the [process page](#/process) shows where the proposal fits.',
       },
     ],
   },
@@ -240,7 +240,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       },
       {
         t: 'p',
-        x: 'A trustworthy provider will answer all five without flinching. Our own answers are on the [about page](#/about): your assets stay yours, care plans are optional, and there is always a clear way to take everything in-house.',
+        x: 'A trustworthy provider will answer all five without flinching. Our own answers are on the [about page](#/about): your assets stay yours, care plans are optional, and there is always a clear way to take everything in-house. If the problem is an existing site with no accountable owner, see [website maintenance and support](#/services/website-maintenance).',
       },
     ],
   },
@@ -398,7 +398,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       },
       {
         t: 'p',
-        x: 'If two platforms both fit, the one that is cheaper to run usually wins. If none of them obviously fits, that is useful information too — it means the decision needs a conversation, not more reading.',
+        x: 'If two platforms both fit, the one that is cheaper to run usually wins. If none of them obviously fits, that is useful information too — it means the decision needs a conversation, not more reading. The [web design and development service](#/services/web-design-development) explains how that recommendation is made inside a project.',
       },
     ],
   },

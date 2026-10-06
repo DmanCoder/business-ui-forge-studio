@@ -8,6 +8,7 @@ import {
   STUDIO_REGION,
   AUTHOR_NAME,
 } from '@src/config/site';
+import { IS_PREVIEW } from '@src/typescriptGlobals/constants';
 
 type BuildMetadataArgs = {
   title: string;
@@ -16,6 +17,7 @@ type BuildMetadataArgs = {
   path: string;
   ogType?: 'website' | 'article';
   noIndex?: boolean;
+  followOnNoIndex?: boolean;
   ogImage?: string;
 };
 
@@ -33,6 +35,7 @@ export const buildMetadata = ({
   path,
   ogType = 'website',
   noIndex = false,
+  followOnNoIndex = false,
   ogImage,
 }: BuildMetadataArgs): Metadata => {
   const url = absoluteUrl(path);
@@ -63,7 +66,9 @@ export const buildMetadata = ({
       description,
       ...(ogImage ? { images: [ogImage] } : {}),
     },
-    ...(noIndex ? { robots: { index: false, follow: false } } : {}),
+    ...(noIndex || IS_PREVIEW
+      ? { robots: { index: false, follow: IS_PREVIEW ? false : followOnNoIndex } }
+      : {}),
   };
 };
 
@@ -107,6 +112,25 @@ export const webPageSchema = ({
   name: title,
   description,
   isPartOf: { '@id': `${BASE_URL}/#website` },
+});
+
+export const serviceSchema = ({
+  name,
+  description,
+  path,
+}: {
+  name: string;
+  description: string;
+  path: string;
+}) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': `${absoluteUrl(path)}#service`,
+  name,
+  description,
+  url: absoluteUrl(path),
+  areaServed: STUDIO_REGION ? ['Australia', STUDIO_REGION] : 'Australia',
+  provider: { '@id': `${BASE_URL}/#organization` },
 });
 
 export const breadcrumbSchema = (items: { name: string; path: string }[]) => ({

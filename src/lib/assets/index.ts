@@ -49,28 +49,35 @@ export const START_PROJECT_VISUAL: StudioAsset = {
 // --- Services (keyed by the exact SERVICE_CATEGORIES name) -----------------
 
 export const SERVICE_ASSETS: Record<string, StudioAsset> = {
-  Websites: {
+  'Web design & development': {
     src: '/static/services/websites.svg',
     width: 1200,
     height: 750,
     category: 'service',
     alt: 'A website project shown as page hierarchy and responsive architecture: a desktop layout and a mobile layout beside a site tree branching from Home to Work, Services and Insights, with responsive breakpoints.',
   },
-  'Landing pages and campaigns': {
+  'Website redesign': {
     src: '/static/services/landing-pages.svg',
     width: 1200,
     height: 750,
     category: 'service',
-    alt: 'A landing page and campaign shown as structure and conversion path: hero, social-proof, offer and call-to-action zones, with a campaign-to-conversion route and a reach-to-action funnel.',
+    alt: 'A website redesign shown as structure and conversion path: hero, evidence, offer and call-to-action zones, with a current-state-to-improved-journey route.',
   },
-  'E-commerce': {
+  'Shopify development': {
     src: '/static/services/ecommerce.svg',
     width: 1200,
     height: 750,
     category: 'service',
     alt: 'An e-commerce build shown as one system: linked product, cart and checkout screens flowing left to right.',
   },
-  'Digital products': {
+  'HubSpot websites': {
+    src: '/static/services/landing-pages.svg',
+    width: 1200,
+    height: 750,
+    category: 'service',
+    alt: 'A HubSpot website and campaign system shown as reusable page sections connected to a lead-generation journey.',
+  },
+  'Web applications': {
     src: '/static/services/digital-products.svg',
     width: 1200,
     height: 750,
@@ -84,7 +91,7 @@ export const SERVICE_ASSETS: Record<string, StudioAsset> = {
     category: 'service',
     alt: 'A mobile application shown as one interface system: navigation, list and detail phone screens beside a shared component kit.',
   },
-  'Ongoing care': {
+  'Website maintenance': {
     src: '/static/services/ongoing-care.svg',
     width: 1200,
     height: 750,

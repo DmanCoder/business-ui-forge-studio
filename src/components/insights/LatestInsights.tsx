@@ -17,7 +17,7 @@ const LatestInsights = async () => {
       <div className='container-site section-pad'>
         <div className='flex flex-wrap items-end justify-between gap-[2rem]'>
           <div>
-            <Eyebrow index='07'>Insights</Eyebrow>
+            <Eyebrow index='08'>Insights</Eyebrow>
             <h2 className='mt-[2rem] text-[clamp(2.8rem,3.6vw,4rem)] leading-[1.1] font-semibold'>
               Plain-language guidance
             </h2>

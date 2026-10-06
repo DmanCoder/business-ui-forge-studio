@@ -9,9 +9,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: false, message: 'Method Not Allowed' }, { status: 405 });
   }
 
+  if (!secretKey) {
+    return NextResponse.json(
+      { success: false, message: 'reCAPTCHA is not configured' },
+      { status: 503 }
+    );
+  }
+
   const { token } = await req.json();
 
-  if (!token) {
+  if (typeof token !== 'string' || !token) {
     return NextResponse.json({ success: false, message: 'Token is missing' }, { status: 400 });
   }
 
@@ -22,7 +29,7 @@ export async function POST(req: NextRequest) {
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: `secret=${secretKey}&response=${token}`,
+      body: new URLSearchParams({ secret: secretKey, response: token }).toString(),
     });
 
     const data = await response.json();

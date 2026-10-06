@@ -58,7 +58,7 @@ export async function generateMetadata(props: PageTypes): Promise<Metadata> {
   const page = parsePageParam(searchParams.page) ?? 1;
 
   const metadata = buildMetadata({
-    title: 'Insights',
+    title: 'Website design and digital product insights',
     description: INTRO,
     path: page > 1 ? `/insights?page=${page}` : '/insights',
   });

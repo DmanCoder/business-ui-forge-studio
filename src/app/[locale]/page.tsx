@@ -43,11 +43,11 @@ export async function generateStaticParams() {
 export async function generateMetadata(): Promise<Metadata> {
   return {
     ...buildMetadata({
-      title: `${SITE_NAME} — ${SITE_TAGLINE}`,
+      title: `Australian web design and development studio | ${SITE_NAME}`,
       description: SITE_DESCRIPTION,
       path: '/',
     }),
-    title: { absolute: `${SITE_NAME} — ${SITE_TAGLINE}` },
+    title: { absolute: `Australian web design and development studio | ${SITE_NAME}` },
   };
 }
 
@@ -55,7 +55,7 @@ export default async function HomePage(props: PageTypes) {
   const { locale } = await props.params;
   if (!ALLOWED_LOCALES.includes(locale)) notFound();
 
-  const capabilities: { title: string; body: string; badge?: string }[] = [
+  const capabilities: { title: string; body: string; href: string; badge?: string }[] = [
     BUILD_FEATURED,
     ...BUILD_CARDS,
   ];
@@ -66,7 +66,8 @@ export default async function HomePage(props: PageTypes) {
       <section className='container-site pt-[clamp(6.4rem,10vh,11.2rem)] pb-[clamp(4.8rem,8vh,8rem)]'>
         <Eyebrow>{HERO.eyebrow}</Eyebrow>
         <h1 className='font-display mt-[3.2rem] max-w-[14ch] text-[clamp(4.6rem,8.5vw,10.4rem)] leading-[1.02] font-normal tracking-[-0.015em]'>
-          Websites and digital products <em className='text-blue'>forged</em> around your business.
+          Custom websites and digital products, <em className='text-blue'>designed and built</em>{' '}
+          around your business.
         </h1>
         <div className='mt-[4rem] grid gap-[3.2rem] lg:grid-cols-12'>
           <p className='text-muted max-w-[52ch] text-[clamp(1.7rem,2vw,2rem)] leading-[1.6] lg:col-span-7'>
@@ -172,6 +173,12 @@ export default async function HomePage(props: PageTypes) {
                 </div>
                 <p className='text-muted max-w-[64ch] text-[1.55rem] leading-[1.65] md:col-span-7'>
                   {item.body}
+                  <Link
+                    href={item.href}
+                    className='text-ink decoration-blue hover:text-blue mt-[1.2rem] block w-fit font-semibold underline decoration-2 underline-offset-[0.5rem]'
+                  >
+                    Explore this service →
+                  </Link>
                 </p>
               </article>
             ))}

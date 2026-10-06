@@ -37,15 +37,11 @@ type FieldValues = {
   business: string;
   website: string;
   type: string;
-  about: string;
-  need: string;
-  goals: string;
-  func: string;
+  brief: string;
   users: string;
   timeline: string;
   budget: string;
   heard: string;
-  details: string;
 };
 
 const INITIAL_VALUES: FieldValues = {
@@ -54,18 +50,14 @@ const INITIAL_VALUES: FieldValues = {
   business: '',
   website: '',
   type: '',
-  about: '',
-  need: '',
-  goals: '',
-  func: '',
+  brief: '',
   users: '',
   timeline: '',
   budget: '',
   heard: '',
-  details: '',
 };
 
-type Errors = Partial<Record<'name' | 'email' | 'type' | 'consent', string>>;
+type Errors = Partial<Record<'name' | 'email' | 'type' | 'brief' | 'consent', string>>;
 
 const OptionalHint = () => <span className='text-muted font-normal'> {LABELS.optional}</span>;
 
@@ -80,13 +72,20 @@ type ChipGroupProps = {
   options: readonly string[];
   value: string;
   onChange: (_value: string) => void;
+  labelledBy: string;
   describedBy?: string;
 };
 
 /** Single-select chip group: click a selected chip again to deselect it. */
 const ChipGroup = React.forwardRef<HTMLDivElement, ChipGroupProps>(
-  ({ options, value, onChange, describedBy }, ref) => (
-    <div ref={ref} className='flex flex-wrap gap-[0.8rem]' aria-describedby={describedBy}>
+  ({ options, value, onChange, labelledBy, describedBy }, ref) => (
+    <div
+      ref={ref}
+      role='group'
+      className='flex flex-wrap gap-[0.8rem]'
+      aria-labelledby={labelledBy}
+      aria-describedby={describedBy}
+    >
       {options.map((option) => {
         const selected = option === value;
         return (
@@ -95,7 +94,7 @@ const ChipGroup = React.forwardRef<HTMLDivElement, ChipGroupProps>(
             type='button'
             aria-pressed={selected}
             onClick={() => onChange(selected ? '' : option)}
-            className={`cursor-pointer rounded-[0.2rem] border px-[1.5rem] py-[1rem] text-[1.4rem] ${
+            className={`min-h-[4.4rem] cursor-pointer rounded-[0.2rem] border px-[1.5rem] py-[1rem] text-[1.4rem] ${
               selected
                 ? 'bg-ink border-ink font-semibold text-white'
                 : 'border-edge text-ink hover:border-ink bg-white font-medium'
@@ -125,6 +124,7 @@ const StartProjectForm: React.FC = () => {
   const nameRef = React.useRef<HTMLInputElement>(null);
   const emailRef = React.useRef<HTMLInputElement>(null);
   const typeGroupRef = React.useRef<HTMLDivElement>(null);
+  const briefRef = React.useRef<HTMLTextAreaElement>(null);
   const consentRef = React.useRef<HTMLInputElement>(null);
 
   const setField = (field: keyof FieldValues) => (value: string) =>
@@ -140,6 +140,7 @@ const StartProjectForm: React.FC = () => {
     if (!values.name.trim()) next.name = VALIDATION.name;
     if (!EMAIL_REGEX.test(values.email.trim())) next.email = VALIDATION.email;
     if (!values.type) next.type = VALIDATION.type;
+    if (!values.brief.trim()) next.brief = VALIDATION.brief;
     if (!consent) next.consent = VALIDATION.consent;
     return next;
   };
@@ -151,6 +152,8 @@ const StartProjectForm: React.FC = () => {
       emailRef.current?.focus();
     } else if (next.type) {
       typeGroupRef.current?.querySelector('button')?.focus();
+    } else if (next.brief) {
+      briefRef.current?.focus();
     } else if (next.consent) {
       consentRef.current?.focus();
     }
@@ -222,6 +225,8 @@ const StartProjectForm: React.FC = () => {
       noValidate
       className='flex flex-col gap-[4rem]'
     >
+      <p className='text-muted text-[1.35rem]'>Fields marked * are required.</p>
+
       {/* Netlify honeypot */}
       <p className='sr-only' aria-hidden='true'>
         <label>
@@ -287,6 +292,7 @@ const StartProjectForm: React.FC = () => {
         <div>
           <label htmlFor='sp-business' className={LABEL_CLASSES}>
             {LABELS.business}
+            <OptionalHint />
           </label>
           <input
             id='sp-business'
@@ -325,79 +331,48 @@ const StartProjectForm: React.FC = () => {
         </legend>
 
         <div>
-          <p className={LABEL_CLASSES}>{LABELS.type} *</p>
+          <p id='sp-type-label' className={LABEL_CLASSES}>
+            {LABELS.type} *
+          </p>
+          <input type='hidden' name='type' value={values.type} />
           <ChipGroup
             ref={typeGroupRef}
             options={PROJECT_TYPES}
             value={values.type}
             onChange={setField('type')}
+            labelledBy='sp-type-label'
             describedBy={errors.type ? 'sp-type-error' : undefined}
           />
           <FieldError id='sp-type-error' message={errors.type} />
         </div>
 
         <div>
-          <label htmlFor='sp-about' className={LABEL_CLASSES}>
-            {LABELS.about}
+          <label htmlFor='sp-brief' className={LABEL_CLASSES}>
+            {LABELS.brief} *
           </label>
+          <p id='sp-brief-hint' className='text-muted mb-[0.8rem] text-[1.35rem] leading-[1.55]'>
+            {LABELS.briefHint}
+          </p>
           <textarea
-            id='sp-about'
-            name='about'
-            rows={3}
-            value={values.about}
-            onChange={handleInput('about')}
+            ref={briefRef}
+            id='sp-brief'
+            name='brief'
+            rows={6}
+            required
+            placeholder={PLACEHOLDERS.brief}
+            value={values.brief}
+            onChange={handleInput('brief')}
+            aria-invalid={Boolean(errors.brief)}
+            aria-describedby={errors.brief ? 'sp-brief-hint sp-brief-error' : 'sp-brief-hint'}
             className={INPUT_CLASSES}
           />
-        </div>
-
-        <div>
-          <label htmlFor='sp-need' className={LABEL_CLASSES}>
-            {LABELS.need}
-          </label>
-          <textarea
-            id='sp-need'
-            name='need'
-            rows={3}
-            value={values.need}
-            onChange={handleInput('need')}
-            className={INPUT_CLASSES}
-          />
-        </div>
-
-        <div>
-          <label htmlFor='sp-goals' className={LABEL_CLASSES}>
-            {LABELS.goals}
-          </label>
-          <textarea
-            id='sp-goals'
-            name='goals'
-            rows={2}
-            placeholder={PLACEHOLDERS.goals}
-            value={values.goals}
-            onChange={handleInput('goals')}
-            className={INPUT_CLASSES}
-          />
-        </div>
-
-        <div>
-          <label htmlFor='sp-func' className={LABEL_CLASSES}>
-            {LABELS.func}
-            <OptionalHint />
-          </label>
-          <textarea
-            id='sp-func'
-            name='func'
-            rows={2}
-            placeholder={PLACEHOLDERS.func}
-            value={values.func}
-            onChange={handleInput('func')}
-            className={INPUT_CLASSES}
-          />
+          <FieldError id='sp-brief-error' message={errors.brief} />
         </div>
 
         <div>
           <label htmlFor='sp-users' className={LABEL_CLASSES}>
             {LABELS.users}
+            <OptionalHint />
           </label>
           <input
             id='sp-users'
@@ -418,16 +393,32 @@ const StartProjectForm: React.FC = () => {
         </legend>
 
         <div>
-          <p className={LABEL_CLASSES}>{LABELS.timeline}</p>
-          <ChipGroup options={TIMELINES} value={values.timeline} onChange={setField('timeline')} />
+          <p id='sp-timeline-label' className={LABEL_CLASSES}>
+            {LABELS.timeline}
+            <OptionalHint />
+          </p>
+          <input type='hidden' name='timeline' value={values.timeline} />
+          <ChipGroup
+            options={TIMELINES}
+            value={values.timeline}
+            onChange={setField('timeline')}
+            labelledBy='sp-timeline-label'
+          />
         </div>
 
         <div>
-          <p className={LABEL_CLASSES}>
+          <p id='sp-budget-label' className={LABEL_CLASSES}>
             {LABELS.budget}
             <span className='text-muted font-normal'> {LABELS.budgetHint}</span>
+            <OptionalHint />
           </p>
-          <ChipGroup options={BUDGETS} value={values.budget} onChange={setField('budget')} />
+          <input type='hidden' name='budget' value={values.budget} />
+          <ChipGroup
+            options={BUDGETS}
+            value={values.budget}
+            onChange={setField('budget')}
+            labelledBy='sp-budget-label'
+          />
         </div>
 
         <div>
@@ -441,21 +432,6 @@ const StartProjectForm: React.FC = () => {
             type='text'
             value={values.heard}
             onChange={handleInput('heard')}
-            className={INPUT_CLASSES}
-          />
-        </div>
-
-        <div>
-          <label htmlFor='sp-details' className={LABEL_CLASSES}>
-            {LABELS.details}
-            <OptionalHint />
-          </label>
-          <textarea
-            id='sp-details'
-            name='details'
-            rows={3}
-            value={values.details}
-            onChange={handleInput('details')}
             className={INPUT_CLASSES}
           />
         </div>

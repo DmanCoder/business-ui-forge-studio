@@ -2,20 +2,25 @@
 
 export type ServiceCategory = {
   name: string;
+  href: string;
+  linkLabel: string;
   tag?: string;
   description: string;
   note?: string;
   items: string[];
 };
 
-export const SERVICES_HEADING = 'Organised around what your business needs';
+export const SERVICES_HEADING =
+  'Design and development services, organised around the decision you need to make';
 
 export const SERVICES_INTRO =
-  'Not sure which of these you need? That is normal, and it is our job to work out. Describe your situation through the enquiry form and we will recommend the right approach.';
+  'UI Forge Studio designs and builds websites, commerce experiences and digital products for Australian businesses. You do not need to arrive with a platform in mind: describe the problem, and the recommendation will follow from your users, workflow, budget and long-term plans.';
 
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {
-    name: 'Websites',
+    name: 'Web design & development',
+    href: '/services/web-design-development',
+    linkLabel: 'Explore website design and development',
     tag: 'Most projects start here',
     description:
       'From a streamlined site that presents your business clearly, to a fully custom build. For growth-focused businesses we usually recommend a custom website: built with modern technology such as Next.js, structured for speed, search visibility and a seamless experience across devices, with no restrictive templates.',
@@ -30,19 +35,24 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     ],
   },
   {
-    name: 'Landing pages and campaigns',
+    name: 'Website redesign',
+    href: '/services/website-redesign',
+    linkLabel: 'Explore website redesigns',
     description:
-      'Focused pages built to support a campaign, offer or launch — designed to convert, and connected to the marketing tools you already use. Built in Webflow or HubSpot, depending on where your marketing lives.',
-    note: 'Already running on HubSpot? We build campaign and lead-generation landing pages, custom themes and modules, and improve existing HubSpot sites. We recommend HubSpot only when your business is genuinely invested in it.',
+      'For sites that look dated, explain the wrong version of the business, underperform on mobile or have become difficult to maintain. The work starts with what should be kept, improved, combined or replaced — not a blank-canvas redesign for its own sake.',
+    note: 'A redesign can remain on the current platform when it still fits. When a migration is justified, valuable content, URLs, metadata and integrations are mapped before the new build replaces them.',
     items: [
-      'Campaign and lead-generation landing pages',
-      'HubSpot landing pages and modules',
-      'Webflow landing pages',
-      'Improvements to existing HubSpot sites',
+      'Current-site UX and content audit',
+      'Search-intent and redirect planning',
+      'Revised information architecture',
+      'Responsive redesign and development',
+      'Migration and launch checks',
     ],
   },
   {
-    name: 'E-commerce',
+    name: 'Shopify development',
+    href: '/services/shopify-development',
+    linkLabel: 'Explore Shopify development',
     description:
       'Two clear paths, recommended by where your store is today. Shopify store development is right for most stores: theme customisation, landing and product pages, conversion-focused improvements, subscriptions, international storefronts, integrations and ongoing development.',
     note: "Outgrown theme constraints? For established brands we build custom Shopify storefronts with Hydrogen, Shopify's React-based storefront framework: a fully custom shopping experience with unique design, speed and flexibility, while Shopify keeps handling the products, checkout and payments you already trust. We recommend it only where the budget and business case justify it — well-executed theme work serves most stores better.",
@@ -55,7 +65,24 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     ],
   },
   {
-    name: 'Digital products',
+    name: 'HubSpot websites',
+    href: '/services/hubspot-websites',
+    linkLabel: 'Explore HubSpot website development',
+    description:
+      'HubSpot Content Hub websites and campaign systems for teams that need content, forms, contact records and marketing activity to work together. Reusable modules give editors useful control without letting every page drift away from the design system.',
+    note: 'The core service is website design and frontend development in HubSpot. CRM architecture, complex automation and data migration are scoped explicitly and may involve a dedicated operations specialist.',
+    items: [
+      'Content Hub websites and redesigns',
+      'Theme and template architecture',
+      'Reusable modules and landing pages',
+      'Forms and CRM-connected journeys',
+      'Content migration and editor guidance',
+    ],
+  },
+  {
+    name: 'Web applications',
+    href: '/services/web-app-development',
+    linkLabel: 'Explore web application development',
     description:
       'A website communicates and markets; a web application lets people get work done. We design and build the tools your customers or team use every day.',
     items: [
@@ -67,6 +94,8 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
   },
   {
     name: 'Mobile applications',
+    href: '/services/mobile-app-development',
+    linkLabel: 'Explore mobile app development',
     description:
       'Launch a consistent experience across iOS and Android without managing two separate application projects, using React Native. An efficient choice for most products, and when your requirements demand a different approach, we will say so.',
     items: [
@@ -76,7 +105,9 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
     ],
   },
   {
-    name: 'Ongoing care',
+    name: 'Website maintenance',
+    href: '/services/website-maintenance',
+    linkLabel: 'Explore website maintenance and support',
     description:
       'Websites need looking after. Care plans cover the practical work of keeping your site healthy, fast and up to date, with one accountable point of contact.',
     note: 'Care plans are optional and never a condition of working together. You can take everything in-house at any time with a clear handover.',
@@ -92,6 +123,6 @@ export const SERVICE_CATEGORIES: ServiceCategory[] = [
 
 export const SERVICES_CTA_CARD = {
   heading: 'Not sure where your project fits?',
-  body: 'Describe it in plain language. We will recommend the right approach.',
-  cta: { label: 'Start a project', href: '/start-a-project' },
+  body: 'Describe the business problem, the current setup and what needs to change. We will recommend the most sensible service and platform path.',
+  cta: { label: 'Get a project recommendation', href: '/start-a-project' },
 };

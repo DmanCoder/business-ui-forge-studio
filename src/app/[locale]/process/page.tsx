@@ -18,9 +18,9 @@ import {
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Process';
+const PAGE_TITLE = 'Website design and development process';
 const PAGE_DESCRIPTION =
-  'Seven phases, explained in plain language — at every stage you know what we are working on, what we need from you and what comes next.';
+  'A clear seven-phase website and digital product process: discovery, scope, design, development, testing, launch and optional ongoing support.';
 const PAGE_PATH = '/process';
 
 export async function generateStaticParams() {

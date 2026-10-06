@@ -13,9 +13,9 @@ import { getPublishedCaseStudies } from '@src/lib/caseStudies';
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Work';
+const PAGE_TITLE = 'Web design and development case studies';
 const PAGE_DESCRIPTION =
-  'Selected projects from UI Forge Studio — case studies covering the goals, the design and development approach, and the outcome.';
+  'Web design and development case studies from UI Forge Studio, clearly labelled as client, internal or concept work and documented without invented outcomes.';
 const PAGE_PATH = '/work';
 
 /** What every future case study will document — shown while the index fills. */

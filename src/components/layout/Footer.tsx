@@ -28,22 +28,21 @@ const footerLink =
 const Footer: React.FC = () => (
   <footer className='bg-ink text-white'>
     {/* Closing statement */}
-    <div className='container-site border-b border-white/12 pt-[9.6rem] pb-[8rem]'>
-      <div className='grid gap-[4rem] lg:grid-cols-12'>
-        <div className='lg:col-span-8'>
-          <p className='meta-label text-muted-dark'>Next step</p>
-          <p className='font-display mt-[2.4rem] max-w-[18ch] text-[clamp(3.6rem,6vw,7.2rem)] leading-[1.04] text-white'>
-            Ready to shape something <span className='text-blue-soft italic'>around</span> your
-            business?
+    <div className='container-site border-b border-white/12 py-[clamp(4.8rem,7vh,7.2rem)]'>
+      <div className='grid items-end gap-[3.2rem] lg:grid-cols-12'>
+        <div className='lg:col-span-7'>
+          <p className='meta-label text-muted-dark'>Project enquiries</p>
+          <p className='font-display mt-[1.8rem] max-w-[20ch] text-[clamp(3rem,4.6vw,5.2rem)] leading-[1.06] text-white'>
+            Bring the business problem. We will help shape the{' '}
+            <span className='text-blue-soft italic'>right brief</span>.
           </p>
         </div>
-        <div className='flex flex-col items-start justify-end gap-[2rem] lg:col-span-4'>
-          <p className='text-muted-dark max-w-[36ch] text-[1.55rem] leading-[1.6]'>
-            Tell us what you are working towards. Every enquiry is read and answered by the founder
-            within {RESPONSE_TIME}.
+        <div className='flex flex-col items-start gap-[1.8rem] lg:col-span-4 lg:col-start-9'>
+          <p className='text-muted-dark max-w-[38ch] text-[1.5rem] leading-[1.65]'>
+            Every enquiry is read by the founder and answered within {RESPONSE_TIME}.
           </p>
-          <Cta href={CTA_ITEM.href} size='lg' onDark withArrow>
-            {CTA_ITEM.label}
+          <Cta href={CTA_ITEM.href} onDark withArrow>
+            Tell us about the project
           </Cta>
         </div>
       </div>
@@ -60,8 +59,8 @@ const Footer: React.FC = () => (
             </span>
           </p>
           <p className='text-muted-dark mt-[1.6rem] text-[1.45rem] leading-[1.65]'>
-            A founder-led Australian digital studio. Websites, e-commerce, web applications and
-            mobile apps — designed and built by the same hands.
+            A founder-led Australian web design and development studio. Websites, commerce and
+            digital products — designed and built by the same hands.
           </p>
         </div>
 
@@ -121,6 +120,9 @@ const Footer: React.FC = () => (
           </Link>
           <Link href='/terms' className='text-muted-dark text-[1.35rem] hover:text-white'>
             Terms
+          </Link>
+          <Link href='/disclaimer' className='text-muted-dark text-[1.35rem] hover:text-white'>
+            Disclaimer
           </Link>
         </nav>
       </div>

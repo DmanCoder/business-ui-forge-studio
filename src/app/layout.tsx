@@ -7,6 +7,7 @@ import Header from '@src/components/layout/Header';
 import Footer from '@src/components/layout/Footer';
 import { SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION, BASE_URL } from '@src/config/site';
 import { professionalServiceSchema, webSiteSchema, jsonLd } from '@src/lib/seo';
+import { IS_PREVIEW } from '@src/typescriptGlobals/constants';
 
 import './globals.css';
 
@@ -17,6 +18,7 @@ export const metadata: Metadata = {
     template: `%s — ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
+  ...(IS_PREVIEW ? { robots: { index: false, follow: false } } : {}),
 };
 
 const RootLayout = async (props: {

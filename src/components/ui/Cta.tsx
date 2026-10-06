@@ -43,7 +43,7 @@ const Cta: React.FC<CtaProps> = ({
   children,
 }) => {
   const base =
-    'inline-flex items-center justify-center gap-[1rem] rounded-[0.2rem] font-semibold tracking-[0.01em] cursor-pointer';
+    'inline-flex min-h-[4.4rem] items-center justify-center gap-[1rem] rounded-[0.2rem] font-semibold tracking-[0.01em] cursor-pointer';
 
   const look =
     variant === 'primary'
