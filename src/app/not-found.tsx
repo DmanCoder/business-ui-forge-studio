@@ -25,15 +25,17 @@ const NotFound: React.FC = () => (
       The page you are after does not exist or has moved. These will get you back on track:
     </p>
 
-    <div className='mt-[4rem] flex flex-wrap gap-[1.2rem]'>
-      <Cta href='/'>Home</Cta>
-      <Cta href='/services' variant='secondary'>
+    <div className='mt-[4rem] grid grid-cols-2 gap-[1.2rem] sm:flex sm:flex-wrap'>
+      <Cta href='/' className='w-full justify-center sm:w-auto'>
+        Home
+      </Cta>
+      <Cta href='/services' variant='secondary' className='w-full justify-center sm:w-auto'>
         Services
       </Cta>
-      <Cta href='/insights' variant='secondary'>
+      <Cta href='/insights' variant='secondary' className='w-full justify-center sm:w-auto'>
         Insights
       </Cta>
-      <Cta href='/start-a-project' variant='secondary'>
+      <Cta href='/start-a-project' variant='secondary' className='w-full justify-center sm:w-auto'>
         Start a project
       </Cta>
     </div>

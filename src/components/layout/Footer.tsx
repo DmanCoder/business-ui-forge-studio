@@ -1,8 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 
-import Spark from '@src/components/ui/Spark';
-import Cta from '@src/components/ui/Cta';
+import Logo from '@src/components/brand/Logo';
+import FooterProjectPrompt from '@src/components/layout/FooterProjectPrompt';
 import {
   NAV_ITEMS,
   CTA_ITEM,
@@ -21,43 +21,20 @@ const footerLink =
   'text-[1.45rem] text-edge hover:text-white hover:underline inline-block py-[0.5rem]';
 
 /**
- * The footer is the site's closing experience: an oversized editorial
- * statement with the single project CTA, then the link ledger beneath a
- * hairline. Every page ends here — no separate pre-footer CTA band.
+ * The footer is the site's closing experience: a route-aware project prompt
+ * where it adds value, then the persistent link ledger beneath a hairline.
  */
 const Footer: React.FC = () => (
   <footer className='bg-ink text-white'>
-    {/* Closing statement */}
-    <div className='container-site border-b border-white/12 py-[clamp(4.8rem,7vh,7.2rem)]'>
-      <div className='grid items-end gap-[3.2rem] lg:grid-cols-12'>
-        <div className='lg:col-span-7'>
-          <p className='meta-label text-muted-dark'>Project enquiries</p>
-          <p className='font-display mt-[1.8rem] max-w-[20ch] text-[clamp(3rem,4.6vw,5.2rem)] leading-[1.06] text-white'>
-            Bring the business problem. We will help shape the{' '}
-            <span className='text-blue-soft italic'>right brief</span>.
-          </p>
-        </div>
-        <div className='flex flex-col items-start gap-[1.8rem] lg:col-span-4 lg:col-start-9'>
-          <p className='text-muted-dark max-w-[38ch] text-[1.5rem] leading-[1.65]'>
-            Every enquiry is read by the founder and answered within {RESPONSE_TIME}.
-          </p>
-          <Cta href={CTA_ITEM.href} onDark withArrow>
-            Tell us about the project
-          </Cta>
-        </div>
-      </div>
-    </div>
+    <FooterProjectPrompt />
 
     {/* Link ledger */}
     <div className='container-site pt-[5.6rem] pb-[4rem]'>
       <div className='grid grid-cols-2 gap-x-[3.2rem] gap-y-[4rem] md:grid-cols-4'>
         <div className='col-span-2 max-w-[34rem] md:col-span-1'>
-          <p className='flex items-center gap-[0.8rem] text-[1.7rem] font-semibold'>
-            <Spark size={1.4} />
-            <span>
-              UI Forge <span className='font-display italic'>Studio</span>
-            </span>
-          </p>
+          <Link href='/' aria-label='UI Forge Studio home' className='inline-flex'>
+            <Logo variant='white' height={5.2} title='' />
+          </Link>
           <p className='text-muted-dark mt-[1.6rem] text-[1.45rem] leading-[1.65]'>
             A founder-led Australian web design and development studio. Websites, commerce and
             digital products — designed and built by the same hands.

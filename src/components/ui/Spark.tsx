@@ -9,9 +9,11 @@ type SparkProps = {
 };
 
 /**
- * The forge-spark brand mark: a single four-point spark.
- * Reserved brand device — wordmark, active-nav marker and the footer
- * sign-off only. Never used as a list bullet or filler.
+ * The forge-spark: a single four-point spark.
+ * Superseded in the header and footer by the logo lockup
+ * (src/components/brand/Logo.tsx). Not rendered anywhere in the UI today;
+ * kept because the static illustration set in public/static uses the same
+ * spark. Never use it as a list bullet or filler.
  */
 const Spark: React.FC<SparkProps> = ({
   size = 1.1,

@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-import Spark from '@src/components/ui/Spark';
+import Logo from '@src/components/brand/Logo';
 import { NAV_ITEMS, CTA_ITEM, CONTACT_EMAIL } from '@src/config/site';
 import { ALLOWED_LOCALES } from '@src/typescriptGlobals/constants';
 
@@ -14,19 +14,6 @@ const normalizePath = (pathname: string) => {
   if (parts.length > 0 && ALLOWED_LOCALES.includes(parts[0])) parts.shift();
   return `/${parts.join('/')}`;
 };
-
-const Wordmark: React.FC<{ onDark?: boolean }> = ({ onDark = false }) => (
-  <span
-    className={`flex items-baseline gap-[0.9rem] text-[1.9rem] font-semibold tracking-[-0.02em] ${
-      onDark ? 'text-white' : 'text-ink'
-    }`}
-  >
-    <Spark size={1.5} className='self-center' />
-    <span>
-      UI Forge <span className='font-display italic'>Studio</span>
-    </span>
-  </span>
-);
 
 const Header: React.FC = () => {
   const pathname = usePathname();
@@ -85,8 +72,9 @@ const Header: React.FC = () => {
     <>
       <header className='border-edge bg-paper sticky top-0 z-50 border-b'>
         <div className='container-site flex min-h-[6.4rem] items-center justify-between gap-[1.6rem]'>
-          <Link href='/' aria-label='UI Forge Studio home' className='shrink-0'>
-            <Wordmark />
+          {/* Brand lockup — 3.4rem on phones, 4rem from md so "STUDIO" stays legible */}
+          <Link href='/' aria-label='UI Forge Studio home' className='flex shrink-0 items-center'>
+            <Logo variant='primary' title='' className='[--logo-h:3.4rem] md:[--logo-h:4rem]' />
           </Link>
 
           {/* Desktop nav — active page carries a static underline */}

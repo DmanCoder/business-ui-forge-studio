@@ -30,6 +30,33 @@ export const isVector = (asset: Pick<StudioAsset, 'src'>): boolean => asset.src.
 
 // --- Brand -----------------------------------------------------------------
 
+// Logo master files. The header and footer render the lockup inline via
+// src/components/brand/Logo.tsx; these files exist for structured data,
+// email, social and any third party that needs a URL to the artwork.
+
+const logoLockup = (variant: string, surface: string): StudioAsset => ({
+  src: `/static/brand/logo/ui-forge-horizontal-${variant}.svg`,
+  width: 383,
+  height: 100,
+  category: 'brand',
+  alt: `UI Forge Studio logo (${variant} version, for ${surface}).`,
+});
+
+/** Ink wordmark with the cobalt bar — the default on paper and white. */
+export const LOGO_PRIMARY = logoLockup('primary', 'light surfaces');
+export const LOGO_INK = logoLockup('ink', 'single-colour light surfaces');
+export const LOGO_COBALT = logoLockup('cobalt', 'single-colour accent use');
+export const LOGO_WHITE = logoLockup('white', 'ink and dark surfaces');
+
+/** Square mark alone — the source every favicon is carved from. */
+export const LOGO_MARK: StudioAsset = {
+  src: '/static/brand/logo/ui-forge-mark.svg',
+  width: 100,
+  height: 100,
+  category: 'brand',
+  alt: 'UI Forge Studio mark: a forge frame with a cobalt bar.',
+};
+
 export const HOMEPAGE_SIGNATURE: StudioAsset = {
   src: '/static/brand/homepage-signature.svg',
   width: 1600,

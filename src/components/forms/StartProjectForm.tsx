@@ -82,7 +82,7 @@ const ChipGroup = React.forwardRef<HTMLDivElement, ChipGroupProps>(
     <div
       ref={ref}
       role='group'
-      className='flex flex-wrap gap-[0.8rem]'
+      className='grid grid-cols-1 gap-[0.8rem] sm:grid-cols-2'
       aria-labelledby={labelledBy}
       aria-describedby={describedBy}
     >
@@ -94,7 +94,7 @@ const ChipGroup = React.forwardRef<HTMLDivElement, ChipGroupProps>(
             type='button'
             aria-pressed={selected}
             onClick={() => onChange(selected ? '' : option)}
-            className={`min-h-[4.4rem] cursor-pointer rounded-[0.2rem] border px-[1.5rem] py-[1rem] text-[1.4rem] ${
+            className={`min-h-[4.4rem] w-full cursor-pointer rounded-[0.2rem] border px-[1.5rem] py-[1rem] text-left text-[1.4rem] ${
               selected
                 ? 'bg-ink border-ink font-semibold text-white'
                 : 'border-edge text-ink hover:border-ink bg-white font-medium'

@@ -258,28 +258,49 @@ export default async function HomePage(props: PageTypes) {
             </h2>
           </div>
 
-          <ol className='mt-[5.6rem] grid list-none gap-x-[3.2rem] md:grid-cols-2 lg:grid-cols-4'>
-            {PHASES.map((phase, index) => (
-              <li key={phase.name} className='border-t border-white/15 py-[2rem]'>
-                <p className='tnum text-blue-soft text-[1.3rem] font-medium'>
-                  {String(index + 1).padStart(2, '0')}
-                </p>
-                <h3 className='mt-[1rem] text-[1.7rem] font-semibold text-white'>{phase.name}</h3>
-                <p className='text-muted-dark mt-[0.8rem] text-[1.45rem] leading-[1.55]'>
-                  {phase.body}
-                </p>
-              </li>
-            ))}
+          <ol className='mt-[5.6rem] grid list-none gap-x-[3.2rem] md:grid-cols-2 lg:grid-cols-3'>
+            {PHASES.map((phase, index) =>
+              index === PHASES.length - 1 ? (
+                <li
+                  key={phase.name}
+                  className='mt-[1.2rem] grid gap-[2rem] border-y border-white/15 py-[2.8rem] md:col-span-2 md:grid-cols-12 md:items-start lg:col-span-3'
+                >
+                  <div className='md:col-span-3'>
+                    <p className='tnum text-blue-soft text-[1.3rem] font-medium'>
+                      {String(index + 1).padStart(2, '0')}
+                    </p>
+                    <p className='text-muted-dark mt-[0.8rem] text-[1.1rem] font-semibold tracking-[0.14em] uppercase'>
+                      After launch · ongoing
+                    </p>
+                  </div>
+                  <div className='md:col-span-5'>
+                    <h3 className='text-[2rem] font-semibold text-white'>{phase.name}</h3>
+                    <p className='text-muted-dark mt-[0.8rem] max-w-[52ch] text-[1.45rem] leading-[1.55]'>
+                      {phase.body}
+                    </p>
+                  </div>
+                  <p className='md:col-span-4 md:justify-self-end'>
+                    <Link
+                      href='/process'
+                      className='hover:text-blue-soft text-[1.5rem] font-semibold text-white underline decoration-[color:var(--color-blue-soft)] decoration-2 underline-offset-[0.6rem]'
+                    >
+                      See the full process →
+                    </Link>
+                  </p>
+                </li>
+              ) : (
+                <li key={phase.name} className='border-t border-white/15 py-[2rem]'>
+                  <p className='tnum text-blue-soft text-[1.3rem] font-medium'>
+                    {String(index + 1).padStart(2, '0')}
+                  </p>
+                  <h3 className='mt-[1rem] text-[1.7rem] font-semibold text-white'>{phase.name}</h3>
+                  <p className='text-muted-dark mt-[0.8rem] text-[1.45rem] leading-[1.55]'>
+                    {phase.body}
+                  </p>
+                </li>
+              )
+            )}
           </ol>
-
-          <p className='mt-[3.2rem]'>
-            <Link
-              href='/process'
-              className='hover:text-blue-soft text-[1.5rem] font-semibold text-white underline decoration-[color:var(--color-blue-soft)] decoration-2 underline-offset-[0.6rem]'
-            >
-              See the full process →
-            </Link>
-          </p>
         </div>
       </section>
 

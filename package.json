@@ -16,7 +16,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "eslint 'src/**/*.{ts,tsx}'",
     "prettify": "prettier --write 'src/**/*.{ts,tsx,js,html,scss,css}'",
-    "precommit": "npm run type-check && npm run lint"
+    "precommit": "npm run type-check && npm run lint",
+    "favicons": "node scripts/generate-favicons.mjs"
   },
   "lint-staged": {
     "*.{ts,tsx,js,html,scss}": [

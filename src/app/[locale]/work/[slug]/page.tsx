@@ -114,6 +114,12 @@ export default async function CaseStudyPage(props: PageTypes) {
     ...(study.year ? [{ label: 'Year', value: study.year }] : []),
     ...(study.duration ? [{ label: 'Duration', value: study.duration }] : []),
   ];
+  const creditGridColumns =
+    credits.length <= 2
+      ? 'md:grid-cols-2'
+      : credits.length === 4
+        ? 'md:grid-cols-4'
+        : 'md:grid-cols-3';
 
   const outcomesHeading = study.isDemo
     ? 'Concept outcome'
@@ -278,7 +284,9 @@ export default async function CaseStudyPage(props: PageTypes) {
         </div>
 
         {/* Credits ledger */}
-        <dl className='border-edge mt-[5.6rem] grid grid-cols-2 gap-x-[3.2rem] gap-y-[2.4rem] border-t pt-[2.4rem] md:grid-cols-4'>
+        <dl
+          className={`border-edge mt-[5.6rem] grid grid-cols-2 gap-x-[3.2rem] gap-y-[2.4rem] border-t pt-[2.4rem] ${creditGridColumns}`}
+        >
           {credits.map((credit) => (
             <div key={credit.label}>
               <dt className='meta-label'>{credit.label}</dt>

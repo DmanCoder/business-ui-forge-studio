@@ -9,6 +9,7 @@ import {
   AUTHOR_NAME,
 } from '@src/config/site';
 import { IS_PREVIEW } from '@src/typescriptGlobals/constants';
+import { LOGO_PRIMARY } from '@src/lib/assets';
 
 type BuildMetadataArgs = {
   title: string;
@@ -82,6 +83,7 @@ export const professionalServiceSchema = () => ({
   '@id': `${BASE_URL}/#organization`,
   name: SITE_NAME,
   url: BASE_URL,
+  logo: absoluteUrl(LOGO_PRIMARY.src),
   description: SITE_DESCRIPTION,
   email: CONTACT_EMAIL,
   areaServed: STUDIO_REGION ? ['Australia', STUDIO_REGION] : 'Australia',

@@ -55,12 +55,21 @@ export default async function ServicesPage(props: PageTypes) {
 
       {/* Service index — table of contents */}
       <nav aria-label='Service index' className='border-edge border-t'>
-        <ol className='container-site grid list-none grid-cols-2 gap-x-[3.2rem] py-[2.4rem] md:grid-cols-3 lg:grid-cols-6'>
+        <ol className='container-site grid list-none grid-cols-1 gap-x-[3.2rem] py-[2.4rem] md:grid-cols-2 xl:grid-cols-12'>
           {SERVICE_CATEGORIES.map((category, index) => (
-            <li key={category.name}>
+            <li
+              key={category.name}
+              className={`${index < 4 ? 'xl:col-span-3' : 'xl:col-span-4'} ${
+                index === SERVICE_CATEGORIES.length - 1 ? 'md:col-span-2 xl:col-span-4' : ''
+              }`}
+            >
               <a
                 href={`#service-${index + 1}`}
-                className='text-muted hover:text-ink flex items-baseline gap-[1rem] py-[0.8rem] text-[1.35rem] font-medium hover:underline hover:underline-offset-[0.4rem]'
+                className={`text-muted hover:text-ink border-line flex h-full items-baseline gap-[1rem] border-t py-[1.2rem] text-[1.35rem] font-medium hover:underline hover:underline-offset-[0.4rem] ${
+                  index === SERVICE_CATEGORIES.length - 1
+                    ? 'md:justify-center xl:justify-start'
+                    : ''
+                }`}
               >
                 <span className='tnum text-blue'>{String(index + 1).padStart(2, '0')}</span>
                 {category.name}
