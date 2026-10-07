@@ -14,6 +14,10 @@ import { getPublishedArticles, getCategories, PAGE_SIZE } from '@src/lib/insight
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
+const PAGE_TITLE = `Web Design & Digital Product Insights | ${SITE_NAME}`;
+const PAGE_DESCRIPTION =
+  'Practical guidance on websites, e-commerce, ownership, platforms and digital products for business owners making technology decisions.';
+const HEADING = 'Web design and digital product insights';
 const INTRO =
   'Practical, plain-language guidance on websites, e-commerce and digital products — written for business owners making decisions, not for developers.';
 
@@ -57,17 +61,11 @@ export async function generateMetadata(props: PageTypes): Promise<Metadata> {
   const searchParams = (await props.searchParams) ?? {};
   const page = parsePageParam(searchParams.page) ?? 1;
 
-  const metadata = buildMetadata({
-    title: 'Website design and digital product insights',
-    description: INTRO,
+  return buildMetadata({
+    title: page > 1 ? `Insights — Page ${page} | ${SITE_NAME}` : PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     path: page > 1 ? `/insights?page=${page}` : '/insights',
   });
-
-  if (page > 1) {
-    return { ...metadata, title: { absolute: `Insights — Page ${page} | ${SITE_NAME}` } };
-  }
-
-  return metadata;
 }
 
 export default async function InsightsPage(props: PageTypes) {
@@ -95,8 +93,8 @@ export default async function InsightsPage(props: PageTypes) {
         <div className='grid gap-[3.2rem] lg:grid-cols-12'>
           <div className='lg:col-span-8'>
             <Eyebrow>Insights</Eyebrow>
-            <h1 className='font-display mt-[2.8rem] text-[clamp(4.6rem,8vw,9.6rem)] leading-[1.0] tracking-[-0.015em]'>
-              Insights
+            <h1 className='font-display mt-[2.8rem] max-w-[14ch] text-[clamp(3.8rem,6.4vw,8rem)] leading-[1.04] tracking-[-0.015em]'>
+              {HEADING}
             </h1>
             <p className='text-muted mt-[2.8rem] max-w-[58ch] text-[clamp(1.6rem,1.9vw,1.9rem)] leading-[1.6]'>
               {INTRO}
@@ -148,12 +146,13 @@ export default async function InsightsPage(props: PageTypes) {
         {featured && <FeaturedInsight article={featured} />}
 
         {gridItems.length > 0 && (
-          <div>
+          <div className='lg:grid lg:grid-cols-2 lg:gap-x-[4.8rem]'>
             {gridItems.map((article, index) => (
               <InsightCard
                 key={article.slug}
                 article={article}
                 index={String((page - 1) * PAGE_SIZE + index + (featured ? 2 : 1)).padStart(2, '0')}
+                compact
               />
             ))}
           </div>
@@ -220,8 +219,8 @@ export default async function InsightsPage(props: PageTypes) {
         dangerouslySetInnerHTML={{
           __html: jsonLd(
             webPageSchema({
-              title: `Insights — ${SITE_NAME}`,
-              description: INTRO,
+              title: PAGE_TITLE,
+              description: PAGE_DESCRIPTION,
               path: page > 1 ? `/insights?page=${page}` : '/insights',
             })
           ),

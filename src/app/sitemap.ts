@@ -14,6 +14,11 @@ const STATIC_ROUTES: { path: string; priority: number }[] = [
   { path: '/about', priority: 0.8 },
   { path: '/insights', priority: 0.8 },
   { path: '/start-a-project', priority: 0.9 },
+  // Legal pages stay indexable — a site this small has no crawl budget to
+  // protect, and the pages carry trust signals.
+  { path: '/privacy', priority: 0.3 },
+  { path: '/terms', priority: 0.3 },
+  { path: '/disclaimer', priority: 0.3 },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

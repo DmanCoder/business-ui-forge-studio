@@ -24,7 +24,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({
-    title: 'Enquiry received',
+    title: 'Enquiry Received | UI Forge Studio',
     description: `We reply to every enquiry within ${RESPONSE_TIME}.`,
     path: '/thank-you',
     noIndex: true,

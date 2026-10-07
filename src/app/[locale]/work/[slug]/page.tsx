@@ -43,17 +43,14 @@ export async function generateMetadata(props: PageTypes): Promise<Metadata> {
   const study = await getCaseStudyBySlug(slug);
   if (!study) notFound();
 
-  return {
-    ...buildMetadata({
-      title: study.seoTitle,
-      description: study.metaDescription,
-      path: `/work/${study.slug}`,
-      ogType: 'article',
-      noIndex: study.noIndex ?? false,
-      ogImage: study.heroMedia ? absoluteUrl(study.heroMedia.src) : undefined,
-    }),
-    title: { absolute: study.seoTitle },
-  };
+  return buildMetadata({
+    title: study.seoTitle,
+    description: study.metaDescription,
+    path: `/work/${study.slug}`,
+    ogType: 'article',
+    noIndex: study.noIndex ?? false,
+    ogImage: study.heroMedia ? absoluteUrl(study.heroMedia.src) : undefined,
+  });
 }
 
 export default async function CaseStudyPage(props: PageTypes) {
@@ -210,12 +207,29 @@ export default async function CaseStudyPage(props: PageTypes) {
     });
   }
 
-  if (study.outcomes?.length || verifiedMetrics.length > 0) {
+  if (study.outcomeLedger?.length || study.outcomes?.length || verifiedMetrics.length > 0) {
     sections.push({
       key: 'outcomes',
-      label: outcomesHeading,
+      label: study.outcomeLedger?.length ? 'What changed' : outcomesHeading,
       content: (
         <>
+          {study.outcomeLedger?.length ? (
+            <dl className='flex flex-col'>
+              {study.outcomeLedger.map((item, index) => (
+                <div
+                  key={item.label}
+                  className={`border-line grid gap-[0.6rem] py-[1.8rem] sm:grid-cols-[16rem_1fr] sm:gap-[2.4rem] ${
+                    index === 0 ? 'pt-[0.6rem]' : 'border-t'
+                  }`}
+                >
+                  <dt className='text-[1.6rem] font-semibold'>{item.label}</dt>
+                  <dd className='text-muted max-w-[58ch] text-[1.55rem] leading-[1.65]'>
+                    {item.body}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
           {study.outcomes?.length ? (
             <ul className='flex list-none flex-col'>
               {study.outcomes.map((outcome, index) => (
@@ -360,6 +374,14 @@ export default async function CaseStudyPage(props: PageTypes) {
             <Cta href='/start-a-project' withArrow className='mt-[2.8rem]'>
               Start a project
             </Cta>
+            <p className='mt-[2rem]'>
+              <Link
+                href='/services/web-design-development'
+                className='text-ink decoration-blue hover:text-blue text-[1.45rem] font-semibold underline decoration-2 underline-offset-[0.5rem]'
+              >
+                Explore custom website design and development →
+              </Link>
+            </p>
           </div>
           {next && (
             <div className='self-end lg:col-span-4 lg:col-start-9'>

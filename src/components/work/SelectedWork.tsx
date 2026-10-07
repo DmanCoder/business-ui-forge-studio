@@ -5,6 +5,7 @@ import Eyebrow from '@src/components/ui/Eyebrow';
 import CaseStudyRow from '@src/components/work/CaseStudyRow';
 
 import { getFeaturedCaseStudies, getPublishedCaseStudies } from '@src/lib/caseStudies';
+import { WORK_SECTION } from '@src/content/home';
 
 type SelectedWorkProps = {
   /** Ledger index for the section eyebrow, e.g. '04'. */
@@ -32,18 +33,27 @@ const SelectedWork = async ({ eyebrowIndex }: SelectedWorkProps) => {
   return (
     <section className='border-edge border-t'>
       <div className='container-site pt-[clamp(5.6rem,9vh,9.6rem)]'>
-        <div className='flex flex-wrap items-end justify-between gap-[2rem]'>
-          <div>
-            <Eyebrow index={eyebrowIndex}>Selected work</Eyebrow>
+        <div className='grid gap-[2rem] lg:grid-cols-12'>
+          <div className='lg:col-span-8'>
+            <Eyebrow index={eyebrowIndex}>{WORK_SECTION.eyebrow}</Eyebrow>
             <h2 className='font-display mt-[2rem] max-w-[16ch] text-[clamp(3rem,4.4vw,5.2rem)] leading-[1.08] font-normal'>
               {demoCount > 0
-                ? 'How we document projects, end to end'
-                : 'Real projects, documented end to end'}
+                ? WORK_SECTION.demoHeading
+                : realCount === 1
+                  ? WORK_SECTION.heading
+                  : 'Real projects, documented end to end'}
             </h2>
           </div>
-          <p className='tnum text-muted-dark pb-[1rem] text-[1.3rem] font-medium'>
-            Index · {String(realCount).padStart(3, '0')} published
-            {demoCount > 0 && <> · {String(demoCount).padStart(3, '0')} demo</>}
+          <p className='text-muted max-w-[40ch] self-end text-[1.5rem] leading-[1.6] lg:col-span-4 lg:col-start-9'>
+            Every project is documented end to end — context, decisions, technical approach and
+            clearly labelled outcomes.
+            {demoCount > 0 && (
+              <>
+                {' '}
+                <span className='tnum'>{String(demoCount).padStart(2, '0')}</span> demo{' '}
+                {demoCount === 1 ? 'entry is' : 'entries are'} labelled as fictional.
+              </>
+            )}
           </p>
         </div>
       </div>
@@ -63,7 +73,7 @@ const SelectedWork = async ({ eyebrowIndex }: SelectedWorkProps) => {
             href='/work'
             className='text-ink hover:text-blue text-[1.5rem] font-semibold underline decoration-[color:var(--color-blue)] decoration-2 underline-offset-[0.6rem]'
           >
-            View all work →
+            {WORK_SECTION.link.label} →
           </Link>
         </div>
       </div>

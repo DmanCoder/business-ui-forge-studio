@@ -51,3 +51,19 @@ The strongest future content is not another generic article. When permission exi
 detailed external case study with the client's situation, constraints, role, decisions, artefacts
 and only verified outcomes. Founder biography and portrait material can also strengthen About and
 service pages more than anonymous stock imagery or invented social proof.
+
+## Backlog added 7 October 2026 (SEO and design rework brief)
+
+Not written in that pass. Each answers a genuine decision question and links to one main service
+page. Several overlap with rows above; merge rather than duplicate when drafting.
+
+| Suggested title | Target service |
+| --- | --- |
+| Shopify theme vs Hydrogen: when headless commerce is actually worth it | Shopify development |
+| Website redesign SEO checklist: how to migrate without losing rankings | Website redesign |
+| HubSpot Content Hub vs WordPress for a marketing website | HubSpot websites |
+| Web app vs website: when your business actually needs an application | Web app development |
+| React Native vs a responsive web app: how to choose | Mobile app development |
+| Website maintenance checklist for Australian businesses | Website maintenance |
+| What to include in a website brief before asking for quotes | Web design and development |
+| How long does a website redesign take? | Website redesign |

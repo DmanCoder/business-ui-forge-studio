@@ -1,3 +1,28 @@
+export type ServiceSectionHeading = {
+  /** Small ledger label above the heading. */
+  eyebrow: string;
+  /** Visible, page-specific H2. */
+  heading: string;
+};
+
+/**
+ * Page-specific section headings. The template structure is shared across
+ * services, but the visible H2 copy must describe this service, not the
+ * template (see docs/site-upgrade/seo-strategy.md).
+ */
+export type ServiceSections = {
+  fit: ServiceSectionHeading;
+  problems: ServiceSectionHeading;
+  includes: ServiceSectionHeading;
+  /** Eyebrow only — the decision heading lives in `decision.heading`. */
+  decision: { eyebrow: string };
+  process: ServiceSectionHeading;
+  whyUs: ServiceSectionHeading;
+  faqs: ServiceSectionHeading;
+};
+
+export type ServiceLink = { label: string; href: string };
+
 export type ServicePage = {
   slug: string;
   shortName: string;
@@ -6,6 +31,9 @@ export type ServicePage = {
   metaDescription: string;
   heading: string;
   lead: string;
+  /** One line shown in the header's "Service note" slot. */
+  serviceNote: string;
+  sections: ServiceSections;
   idealFor: string[];
   problems: { title: string; body: string }[];
   deliverables: string[];
@@ -17,7 +45,10 @@ export type ServicePage = {
   approach: { title: string; body: string }[];
   whyUs: string[];
   faqs: { question: string; answer: string }[];
-  relatedInsights: { label: string; href: string }[];
+  /** Contextual links to sibling services (descriptive anchor text). */
+  relatedServices: ServiceLink[];
+  /** Related Insights articles — labels are rendered as "Read: …". */
+  relatedInsights: ServiceLink[];
   cta: { heading: string; body: string; label: string };
 };
 
@@ -26,11 +57,22 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: 'web-design-development',
     shortName: 'Web design & development',
     eyebrow: 'Custom websites · Australia',
-    seoTitle: 'Web design and development Australia | UI Forge Studio',
+    seoTitle: 'Custom Website Design & Development Australia | UI Forge Studio',
     metaDescription:
-      'Custom website design and development for Australian businesses. Strategy, UX, content structure, responsive design and modern development in one founder-led studio.',
-    heading: 'Custom websites designed and built as one considered system',
-    lead: 'For Australian businesses that need more than a polished template. UI Forge Studio plans the structure, designs the interface and builds the finished website, so brand, content, performance and search visibility support the same goal.',
+      'Custom website design and development for Australian businesses, including Next.js, WordPress, Webflow and HubSpot with SEO and accessibility built in.',
+    heading: 'Custom website design and development for Australian businesses',
+    lead: 'UI Forge Studio plans the structure, designs the interface and builds the finished website as one system, so content, usability, performance and search visibility support the same business goal.',
+    serviceNote:
+      'Remote delivery across Australia. Next.js, WordPress, Webflow or HubSpot — recommended after discovery, not before.',
+    sections: {
+      fit: { eyebrow: 'Who it is for', heading: 'Who custom website design is for' },
+      problems: { eyebrow: 'Problems we solve', heading: 'Website problems we help solve' },
+      includes: { eyebrow: 'Scope', heading: 'What a website project can include' },
+      decision: { eyebrow: 'Choosing the right website platform' },
+      process: { eyebrow: 'How it runs', heading: 'How a custom website project moves' },
+      whyUs: { eyebrow: 'Why UI Forge Studio', heading: 'Why work with a founder-led studio' },
+      faqs: { eyebrow: 'Common questions', heading: 'Custom website design FAQs' },
+    },
     idealFor: [
       'Established businesses whose website no longer reflects the quality of their work',
       'Marketing teams that need a flexible site and a sensible content workflow',
@@ -62,7 +104,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       'Documentation and a clear ownership handover',
     ],
     decision: {
-      heading: 'The platform comes after the business case',
+      heading: 'Choosing the right website platform',
       body: 'There is no universal “best” website platform. The useful question is which option gives your team the right balance of editing control, flexibility, performance and running cost.',
       items: [
         {
@@ -129,14 +171,22 @@ export const SERVICE_PAGES: ServicePage[] = [
           'The proposal sets out ownership for the specific platform and engagement. Business accounts, domains, content and data should remain under your control, with project-specific intellectual property terms documented in the client agreement.',
       },
     ],
+    relatedServices: [
+      { label: 'Explore website redesign', href: '/services/website-redesign' },
+      { label: 'Explore HubSpot website development', href: '/services/hubspot-websites' },
+    ],
     relatedInsights: [
       {
-        label: 'Choosing between a custom website, WordPress and Webflow',
+        label: 'WordPress vs Webflow vs a custom website: how to choose',
         href: '/insights/custom-website-wordpress-or-webflow',
       },
       {
-        label: 'What affects the cost of a website project',
+        label: 'Website cost in Australia: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
+      },
+      {
+        label: 'Website ownership and hosting: what should your business own?',
+        href: '/insights/website-ownership-and-hosting-explained',
       },
     ],
     cta: {
@@ -149,11 +199,22 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: 'website-redesign',
     shortName: 'Website redesign',
     eyebrow: 'Website redesign · Australia',
-    seoTitle: 'Website redesign services Australia | UI Forge Studio',
+    seoTitle: 'Website Redesign Services Australia | UI Forge Studio',
     metaDescription:
-      'Website redesign services for Australian businesses with an outdated, slow or unclear site. Audit, content structure, UX, design, development and careful migration.',
-    heading: 'Redesign the website without losing what already works',
-    lead: 'A redesign is more than a new visual layer. It is a chance to fix unclear positioning, weak journeys, mobile friction, dated content, platform constraints and technical SEO—while protecting useful URLs, content and search equity.',
+      'Redesign an existing website without losing valuable content, URLs or search equity. Improve UX, mobile performance, structure and maintainability.',
+    heading: 'Website redesigns that improve clarity without losing what works',
+    lead: 'A website redesign should do more than replace the visual layer. We review content, UX, mobile behaviour, platform constraints and technical SEO, then keep, improve, combine or replace what the evidence supports.',
+    serviceNote:
+      'Remote delivery across Australia. Existing URLs, content and search value are inventoried before anything is replaced.',
+    sections: {
+      fit: { eyebrow: 'Who it is for', heading: 'When a website redesign makes sense' },
+      problems: { eyebrow: 'Problems we solve', heading: 'Website problems a redesign should fix' },
+      includes: { eyebrow: 'Scope', heading: 'What a website redesign can include' },
+      decision: { eyebrow: 'What to keep, improve, combine or replace' },
+      process: { eyebrow: 'How it runs', heading: 'Our website redesign process' },
+      whyUs: { eyebrow: 'Why UI Forge Studio', heading: 'Why UI Forge Studio for a redesign' },
+      faqs: { eyebrow: 'Common questions', heading: 'Website redesign FAQs' },
+    },
     idealFor: [
       'Businesses that have outgrown a first-generation or template website',
       'Teams preparing for a repositioning, new offer or broader market',
@@ -252,13 +313,20 @@ export const SERVICE_PAGES: ServicePage[] = [
           'Analytics are useful when they are available and reliable, but they are not the only evidence. Search performance, support questions, sales feedback, content quality and direct usability review can also guide priorities.',
       },
     ],
+    relatedServices: [
+      {
+        label: 'Explore custom website design and development',
+        href: '/services/web-design-development',
+      },
+      { label: 'Explore website maintenance', href: '/services/website-maintenance' },
+    ],
     relatedInsights: [
       {
-        label: 'Website ownership and hosting explained',
+        label: 'Website ownership and hosting: what should your business own?',
         href: '/insights/website-ownership-and-hosting-explained',
       },
       {
-        label: 'Choosing between a custom website, WordPress and Webflow',
+        label: 'WordPress vs Webflow vs a custom website: how to choose',
         href: '/insights/custom-website-wordpress-or-webflow',
       },
     ],
@@ -272,11 +340,25 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: 'shopify-development',
     shortName: 'Shopify development',
     eyebrow: 'Shopify design & development · Australia',
-    seoTitle: 'Shopify development Australia | UI Forge Studio',
+    seoTitle: 'Shopify Development Australia | UI Forge Studio',
     metaDescription:
-      'Shopify design and development for Australian retailers: theme customisation, storefront UX, integrations, migrations and selective Hydrogen builds.',
-    heading: 'Shopify stores built around the way customers buy and teams operate',
-    lead: 'From a well-executed theme build to a custom Hydrogen storefront, the right Shopify approach depends on catalogue complexity, brand requirements, integrations, internal workflow and the commercial case for custom development.',
+      'Shopify design and development for Australian brands, from custom theme work and subscriptions to integrations and Hydrogen storefronts where justified.',
+    heading: 'Shopify design and development for growing stores',
+    lead: 'From a focused theme build to a custom Hydrogen storefront, the right Shopify approach depends on how customers buy, how the team operates and whether custom development creates a genuine commercial advantage.',
+    serviceNote:
+      'Remote delivery across Australia. Theme-led work serves most stores; Hydrogen only where the business case is proven.',
+    sections: {
+      fit: { eyebrow: 'Who it is for', heading: 'When Shopify development is a good fit' },
+      problems: { eyebrow: 'Problems we solve', heading: 'Shopify problems we help solve' },
+      includes: { eyebrow: 'Scope', heading: 'What Shopify development can include' },
+      decision: { eyebrow: 'Shopify theme customisation vs Hydrogen' },
+      process: { eyebrow: 'How it runs', heading: 'Our Shopify development process' },
+      whyUs: {
+        eyebrow: 'Why UI Forge Studio',
+        heading: 'Why work with UI Forge Studio on Shopify',
+      },
+      faqs: { eyebrow: 'Common questions', heading: 'Shopify development FAQs' },
+    },
     idealFor: [
       'Retailers launching a considered first Shopify store',
       'Established stores that have outgrown a generic theme experience',
@@ -375,13 +457,19 @@ export const SERVICE_PAGES: ServicePage[] = [
           'No. Design and development can remove friction and improve clarity, but conversion also depends on the offer, pricing, traffic, product-market fit and operations. Any measurement plan should use your real baseline data.',
       },
     ],
+    relatedServices: [
+      {
+        label: 'Explore website maintenance for ongoing store development',
+        href: '/services/website-maintenance',
+      },
+    ],
     relatedInsights: [
       {
-        label: 'What affects the cost of a website project',
+        label: 'Website cost in Australia: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
       {
-        label: 'Website ownership and hosting explained',
+        label: 'Website ownership and hosting: what should your business own?',
         href: '/insights/website-ownership-and-hosting-explained',
       },
     ],
@@ -395,11 +483,25 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: 'hubspot-websites',
     shortName: 'HubSpot websites',
     eyebrow: 'HubSpot website development · Australia',
-    seoTitle: 'HubSpot website development Australia | UI Forge Studio',
+    seoTitle: 'HubSpot Website Development Australia | UI Forge Studio',
     metaDescription:
-      'HubSpot website and landing-page development for Australian marketing teams: Content Hub design, reusable modules, forms, CRM-connected journeys and ongoing improvements.',
-    heading: 'HubSpot websites that connect content, campaigns and customer data',
-    lead: 'For businesses already invested in HubSpot, the website should be part of the marketing and sales system—not a separate brochure. We design and build reusable HubSpot experiences around how your team publishes, captures enquiries and follows them through.',
+      'HubSpot Content Hub website design and frontend development, including themes, reusable modules, landing pages, forms and content migration.',
+    heading: 'HubSpot website design and development for marketing teams',
+    lead: 'For businesses already invested in HubSpot, the website should work as part of the marketing system. We design and build reusable Content Hub experiences around publishing, campaigns, forms and the way enquiries move into the CRM.',
+    serviceNote:
+      'Remote delivery across Australia. Website and frontend work inside HubSpot; CRM architecture is scoped separately.',
+    sections: {
+      fit: { eyebrow: 'Who it is for', heading: 'When HubSpot Content Hub is a good fit' },
+      problems: { eyebrow: 'Problems we solve', heading: 'HubSpot website problems we help solve' },
+      includes: { eyebrow: 'Scope', heading: 'What HubSpot website development can include' },
+      decision: { eyebrow: 'When Content Hub is — and is not — the right platform' },
+      process: { eyebrow: 'How it runs', heading: 'Our HubSpot website development process' },
+      whyUs: {
+        eyebrow: 'Why UI Forge Studio',
+        heading: 'Why work with UI Forge Studio on HubSpot',
+      },
+      faqs: { eyebrow: 'Common questions', heading: 'HubSpot website development FAQs' },
+    },
     idealFor: [
       'B2B teams already using HubSpot CRM or Marketing Hub',
       'Businesses migrating a marketing website into Content Hub',
@@ -498,13 +600,21 @@ export const SERVICE_PAGES: ServicePage[] = [
           'Yes, after the current content, URL structure, forms, integrations and HubSpot subscription are reviewed. Migration scope should include redirects and content quality, not only copying pages.',
       },
     ],
+    relatedServices: [
+      {
+        label: 'Explore custom website design and development',
+        href: '/services/web-design-development',
+      },
+      { label: 'Explore website redesign', href: '/services/website-redesign' },
+      { label: 'Explore website maintenance', href: '/services/website-maintenance' },
+    ],
     relatedInsights: [
       {
-        label: 'Choosing between a custom website, WordPress and Webflow',
-        href: '/insights/custom-website-wordpress-or-webflow',
+        label: 'Website ownership and hosting: what should your business own?',
+        href: '/insights/website-ownership-and-hosting-explained',
       },
       {
-        label: 'What affects the cost of a website project',
+        label: 'Website cost in Australia: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
     ],
@@ -516,13 +626,27 @@ export const SERVICE_PAGES: ServicePage[] = [
   },
   {
     slug: 'web-app-development',
-    shortName: 'Web app development',
+    shortName: 'Web application development',
     eyebrow: 'Web application design & development · Australia',
-    seoTitle: 'Web app development Australia | UI Forge Studio',
+    seoTitle: 'Web Application Development Australia | UI Forge Studio',
     metaDescription:
-      'Web application design and frontend development for Australian businesses: portals, dashboards, booking workflows, internal tools and focused product interfaces.',
-    heading: 'Web applications that make a real workflow clearer',
-    lead: 'A portal, dashboard or internal tool succeeds when it reduces work for the people using it. UI Forge Studio turns a defined business process into a focused interface and production-ready frontend, with scope and technical boundaries made clear before the build expands.',
+      'Design and development for portals, dashboards, booking systems and internal tools, with product UX, React/Next.js frontend work and integrations.',
+    heading: 'Web application design and development for real business workflows',
+    lead: 'UI Forge Studio turns defined workflows into focused web applications — from client portals and dashboards to booking systems and internal tools — with product design and frontend implementation planned together.',
+    serviceNote:
+      'Remote delivery across Australia. Product UX and React or Next.js frontend delivery; backend responsibility is agreed in scoping.',
+    sections: {
+      fit: {
+        eyebrow: 'Who it is for',
+        heading: 'When custom web application development makes sense',
+      },
+      problems: { eyebrow: 'Problems we solve', heading: 'Workflow problems we help solve' },
+      includes: { eyebrow: 'Scope', heading: 'What web application development can include' },
+      decision: { eyebrow: 'How we define a useful first release' },
+      process: { eyebrow: 'How it runs', heading: 'Our web application development process' },
+      whyUs: { eyebrow: 'Why UI Forge Studio', heading: 'Why a founder-led product team can fit' },
+      faqs: { eyebrow: 'Common questions', heading: 'Web application development FAQs' },
+    },
     idealFor: [
       'Businesses replacing spreadsheets, email chains or manual client updates',
       'Founders shaping a focused first release of a web product',
@@ -554,7 +678,7 @@ export const SERVICE_PAGES: ServicePage[] = [
       'QA, documentation and handover',
     ],
     decision: {
-      heading: 'Start with the workflow, not the feature list',
+      heading: 'A useful first release does one coherent job',
       body: 'A useful first release does one coherent job. The product becomes easier to estimate and test when every feature can be traced to a user, a decision and an outcome.',
       items: [
         {
@@ -621,13 +745,19 @@ export const SERVICE_PAGES: ServicePage[] = [
           'Yes. UI Forge Studio can own product interface design and frontend delivery while collaborating through agreed API contracts, repositories and review practices.',
       },
     ],
+    relatedServices: [
+      {
+        label: 'Explore React Native app development',
+        href: '/services/mobile-app-development',
+      },
+    ],
     relatedInsights: [
       {
-        label: 'What affects the cost of a website project',
+        label: 'Website cost in Australia: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
       {
-        label: 'Website ownership and hosting explained',
+        label: 'Website ownership and hosting: what should your business own?',
         href: '/insights/website-ownership-and-hosting-explained',
       },
     ],
@@ -639,13 +769,27 @@ export const SERVICE_PAGES: ServicePage[] = [
   },
   {
     slug: 'mobile-app-development',
-    shortName: 'Mobile app development',
+    shortName: 'React Native app development',
     eyebrow: 'React Native app development · Australia',
-    seoTitle: 'React Native app development Australia | UI Forge Studio',
+    seoTitle: 'React Native App Development Australia | UI Forge Studio',
     metaDescription:
-      'Mobile app design and React Native development for Australian businesses. Product scoping, cross-platform interface design, API integration and release-ready implementation.',
-    heading: 'One considered mobile product across iOS and Android',
-    lead: 'React Native can give most products a consistent cross-platform codebase without treating iOS and Android as separate design exercises. The important decision comes first: whether the product truly needs an installed app, and which mobile capabilities justify it.',
+      'React Native app design and development for iOS and Android, including product UX, APIs, authentication, testing and release support.',
+    heading: 'React Native app development for iOS and Android',
+    lead: 'React Native can give many products one coherent cross-platform codebase without treating iOS and Android as separate projects. We first confirm that an installed app is genuinely the right product surface, then design and build the core experience.',
+    serviceNote:
+      'Remote delivery across Australia. If a better mobile website is the honest answer, that is the recommendation you will get.',
+    sections: {
+      fit: { eyebrow: 'Who it is for', heading: 'When a mobile app is worth building' },
+      problems: { eyebrow: 'Problems we solve', heading: 'Mobile product problems we help solve' },
+      includes: { eyebrow: 'Scope', heading: 'What React Native app development can include' },
+      decision: { eyebrow: 'App vs responsive website vs progressive web app' },
+      process: { eyebrow: 'How it runs', heading: 'Our React Native development process' },
+      whyUs: {
+        eyebrow: 'Why UI Forge Studio',
+        heading: 'Why work with UI Forge Studio on a mobile product',
+      },
+      faqs: { eyebrow: 'Common questions', heading: 'React Native app development FAQs' },
+    },
     idealFor: [
       'Businesses extending an existing service into a regular mobile workflow',
       'Founders validating a focused cross-platform product',
@@ -744,13 +888,20 @@ export const SERVICE_PAGES: ServicePage[] = [
           'Yes. A focused first release is often the safest approach, provided it completes one valuable user loop rather than shipping a collection of partial features.',
       },
     ],
+    relatedServices: [
+      { label: 'Explore web application development', href: '/services/web-app-development' },
+      {
+        label: 'Explore custom website design for a responsive web alternative',
+        href: '/services/web-design-development',
+      },
+    ],
     relatedInsights: [
       {
-        label: 'What affects the cost of a website project',
+        label: 'Website cost in Australia: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
       {
-        label: 'Website ownership and hosting explained',
+        label: 'Website ownership and hosting: what should your business own?',
         href: '/insights/website-ownership-and-hosting-explained',
       },
     ],
@@ -764,11 +915,28 @@ export const SERVICE_PAGES: ServicePage[] = [
     slug: 'website-maintenance',
     shortName: 'Website maintenance',
     eyebrow: 'Website maintenance & support · Australia',
-    seoTitle: 'Website maintenance Australia | UI Forge Studio',
+    seoTitle: 'Website Maintenance & Support Australia | UI Forge Studio',
     metaDescription:
-      'Website maintenance and support for Australian businesses: updates, monitoring, content changes, performance reviews and planned improvements without forced lock-in.',
-    heading: 'Website care with a clear owner and a useful plan',
-    lead: 'Maintenance should do more than keep software versions current. A useful care arrangement protects forms and journeys, keeps content accurate, catches deterioration and creates a practical path for improvements after launch.',
+      'Website maintenance and support for Australian businesses, including technical checks, content updates, performance monitoring and planned improvements.',
+    heading: 'Website maintenance and support with a clear owner and plan',
+    lead: 'A useful website care plan does more than install updates. It protects important forms and journeys, keeps content accurate, catches deterioration and creates a practical path for ongoing improvements.',
+    serviceNote:
+      'Remote support across Australia. Care plans are optional, documented and never a condition of working together.',
+    sections: {
+      fit: { eyebrow: 'Who it is for', heading: 'When website maintenance support makes sense' },
+      problems: {
+        eyebrow: 'Problems we solve',
+        heading: 'Website maintenance problems we help solve',
+      },
+      includes: { eyebrow: 'Scope', heading: 'What a website care plan can include' },
+      decision: { eyebrow: 'Maintenance, support, content changes and improvements' },
+      process: { eyebrow: 'How it runs', heading: 'How ongoing website care works' },
+      whyUs: {
+        eyebrow: 'Why UI Forge Studio',
+        heading: 'Why work with UI Forge Studio for ongoing support',
+      },
+      faqs: { eyebrow: 'Common questions', heading: 'Website maintenance FAQs' },
+    },
     idealFor: [
       'Existing UI Forge Studio clients who want continuity after launch',
       'Businesses with a neglected site and no accountable technical contact',
@@ -867,13 +1035,23 @@ export const SERVICE_PAGES: ServicePage[] = [
           'Yes. Care should not be a form of lock-in. Account ownership, access, notice and handover details are set out in the specific agreement, with business assets kept under client control wherever practical.',
       },
     ],
+    relatedServices: [
+      {
+        label: 'Explore website redesign when replacement is the honest answer',
+        href: '/services/website-redesign',
+      },
+      {
+        label: 'Explore custom website design and development',
+        href: '/services/web-design-development',
+      },
+    ],
     relatedInsights: [
       {
-        label: 'Website ownership and hosting explained',
+        label: 'Website ownership and hosting: what should your business own?',
         href: '/insights/website-ownership-and-hosting-explained',
       },
       {
-        label: 'What affects the cost of a website project',
+        label: 'Website cost in Australia: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
     ],

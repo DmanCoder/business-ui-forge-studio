@@ -18,7 +18,7 @@ import {
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Testimonials';
+const PAGE_TITLE = 'Client Testimonials | UI Forge Studio';
 const PAGE_DESCRIPTION =
   'Client feedback on working with UI Forge Studio — collected with permission and published only when verified.';
 const PAGE_PATH = '/testimonials';

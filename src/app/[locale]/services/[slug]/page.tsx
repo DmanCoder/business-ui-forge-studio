@@ -30,14 +30,11 @@ export async function generateMetadata(props: ServicePageProps): Promise<Metadat
   const service = getServicePage(slug);
   if (!service) notFound();
 
-  return {
-    ...buildMetadata({
-      title: service.seoTitle,
-      description: service.metaDescription,
-      path: `/services/${service.slug}`,
-    }),
-    title: { absolute: service.seoTitle },
-  };
+  return buildMetadata({
+    title: service.seoTitle,
+    description: service.metaDescription,
+    path: `/services/${service.slug}`,
+  });
 }
 
 export default async function ServicePage(props: ServicePageProps) {
@@ -72,7 +69,7 @@ export default async function ServicePage(props: ServicePageProps) {
           <div className='flex flex-col items-start justify-end lg:col-span-3'>
             <p className='meta-label'>Service note</p>
             <p className='text-muted border-edge mt-[1.2rem] border-t pt-[1.6rem] text-[1.45rem] leading-[1.65]'>
-              Remote delivery across Australia. Platform and scope are recommended after discovery.
+              {service.serviceNote}
             </p>
           </div>
         </div>
@@ -93,10 +90,10 @@ export default async function ServicePage(props: ServicePageProps) {
         <div className='container-site grid gap-[4rem] py-[clamp(5.6rem,9vh,9.6rem)] lg:grid-cols-12'>
           <div className='lg:col-span-4'>
             <Eyebrow index='01' onDark>
-              A useful fit when
+              {service.sections.fit.eyebrow}
             </Eyebrow>
             <h2 className='font-display mt-[2rem] max-w-[14ch] text-[clamp(3rem,4.6vw,5.4rem)] leading-[1.08] text-white'>
-              The project has a clear business reason to exist
+              {service.sections.fit.heading}
             </h2>
           </div>
           <ul className='lg:col-span-7 lg:col-start-6'>
@@ -119,10 +116,10 @@ export default async function ServicePage(props: ServicePageProps) {
         <div className='container-site section-pad'>
           <div className='grid gap-[2rem] lg:grid-cols-12'>
             <div className='lg:col-span-4'>
-              <Eyebrow index='02'>Problems this work should solve</Eyebrow>
+              <Eyebrow index='02'>{service.sections.problems.eyebrow}</Eyebrow>
             </div>
             <h2 className='max-w-[22ch] text-[clamp(2.8rem,3.8vw,4.2rem)] leading-[1.12] font-semibold lg:col-span-8'>
-              Start with the friction, not a preferred technology
+              {service.sections.problems.heading}
             </h2>
           </div>
           <div className='mt-[5.6rem] grid gap-x-[3.2rem] md:grid-cols-3'>
@@ -144,9 +141,9 @@ export default async function ServicePage(props: ServicePageProps) {
       <section className='border-edge border-t'>
         <div className='container-site grid gap-[4rem] py-[clamp(5.6rem,9vh,9.6rem)] lg:grid-cols-12'>
           <div className='lg:col-span-4'>
-            <Eyebrow index='03'>What the engagement can include</Eyebrow>
+            <Eyebrow index='03'>{service.sections.includes.eyebrow}</Eyebrow>
             <h2 className='mt-[2rem] max-w-[15ch] text-[clamp(2.6rem,3.6vw,4rem)] leading-[1.12] font-semibold'>
-              Scope shaped around the real job
+              {service.sections.includes.heading}
             </h2>
             <p className='text-muted mt-[2rem] max-w-[40ch] text-[1.5rem] leading-[1.7]'>
               The proposal confirms the exact inclusions. This list shows the areas that can form a
@@ -171,7 +168,7 @@ export default async function ServicePage(props: ServicePageProps) {
         <div className='container-site section-pad'>
           <div className='grid gap-[3.2rem] lg:grid-cols-12'>
             <div className='lg:col-span-5'>
-              <Eyebrow index='04'>A decision worth making well</Eyebrow>
+              <Eyebrow index='04'>{service.sections.decision.eyebrow}</Eyebrow>
               <h2 className='font-display mt-[2rem] max-w-[16ch] text-[clamp(3rem,4.4vw,5.2rem)] leading-[1.08]'>
                 {service.decision.heading}
               </h2>
@@ -199,16 +196,16 @@ export default async function ServicePage(props: ServicePageProps) {
       <section className='border-edge border-t'>
         <div className='container-site section-pad grid gap-[4rem] lg:grid-cols-12'>
           <div className='lg:col-span-4'>
-            <Eyebrow index='05'>How the work moves</Eyebrow>
+            <Eyebrow index='05'>{service.sections.process.eyebrow}</Eyebrow>
             <h2 className='mt-[2rem] max-w-[15ch] text-[clamp(2.6rem,3.6vw,4rem)] leading-[1.12] font-semibold'>
-              Decisions stay close to delivery
+              {service.sections.process.heading}
             </h2>
             <p className='mt-[2.4rem]'>
               <Link
                 href='/process'
                 className='text-ink decoration-blue hover:text-blue text-[1.5rem] font-semibold underline decoration-2 underline-offset-[0.6rem]'
               >
-                Read the complete studio process →
+                See our website design and development process →
               </Link>
             </p>
           </div>
@@ -237,10 +234,10 @@ export default async function ServicePage(props: ServicePageProps) {
         <div className='container-site section-pad grid gap-[4rem] lg:grid-cols-12'>
           <div className='lg:col-span-5'>
             <Eyebrow index='06' onDark>
-              Why UI Forge Studio
+              {service.sections.whyUs.eyebrow}
             </Eyebrow>
             <h2 className='font-display mt-[2rem] max-w-[15ch] text-[clamp(3rem,4.4vw,5.2rem)] leading-[1.08] text-white'>
-              Founder-led does not mean improvised
+              {service.sections.whyUs.heading}
             </h2>
           </div>
           <ul className='lg:col-span-6 lg:col-start-7'>
@@ -259,9 +256,9 @@ export default async function ServicePage(props: ServicePageProps) {
       <section className='border-edge border-t'>
         <div className='container-site section-pad grid gap-[4rem] lg:grid-cols-12'>
           <div className='lg:col-span-4'>
-            <Eyebrow index='07'>Common questions</Eyebrow>
-            <h2 className='mt-[2rem] max-w-[13ch] text-[clamp(2.6rem,3.6vw,4rem)] leading-[1.12] font-semibold'>
-              Before a proposal
+            <Eyebrow index='07'>{service.sections.faqs.eyebrow}</Eyebrow>
+            <h2 className='mt-[2rem] max-w-[14ch] text-[clamp(2.6rem,3.6vw,4rem)] leading-[1.12] font-semibold'>
+              {service.sections.faqs.heading}
             </h2>
           </div>
           <div className='lg:col-span-7 lg:col-start-6'>
@@ -282,24 +279,44 @@ export default async function ServicePage(props: ServicePageProps) {
 
       <section className='border-edge border-t'>
         <div className='container-site grid gap-[3.2rem] py-[clamp(4.8rem,7vh,7.2rem)] lg:grid-cols-12'>
-          <div className='lg:col-span-7'>
+          <div className='lg:col-span-4'>
             <Eyebrow>Related guidance</Eyebrow>
-            <h2 className='mt-[1.6rem] max-w-[22ch] text-[clamp(2.4rem,3.2vw,3.6rem)] leading-[1.15] font-semibold'>
+            <h2 className='mt-[1.6rem] max-w-[16ch] text-[clamp(2.4rem,3.2vw,3.6rem)] leading-[1.15] font-semibold'>
               Useful context before you choose a provider or platform
             </h2>
           </div>
-          <ul className='self-end lg:col-span-4 lg:col-start-9'>
-            {service.relatedInsights.map((item) => (
-              <li key={item.href} className='border-line border-t py-[1.4rem]'>
-                <Link
-                  href={item.href}
-                  className='text-ink decoration-blue hover:text-blue text-[1.45rem] font-semibold underline decoration-2 underline-offset-[0.5rem]'
-                >
-                  {item.label} →
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className='grid gap-[3.2rem] sm:grid-cols-2 lg:col-span-8'>
+            <div>
+              <h3 className='meta-label'>Related services</h3>
+              <ul className='mt-[1.2rem]'>
+                {service.relatedServices.map((item) => (
+                  <li key={item.href} className='border-line border-t py-[1.4rem]'>
+                    <Link
+                      href={item.href}
+                      className='text-ink decoration-blue hover:text-blue text-[1.45rem] leading-[1.5] font-semibold underline decoration-2 underline-offset-[0.5rem]'
+                    >
+                      {item.label} →
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className='meta-label'>Related reading</h3>
+              <ul className='mt-[1.2rem]'>
+                {service.relatedInsights.map((item) => (
+                  <li key={item.href} className='border-line border-t py-[1.4rem]'>
+                    <Link
+                      href={item.href}
+                      className='text-ink decoration-blue hover:text-blue text-[1.45rem] leading-[1.5] font-semibold underline decoration-2 underline-offset-[0.5rem]'
+                    >
+                      Read: {item.label} →
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 

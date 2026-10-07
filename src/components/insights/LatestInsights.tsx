@@ -18,15 +18,15 @@ const LatestInsights = async () => {
         <div className='flex flex-wrap items-end justify-between gap-[2rem]'>
           <div>
             <Eyebrow index='08'>Insights</Eyebrow>
-            <h2 className='mt-[2rem] text-[clamp(2.8rem,3.6vw,4rem)] leading-[1.1] font-semibold'>
-              Plain-language guidance
+            <h2 className='mt-[2rem] max-w-[22ch] text-[clamp(2.8rem,3.6vw,4rem)] leading-[1.1] font-semibold'>
+              Plain-language guidance on websites and digital products
             </h2>
           </div>
           <Link
             href='/insights'
             className='text-ink decoration-blue hover:text-blue pb-[0.6rem] text-[1.5rem] font-semibold underline decoration-2 underline-offset-[0.6rem]'
           >
-            All insights →
+            All web design and digital product insights →
           </Link>
         </div>
         <div className='mt-[3.2rem]'>

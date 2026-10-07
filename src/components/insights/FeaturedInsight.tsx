@@ -28,7 +28,8 @@ const FeaturedInsight: React.FC<FeaturedInsightProps> = ({ article }) => (
         {article.excerpt}
       </p>
       <p className='text-ink mt-[2.4rem] text-[1.5rem] font-semibold'>
-        Read the article <span aria-hidden='true'>→</span>
+        Read the article<span className='sr-only'>: {article.title}</span>{' '}
+        <span aria-hidden='true'>→</span>
       </p>
     </Link>
   </article>

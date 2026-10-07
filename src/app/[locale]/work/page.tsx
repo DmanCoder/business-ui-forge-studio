@@ -13,9 +13,9 @@ import { getPublishedCaseStudies } from '@src/lib/caseStudies';
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Web design and development case studies';
+const PAGE_TITLE = 'Web Design & Development Work | UI Forge Studio';
 const PAGE_DESCRIPTION =
-  'Web design and development case studies from UI Forge Studio, clearly labelled as client, internal or concept work and documented without invented outcomes.';
+  'Explore UI Forge Studio website and digital product work, with project context, design decisions, technical approach and clearly labelled outcomes.';
 const PAGE_PATH = '/work';
 
 /** What every future case study will document — shown while the index fills. */
@@ -50,16 +50,18 @@ export default async function WorkPage(props: PageTypes) {
     <>
       {/* Page header */}
       <section className='container-site pt-[clamp(6.4rem,10vh,11.2rem)] pb-[clamp(4rem,6vh,6.4rem)]'>
-        <div className='flex flex-wrap items-end justify-between gap-[2rem]'>
-          <div>
-            <Eyebrow>Work</Eyebrow>
-            <h1 className='font-display mt-[2.8rem] max-w-[16ch] text-[clamp(4rem,7vw,8.8rem)] leading-[1.03] font-normal tracking-[-0.015em]'>
-              {WORK_HEADING}
-            </h1>
-          </div>
-          <p className='tnum text-muted-dark pb-[1rem] text-[1.3rem] font-medium'>
-            Index · {String(realCount).padStart(3, '0')} published
-            {demoCount > 0 && <> · {String(demoCount).padStart(3, '0')} demo</>}
+        <Eyebrow>Work</Eyebrow>
+        <h1 className='font-display mt-[2.8rem] max-w-[16ch] text-[clamp(4rem,6.6vw,8.4rem)] leading-[1.03] font-normal tracking-[-0.015em]'>
+          {WORK_HEADING}
+        </h1>
+        <div className='mt-[3.2rem] grid gap-[2.4rem] lg:grid-cols-12'>
+          <p className='text-muted max-w-[56ch] text-[clamp(1.7rem,2vw,2rem)] leading-[1.6] lg:col-span-8'>
+            Each project is written up with its context, the design decisions, the technical
+            approach and outcomes that are clearly labelled as client, internal or concept work.
+          </p>
+          <p className='tnum text-muted-dark self-end text-[1.3rem] font-medium lg:col-span-3 lg:col-start-10 lg:text-right'>
+            {String(realCount).padStart(2, '0')} published
+            {demoCount > 0 && <> · {String(demoCount).padStart(2, '0')} demo</>}
           </p>
         </div>
       </section>

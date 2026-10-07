@@ -6,16 +6,18 @@ import { displayFont, bodyFont } from './font';
 import Header from '@src/components/layout/Header';
 import Footer from '@src/components/layout/Footer';
 import { SITE_NAME, SITE_TAGLINE, SITE_DESCRIPTION, BASE_URL } from '@src/config/site';
-import { professionalServiceSchema, webSiteSchema, jsonLd } from '@src/lib/seo';
+import { organizationSchema, webSiteSchema, jsonLd } from '@src/lib/seo';
 import { IS_PREVIEW } from '@src/typescriptGlobals/constants';
 
 import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
+  // Every route supplies an absolute title via buildMetadata; this default
+  // only covers routes without their own metadata (e.g. the global 404).
   title: {
-    default: `${SITE_NAME} — ${SITE_TAGLINE}`,
-    template: `%s — ${SITE_NAME}`,
+    default: `${SITE_TAGLINE} | ${SITE_NAME}`,
+    template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
   ...(IS_PREVIEW ? { robots: { index: false, follow: false } } : {}),
@@ -48,7 +50,7 @@ const RootLayout = async (props: {
 
         <script
           type='application/ld+json'
-          dangerouslySetInnerHTML={{ __html: jsonLd(professionalServiceSchema()) }}
+          dangerouslySetInnerHTML={{ __html: jsonLd(organizationSchema()) }}
         />
         <script
           type='application/ld+json'

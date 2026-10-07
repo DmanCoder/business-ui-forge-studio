@@ -14,9 +14,9 @@ import { START_INTRO } from '@src/content/start-project';
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Start a web design or development project';
+const PAGE_TITLE = 'Start a Website or Digital Product Project | UI Forge Studio';
 const PAGE_DESCRIPTION =
-  'Tell UI Forge Studio about your website, Shopify, HubSpot, web app or mobile app project and receive a considered response within two business days.';
+  'Tell UI Forge Studio what you want to change or build. Get a founder-led reply, a short discovery call and a clear written project proposal.';
 
 /** Expectation-setting: what happens after the form is sent. */
 const NEXT_STEPS = [
@@ -55,7 +55,7 @@ export default async function StartProjectPage(props: PageTypes) {
       {/* Page header */}
       <section className='container-site pt-[clamp(6.4rem,10vh,11.2rem)] pb-[clamp(4rem,6vh,6.4rem)]'>
         <Eyebrow>{START_INTRO.eyebrow}</Eyebrow>
-        <h1 className='font-display mt-[2.8rem] max-w-[16ch] text-[clamp(4rem,7vw,8.8rem)] leading-[1.03] font-normal tracking-[-0.015em]'>
+        <h1 className='font-display mt-[2.8rem] max-w-[16ch] text-[clamp(4rem,6.6vw,8.4rem)] leading-[1.03] font-normal tracking-[-0.015em]'>
           {START_INTRO.heading}
         </h1>
         <p className='text-muted mt-[3.2rem] max-w-[54ch] text-[clamp(1.7rem,2vw,2rem)] leading-[1.6]'>

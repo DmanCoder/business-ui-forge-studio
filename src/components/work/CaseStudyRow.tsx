@@ -60,7 +60,8 @@ const CaseStudyRow: React.FC<CaseStudyRowProps> = ({
               {study.summary}
             </p>
             <p className='text-ink mt-[2rem] text-[1.45rem] font-semibold'>
-              Read the case study <span aria-hidden='true'>→</span>
+              View the {study.isDemo ? 'demo' : ''} case study
+              <span className='sr-only'>: {study.title}</span> <span aria-hidden='true'>→</span>
             </p>
           </div>
           <dl className='flex flex-col gap-[1.2rem] lg:col-span-4 lg:col-start-9'>

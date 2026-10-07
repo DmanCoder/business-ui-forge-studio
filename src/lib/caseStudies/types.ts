@@ -127,6 +127,11 @@ export type CaseStudySource = {
    * 'Current progress' for in-progress work.
    */
   outcomes?: string[];
+  /**
+   * "What changed" ledger: labelled, scannable outcomes (area → result).
+   * Rendered in place of the plain outcomes list when present.
+   */
+  outcomeLedger?: { label: string; body: string }[];
   /** Quantitative claims — each rendered only when verified. */
   verifiedMetrics?: CaseStudyMetric[];
   /** Id of a verified testimonial in the testimonial source. */

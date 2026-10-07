@@ -7,10 +7,10 @@ export type ProcessPhase = {
   deliverable: string;
 };
 
-export const PROCESS_HEADING = 'You always know what is happening';
+export const PROCESS_HEADING = 'Our website design and development process';
 
 export const PROCESS_INTRO =
-  'Seven phases, explained in plain language. At every stage you know what we are working on, what we need from you and what comes next.';
+  'Seven clear phases from the first conversation to launch — with optional support afterwards. You always know what we are working on, what we need from you and what comes next.';
 
 export const PROCESS_PHASES: ProcessPhase[] = [
   {

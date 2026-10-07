@@ -12,6 +12,7 @@ import { PageTypes } from '@src/typescriptGlobals/types';
 const TITLE = 'Website disclaimer';
 const DESCRIPTION =
   'Important context for general website, technology, project and outcome information published by UI Forge Studio.';
+const SEO_TITLE = 'Website Disclaimer | UI Forge Studio';
 const PATH = '/disclaimer';
 const UPDATED = '6 October 2026';
 
@@ -87,7 +88,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  return buildMetadata({ title: TITLE, description: DESCRIPTION, path: PATH, noIndex: true });
+  return buildMetadata({ title: SEO_TITLE, description: DESCRIPTION, path: PATH });
 }
 
 export default async function DisclaimerPage(props: PageTypes) {
@@ -105,7 +106,7 @@ export default async function DisclaimerPage(props: PageTypes) {
       <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{
-          __html: jsonLd(webPageSchema({ title: TITLE, description: DESCRIPTION, path: PATH })),
+          __html: jsonLd(webPageSchema({ title: SEO_TITLE, description: DESCRIPTION, path: PATH })),
         }}
       />
       <script

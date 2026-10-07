@@ -28,7 +28,7 @@ export async function generateMetadata(props: CategoryPageProps): Promise<Metada
   if (!category) notFound();
 
   return buildMetadata({
-    title: `${category.name} — Insights`,
+    title: `${category.name} Insights | ${SITE_NAME}`,
     description: `Articles in ${category.name} — practical, plain-language guidance on websites, e-commerce and digital products.`,
     path: `/insights/categories/${category.slug}`,
     noIndex: true,

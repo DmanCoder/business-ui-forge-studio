@@ -8,7 +8,25 @@ export const SITE_TAGLINE = 'Web design and development for Australian businesse
 export const SITE_DESCRIPTION =
   'Founder-led Australian web design and development studio for custom websites, Shopify, HubSpot, web applications, mobile apps and ongoing support.';
 
-export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://uiforgestudio.com.au';
+/** The brand's production origin. Never a preview or local hostname. */
+export const PRODUCTION_ORIGIN = 'https://uiforgestudio.com.au';
+
+const isLocalOrigin = (value: string) => /localhost|127\.0\.0\.1|0\.0\.0\.0/.test(value);
+
+/**
+ * Canonical origin for metadata, sitemap, Open Graph and JSON-LD URLs.
+ * `NEXT_PUBLIC_BASE_URL` wins when set; a localhost value is only honoured
+ * in development so a hosted build can never emit `http://localhost:3000`
+ * canonicals (this was observed on the Netlify preview deploy).
+ */
+export const BASE_URL = (() => {
+  const configured = process.env.NEXT_PUBLIC_BASE_URL;
+  if (!configured) return PRODUCTION_ORIGIN;
+  if (process.env.NODE_ENV !== 'development' && isLocalOrigin(configured)) {
+    return PRODUCTION_ORIGIN;
+  }
+  return configured;
+})();
 
 export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hello@uiforgestudio.com.au';
 

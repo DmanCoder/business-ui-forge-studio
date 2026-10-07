@@ -12,6 +12,7 @@ import { IS_PREVIEW } from '@src/typescriptGlobals/constants';
 import { LOGO_PRIMARY } from '@src/lib/assets';
 
 type BuildMetadataArgs = {
+  /** Complete document title, including the brand suffix (used verbatim). */
   title: string;
   description: string;
   /** Clean path without locale prefix, e.g. '/services'. '/' for home. */
@@ -29,6 +30,11 @@ export const absoluteUrl = (path: string) => new URL(path, BASE_URL).toString();
  * Shared metadata builder: title, description, canonical + hreflang,
  * Open Graph and Twitter cards. Canonicals use clean locale-free URLs —
  * `/` serves `en` via rewrite, so `/en/...` pages canonicalise to `/...`.
+ * Titles are written per page in full (brand suffix included) and used as
+ * given, so the root layout template never doubles the brand.
+ *
+ * hreflang: the site is one Australian-English experience. A self-referencing
+ * `en-AU` plus `x-default` is emitted; no other regional variants exist.
  */
 export const buildMetadata = ({
   title,
@@ -42,13 +48,13 @@ export const buildMetadata = ({
   const url = absoluteUrl(path);
 
   return {
-    title,
+    title: { absolute: title },
     description,
     metadataBase: new URL(BASE_URL),
     alternates: {
       canonical: url,
       languages: {
-        en: url,
+        'en-AU': url,
         'x-default': url,
       },
     },
@@ -74,12 +80,13 @@ export const buildMetadata = ({
 };
 
 /**
- * Site-wide ProfessionalService schema. Remote-first studio — street address
- * intentionally omitted (never fabricate one); areaServed per brief.
+ * Site-wide Organization schema. Remote-first studio — street address
+ * intentionally omitted (never fabricate one), which is also why this is a
+ * plain Organization rather than a LocalBusiness subtype.
  */
-export const professionalServiceSchema = () => ({
+export const organizationSchema = () => ({
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
+  '@type': 'Organization',
   '@id': `${BASE_URL}/#organization`,
   name: SITE_NAME,
   url: BASE_URL,
@@ -87,6 +94,15 @@ export const professionalServiceSchema = () => ({
   description: SITE_DESCRIPTION,
   email: CONTACT_EMAIL,
   areaServed: STUDIO_REGION ? ['Australia', STUDIO_REGION] : 'Australia',
+  knowsAbout: [
+    'Web design',
+    'Web development',
+    'Shopify development',
+    'HubSpot website development',
+    'Web application development',
+    'React Native app development',
+    'Website maintenance',
+  ],
 });
 
 export const webSiteSchema = () => ({
@@ -170,7 +186,13 @@ export const articleSchema = ({
   datePublished,
   dateModified: dateModified ?? datePublished,
   ...(image ? { image } : {}),
-  author: { '@type': 'Person', name: AUTHOR_NAME },
+  author: {
+    '@type': 'Person',
+    name: AUTHOR_NAME,
+    jobTitle: 'Founder, designer and developer',
+    url: absoluteUrl('/about'),
+    worksFor: { '@id': `${BASE_URL}/#organization` },
+  },
   publisher: { '@id': `${BASE_URL}/#organization` },
 });
 

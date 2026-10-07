@@ -42,16 +42,13 @@ export async function generateMetadata(props: PageTypes): Promise<Metadata> {
   if (!article) notFound();
 
   const cover = insightCoverFor(article.slug);
-  return {
-    ...buildMetadata({
-      title: article.seoTitle,
-      description: article.metaDescription,
-      path: `/insights/${article.slug}`,
-      ogType: 'article',
-      ogImage: cover ? absoluteUrl(cover.ogImage) : undefined,
-    }),
-    title: { absolute: article.seoTitle },
-  };
+  return buildMetadata({
+    title: article.seoTitle,
+    description: article.metaDescription,
+    path: `/insights/${article.slug}`,
+    ogType: 'article',
+    ogImage: cover ? absoluteUrl(cover.ogImage) : undefined,
+  });
 }
 
 export default async function InsightArticlePage(props: PageTypes) {
@@ -86,8 +83,13 @@ export default async function InsightArticlePage(props: PageTypes) {
           <p className='flex flex-wrap items-baseline gap-x-[2rem] gap-y-[0.6rem]'>
             <span className='meta-label text-blue'>{article.category}</span>
             <span className='tnum text-muted-dark text-[1.35rem]'>
-              {formatInsightDate(article.date)}
-              {article.updated && <> · Updated {formatInsightDate(article.updated)}</>}
+              <time dateTime={article.date}>{formatInsightDate(article.date)}</time>
+              {article.updated && (
+                <>
+                  {' · '}Updated{' '}
+                  <time dateTime={article.updated}>{formatInsightDate(article.updated)}</time>
+                </>
+              )}
               {' · '}
               {article.readMins} min read
             </span>
@@ -119,6 +121,19 @@ export default async function InsightArticlePage(props: PageTypes) {
       )}
 
       <article className='container-prose pt-[1.6rem] pb-[clamp(4.8rem,8vh,8rem)]'>
+        {/* Short answer — the article's conclusion for readers who skim */}
+        {article.summary && (
+          <aside
+            aria-label='Short answer'
+            className='border-blue mt-[2.4rem] border-l-2 pl-[2.4rem]'
+          >
+            <p className='meta-label text-blue'>Short answer</p>
+            <p className='mt-[1rem] text-[clamp(1.7rem,2vw,1.9rem)] leading-[1.6] font-medium'>
+              {article.summary}
+            </p>
+          </aside>
+        )}
+
         {headings.length >= 3 && <TableOfContents items={headings} />}
 
         <InsightBlocks blocks={article.blocks} />
@@ -141,6 +156,24 @@ export default async function InsightArticlePage(props: PageTypes) {
             >
               {article.cta.label}
             </Cta>
+          </aside>
+        )}
+
+        {/* Related service — the commercial page this article most naturally leads to */}
+        {article.relatedService && (
+          <aside className='border-edge mt-[4.8rem] border-t pt-[2.4rem]'>
+            <p className='meta-label'>Related service</p>
+            <p className='text-muted mt-[1rem] max-w-[58ch] text-[1.5rem] leading-[1.65]'>
+              {article.relatedService.note}
+            </p>
+            <p className='mt-[1.2rem]'>
+              <Link
+                href={normalizeInsightHref(article.relatedService.href)}
+                className='text-ink decoration-blue hover:text-blue text-[1.5rem] font-semibold underline decoration-2 underline-offset-[0.5rem]'
+              >
+                {article.relatedService.label} →
+              </Link>
+            </p>
           </aside>
         )}
 
@@ -202,11 +235,13 @@ export default async function InsightArticlePage(props: PageTypes) {
         )}
       </article>
 
-      {/* Related articles */}
+      {/* Related reading */}
       {related.length > 0 && (
-        <section className='border-edge border-t'>
+        <section className='border-edge border-t' aria-labelledby='related-reading-heading'>
           <div className='container-site section-pad'>
-            <p className='meta-label'>Related articles</p>
+            <h2 id='related-reading-heading' className='meta-label'>
+              Related reading
+            </h2>
             <div className='mt-[2.4rem]'>
               {related.map((relatedArticle, index) => (
                 <InsightCard

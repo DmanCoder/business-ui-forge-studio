@@ -32,8 +32,8 @@ Create `.env.local`:
 
 | Variable | Purpose |
 | --- | --- |
-| `NEXT_PUBLIC_BASE_URL` | Canonical origin, e.g. `https://uiforgestudio.com.au`. Required in production for canonicals/sitemap/OG. |
-| `NEXT_PUBLIC_ENVIRONMENT` | `production` on the production deploy; anything else enables preview behaviour (robots noindex, Contentful preview). |
+| `NEXT_PUBLIC_BASE_URL` | Canonical origin, e.g. `https://uiforgestudio.com.au`. Required in production for canonicals/sitemap/OG. A `localhost` value is ignored outside `next dev` (hosted builds fall back to the production origin) so a misconfigured deploy can never emit localhost canonicals. |
+| `NEXT_PUBLIC_ENVIRONMENT` | `production` on the production deploy **only**; anything else (including the Netlify `*.netlify.app` preview) enables preview behaviour: `noindex, nofollow` meta + `X-Robots-Tag`, `Disallow: /` robots.txt and no sitemap reference. Set it in the Netlify production context, never in deploy-preview or branch contexts. |
 | `NEXT_PUBLIC_CONTENTFUL_SPACE_ID` | Contentful space for Insights articles. |
 | `NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN` | Contentful delivery token. |
 | `NEXT_PUBLIC_RECAPTCHA_SITE_KEY` | reCAPTCHA site key (project-inquiry form). Optional in dev — the form skips reCAPTCHA when unset. |
@@ -51,7 +51,7 @@ A template with every variable is provided in `.env.example` — copy it to
   clean URLs).
 - `src/config/site.ts` — brand, contact, navigation single source of truth.
 - `src/content/…` — static page copy modules.
-- `src/lib/seo.ts` — metadata + JSON-LD builders (ProfessionalService, WebSite, WebPage,
+- `src/lib/seo.ts` — metadata + JSON-LD builders (Organization, WebSite, WebPage,
   Service, BlogPosting, Breadcrumb).
 - `src/lib/insights/…` — Insights data layer. Currently serves typed local article
   content; swap to Contentful once entries exist (see `docs/CONTENTFUL-MIGRATION.md`).

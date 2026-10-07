@@ -21,6 +21,15 @@ export type InsightCta = {
   href: string;
 };
 
+/** The one commercial service page an article most naturally leads to. */
+export type InsightRelatedService = {
+  /** Descriptive anchor text, e.g. 'Explore Shopify development'. */
+  label: string;
+  href: string;
+  /** One sentence on why the service is relevant to this article. */
+  note: string;
+};
+
 /** An article as authored — reading time is computed, not stored. */
 export type InsightArticleSource = {
   slug: string;
@@ -28,6 +37,11 @@ export type InsightArticleSource = {
   seoTitle: string;
   metaDescription: string;
   excerpt: string;
+  /**
+   * Short direct answer shown immediately after the header — the article's
+   * conclusion in one or two sentences, for readers who skim.
+   */
+  summary?: string;
   category: string;
   /** ISO publish date, e.g. '2026-06-30'. */
   date: string;
@@ -37,6 +51,7 @@ export type InsightArticleSource = {
   published: boolean;
   blocks: InsightBlock[];
   cta?: InsightCta;
+  relatedService?: InsightRelatedService;
 };
 
 /** An article as consumed by pages: source data + computed reading time. */

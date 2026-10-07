@@ -18,9 +18,9 @@ import {
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Website design and development process';
+const PAGE_TITLE = 'Website Design & Development Process | UI Forge Studio';
 const PAGE_DESCRIPTION =
-  'A clear seven-phase website and digital product process: discovery, scope, design, development, testing, launch and optional ongoing support.';
+  'See how UI Forge Studio moves from discovery and scope through design, development, testing, launch and optional ongoing website support.';
 const PAGE_PATH = '/process';
 
 export async function generateStaticParams() {
@@ -44,7 +44,7 @@ export default async function ProcessPage(props: PageTypes) {
       {/* Page header */}
       <section className='container-site pt-[clamp(6.4rem,10vh,11.2rem)] pb-[clamp(4.8rem,8vh,8rem)]'>
         <Eyebrow>Process</Eyebrow>
-        <h1 className='font-display mt-[2.8rem] max-w-[16ch] text-[clamp(4rem,7vw,8.8rem)] leading-[1.03] font-normal tracking-[-0.015em]'>
+        <h1 className='font-display mt-[2.8rem] max-w-[16ch] text-[clamp(4rem,6.6vw,8.4rem)] leading-[1.03] font-normal tracking-[-0.015em]'>
           {PROCESS_HEADING}
         </h1>
         <div className='mt-[3.2rem] grid gap-[2.4rem] lg:grid-cols-12'>

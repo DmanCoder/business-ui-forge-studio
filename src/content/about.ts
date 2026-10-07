@@ -2,7 +2,9 @@
 
 export const ABOUT_HEADER = {
   eyebrow: 'About',
-  heading: 'A studio where design and development are the same conversation',
+  heading: 'A founder-led web design and development studio in Australia',
+  statement:
+    'Design and development stay in the same conversation, so what is planned, approved and built remains one coherent system.',
   intro:
     'UI Forge Studio exists because too many businesses end up with websites that look fine in a mock-up and disappoint in the real world: slow, awkward on phones, hard to update, invisible in search.',
 };

@@ -16,10 +16,10 @@ import type { CaseStudySource, Testimonial } from './types';
  */
 const UI_FORGE_STUDIO_SITE: CaseStudySource = {
   slug: 'ui-forge-studio-website',
-  title: 'UI Forge Studio — designing and building our own site',
-  seoTitle: 'Case study: the UI Forge Studio website | UI Forge Studio',
+  title: 'UI Forge Studio website — design, content and Next.js development',
+  seoTitle: 'UI Forge Studio Website Case Study | Next.js Design & Development',
   metaDescription:
-    'How UI Forge Studio designed and built its own website: an editorial system with zero animation, dedicated service architecture, structured SEO and accessibility as a default.',
+    'See how UI Forge Studio designed and built its own Next.js website, including the design system, content architecture, accessibility and technical SEO.',
   summary:
     'Our own site, rebuilt from the ground up: an editorial design system with zero animation, a typed CMS-ready content layer, and the same standards we apply to client work.',
   status: 'internal',
@@ -129,15 +129,35 @@ const UI_FORGE_STUDIO_SITE: CaseStudySource = {
       ],
     },
   ],
-  outcomes: [
-    'A consistent editorial design system documented in the repository and applied across every route.',
-    'Zero animation site-wide, verified in a dedicated audit — premium feel carried by typography and composition.',
-    'A typed content layer that is CMS-ready: swapping in Contentful requires no page changes.',
-    'Structured SEO across the site: intent-specific service pages, canonicals, hreflang, JSON-LD, sitemap, and reviewed legacy redirects.',
-    'Every pre-existing security and SEO defect found in the audit was fixed during the rebuild.',
+  outcomeLedger: [
+    {
+      label: 'Design system',
+      body: 'Documented editorial tokens and reusable patterns, applied across every route.',
+    },
+    {
+      label: 'Frontend',
+      body: 'Next.js App Router with React Server Components by default; client JavaScript only where interaction needs it.',
+    },
+    {
+      label: 'Content',
+      body: 'Typed, CMS-ready content layer — swapping in Contentful requires no page changes.',
+    },
+    {
+      label: 'Accessibility',
+      body: 'Zero-animation approach verified in a dedicated audit, with semantic structure and visible focus states.',
+    },
+    {
+      label: 'SEO',
+      body: 'Metadata, canonicals, structured data, sitemap and reviewed legacy redirects, with intent-specific service pages.',
+    },
+    {
+      label: 'Security',
+      body: 'Inherited issues identified in the rebuild audit and removed — host allowlist, exposed CMS credentials, relative sitemap URLs.',
+    },
   ],
   published: true,
   publishedAt: '2026-07-15',
+  updatedAt: '2026-10-07',
 };
 
 export const LOCAL_CASE_STUDIES: CaseStudySource[] = [UI_FORGE_STUDIO_SITE];

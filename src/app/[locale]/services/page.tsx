@@ -6,6 +6,7 @@ import type { Metadata } from 'next';
 import Eyebrow from '@src/components/ui/Eyebrow';
 import Cta from '@src/components/ui/Cta';
 import StudioImage from '@src/components/media/StudioImage';
+import ServiceIndex from '@src/components/services/ServiceIndex';
 
 import { SERVICE_ASSETS } from '@src/lib/assets';
 import { ALLOWED_LOCALES } from '@src/typescriptGlobals/constants';
@@ -19,9 +20,9 @@ import {
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Web design and development services Australia';
+const PAGE_TITLE = 'Web Design & Development Services Australia | UI Forge Studio';
 const PAGE_DESCRIPTION =
-  'Website design, redesign, Shopify, HubSpot, web application, mobile app and website maintenance services for Australian businesses.';
+  'Explore custom website, Shopify, HubSpot, web app, mobile app and website maintenance services from a founder-led Australian studio.';
 const PAGE_PATH = '/services';
 
 export async function generateStaticParams() {
@@ -45,39 +46,21 @@ export default async function ServicesPage(props: PageTypes) {
       {/* Page header */}
       <section className='container-site pt-[clamp(6.4rem,10vh,11.2rem)] pb-[clamp(4.8rem,8vh,8rem)]'>
         <Eyebrow>Services</Eyebrow>
-        <h1 className='font-display mt-[2.8rem] max-w-[16ch] text-[clamp(4rem,7vw,8.8rem)] leading-[1.03] font-normal tracking-[-0.015em]'>
+        <h1 className='font-display mt-[2.8rem] max-w-[16ch] text-[clamp(4rem,6.6vw,8.4rem)] leading-[1.03] font-normal tracking-[-0.015em]'>
           {SERVICES_HEADING}
         </h1>
-        <p className='text-muted mt-[3.2rem] max-w-[56ch] text-[clamp(1.7rem,2vw,2rem)] leading-[1.6]'>
-          {SERVICES_INTRO}
-        </p>
+        <div className='mt-[3.2rem] grid gap-[2.4rem] lg:grid-cols-12'>
+          <p className='text-muted max-w-[56ch] text-[clamp(1.7rem,2vw,2rem)] leading-[1.6] lg:col-span-8'>
+            {SERVICES_INTRO}
+          </p>
+          <p className='text-muted-dark self-end text-[1.4rem] leading-[1.6] lg:col-span-3 lg:col-start-10'>
+            Organised around the decision you need to make, not the technology we prefer.
+          </p>
+        </div>
       </section>
 
-      {/* Service index — table of contents */}
-      <nav aria-label='Service index' className='border-edge border-t'>
-        <ol className='container-site grid list-none grid-cols-1 gap-x-[3.2rem] py-[2.4rem] md:grid-cols-2 xl:grid-cols-12'>
-          {SERVICE_CATEGORIES.map((category, index) => (
-            <li
-              key={category.name}
-              className={`${index < 4 ? 'xl:col-span-3' : 'xl:col-span-4'} ${
-                index === SERVICE_CATEGORIES.length - 1 ? 'md:col-span-2 xl:col-span-4' : ''
-              }`}
-            >
-              <a
-                href={`#service-${index + 1}`}
-                className={`text-muted hover:text-ink border-line flex h-full items-baseline gap-[1rem] border-t py-[1.2rem] text-[1.35rem] font-medium hover:underline hover:underline-offset-[0.4rem] ${
-                  index === SERVICE_CATEGORIES.length - 1
-                    ? 'md:justify-center xl:justify-start'
-                    : ''
-                }`}
-              >
-                <span className='tnum text-blue'>{String(index + 1).padStart(2, '0')}</span>
-                {category.name}
-              </a>
-            </li>
-          ))}
-        </ol>
-      </nav>
+      {/* Service index — ledger of real links to each service page */}
+      <ServiceIndex />
 
       {/* Service ledger */}
       <section>

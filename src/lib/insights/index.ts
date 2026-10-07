@@ -102,14 +102,20 @@ export async function getArticleBySlug(slug: string): Promise<InsightArticle | n
   return publishedSorted().find((article) => article.slug === slug) ?? null;
 }
 
-/** Same category, excluding the article itself, up to `max`. */
+/**
+ * Related reading: same-category articles first, then the newest from other
+ * categories, up to `max`. The fallback matters while the library is small —
+ * a reader should always be offered something else to read.
+ */
 export async function getRelatedArticles(
   article: InsightArticle,
   max = 3
 ): Promise<InsightArticle[]> {
-  return publishedSorted()
-    .filter((other) => other.slug !== article.slug && other.category === article.category)
-    .slice(0, max);
+  const others = publishedSorted().filter((other) => other.slug !== article.slug);
+  const sameCategory = others.filter((other) => other.category === article.category);
+  const elsewhere = others.filter((other) => other.category !== article.category);
+
+  return [...sameCategory, ...elsewhere].slice(0, max);
 }
 
 /** Neighbours in the date-sorted published list. */

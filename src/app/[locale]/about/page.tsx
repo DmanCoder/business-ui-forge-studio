@@ -24,9 +24,9 @@ import {
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'About the founder-led studio';
+const PAGE_TITLE = 'Founder-Led Web Design Studio Australia | UI Forge Studio';
 const PAGE_DESCRIPTION =
-  'Meet UI Forge Studio, a founder-led Australian web design and development studio where the same person shapes the strategy, interface and frontend build.';
+  'Meet the founder-led Australian studio combining website design and frontend development across Next.js, Shopify, HubSpot and React Native.';
 
 /** Honest studio facts — no invented scale. */
 const STUDIO_LEDGER = [
@@ -60,9 +60,14 @@ export default async function AboutPage(props: PageTypes) {
         <h1 className='font-display mt-[2.8rem] max-w-[18ch] text-[clamp(3.8rem,6.4vw,8rem)] leading-[1.05] font-normal tracking-[-0.015em]'>
           {ABOUT_HEADER.heading}
         </h1>
-        <p className='text-muted mt-[3.2rem] max-w-[56ch] text-[clamp(1.7rem,2vw,2rem)] leading-[1.6]'>
-          {ABOUT_HEADER.intro}
-        </p>
+        <div className='mt-[3.2rem] grid gap-[2.4rem] lg:grid-cols-12'>
+          <p className='max-w-[48ch] text-[clamp(1.8rem,2.2vw,2.2rem)] leading-[1.5] font-medium lg:col-span-6'>
+            {ABOUT_HEADER.statement}
+          </p>
+          <p className='text-muted max-w-[52ch] text-[clamp(1.6rem,1.9vw,1.8rem)] leading-[1.65] lg:col-span-5 lg:col-start-8'>
+            {ABOUT_HEADER.intro}
+          </p>
+        </div>
       </section>
 
       {/* Founder's note — editorial colophon */}

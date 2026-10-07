@@ -10,15 +10,23 @@ import type { InsightArticleSource } from './types';
 export const LOCAL_ARTICLES: InsightArticleSource[] = [
   {
     slug: 'what-affects-the-cost-of-a-website',
-    title: 'What affects the cost of a website project',
-    seoTitle: 'What affects the cost of a website project — UI Forge Studio',
+    title: 'Website cost in Australia: what actually affects the price?',
+    seoTitle: 'Website Cost in Australia: What Affects the Price? | UI Forge Studio',
     metaDescription:
-      'Why quotes for the same website can differ by tens of thousands of dollars, and the factors that actually move the price of a website project.',
+      'Understand what changes the cost of a website project in Australia, including scope, design, content, functionality, integrations and ongoing support.',
     excerpt:
       'Why quotes for the same website can differ by tens of thousands of dollars — and the factors that actually move the price.',
+    summary:
+      'Website cost is driven less by page count than by the number of unique layouts, content work, functionality, integrations, e-commerce requirements and the amount of custom design and development involved.',
     category: 'Websites',
     date: '2026-06-30',
+    updated: '2026-10-07',
     published: true,
+    relatedService: {
+      label: 'Explore custom website design and development',
+      href: '#/services/web-design-development',
+      note: 'The service page sets out what a complete website engagement can include, so you can see where each cost factor sits.',
+    },
     cta: {
       title: 'Want a number instead of a range?',
       text: 'The enquiry form takes about five minutes. Tell us what you need and what you are working towards, and we will come back with questions and a clear written proposal.',
@@ -56,7 +64,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       },
       {
         t: 'p',
-        x: 'Cost tracks design effort more than page count. Ten pages sharing two well-designed templates cost far less than five pages that each need a unique layout. When you brief a project, a rough sitemap helps far more than a page number.',
+        x: 'Cost tracks design effort more than page count. Ten pages sharing two well-designed templates cost far less than five pages that each need a unique layout. When you brief a project, a rough sitemap helps far more than a page number. This is also why a [website redesign](#/services/website-redesign) is often priced by the templates that change, not the pages that exist.',
       },
       {
         t: 'h3',
@@ -96,7 +104,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       },
       {
         t: 'p',
-        x: 'Online stores add product data, payment and shipping configuration, tax rules and a checkout that has to feel trustworthy under pressure. The range is wide: a focused Shopify store is a very different project from a custom storefront with thousands of products.',
+        x: 'Online stores add product data, payment and shipping configuration, tax rules and a checkout that has to feel trustworthy under pressure. The range is wide: a focused [Shopify store](#/services/shopify-development) is a very different project from a custom storefront with thousands of products.',
       },
       {
         t: 'h2',
@@ -104,7 +112,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       },
       {
         t: 'p',
-        x: 'A website also carries running costs: hosting, domain renewal, any platform or plugin licences, and maintenance. These are modest compared with the build, but they are real, and a proposal that never mentions them is incomplete. Who owns those accounts matters as much as what they cost — [Website ownership and hosting explained](#/insights/website-ownership-and-hosting-explained) covers who should hold what.',
+        x: 'A website also carries running costs: hosting, domain renewal, any platform or plugin licences, and maintenance. These are modest compared with the build, but they are real, and a proposal that never mentions them is incomplete. Who owns those accounts matters as much as what they cost — [Website ownership and hosting: what should your business own?](#/insights/website-ownership-and-hosting-explained) covers who should hold what.',
       },
       {
         t: 'h2',
@@ -133,15 +141,23 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
   },
   {
     slug: 'website-ownership-and-hosting-explained',
-    title: 'Website ownership and hosting explained',
-    seoTitle: 'Website ownership and hosting explained — UI Forge Studio',
+    title: 'Website ownership and hosting: what should your business own?',
+    seoTitle: 'Website Ownership & Hosting: What Should You Own? | UI Forge Studio',
     metaDescription:
-      'Domains, hosting, code, content and accounts: who should own each part of your website, and the questions to ask any provider before you sign.',
+      'Learn who should own your domain, hosting, website code, content, data and accounts — plus the questions to ask a web developer or agency.',
     excerpt:
       'Domains, hosting, code and content — who should own what, and the questions to ask before you sign anything.',
+    summary:
+      'Your business should control the domain, business accounts, content and data. Hosting can be managed by you or a provider, but the arrangement should be documented, portable and reversible.',
     category: 'Ownership and support',
     date: '2026-06-09',
+    updated: '2026-10-07',
     published: true,
+    relatedService: {
+      label: 'Explore website maintenance and support',
+      href: '#/services/website-maintenance',
+      note: 'If the site already exists and nobody is accountable for it, a documented care arrangement is usually the first fix.',
+    },
     cta: {
       title: 'Want the ownership conversation up front?',
       text: 'Every UI Forge Studio proposal spells out ownership, hosting and handover before work begins. Tell us about your project and see for yourself.',
@@ -202,7 +218,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       },
       {
         t: 'p',
-        x: 'Platform websites add a wrinkle: a Webflow site lives inside Webflow, a Shopify theme belongs to your Shopify account, and WordPress themes may carry their own licences. A good provider will explain exactly which parts of your build are portable before the project starts, not after it ends. If you are still choosing a platform, [our comparison of custom, WordPress and Webflow builds](#/insights/custom-website-wordpress-or-webflow) covers this from the other direction.',
+        x: 'Platform websites add a wrinkle: a Webflow site lives inside Webflow, a Shopify theme belongs to your Shopify account, and WordPress themes may carry their own licences. A good provider will explain exactly which parts of your build are portable before the project starts, not after it ends. If you are still choosing a platform, [WordPress vs Webflow vs a custom website](#/insights/custom-website-wordpress-or-webflow) covers this from the other direction, and the [custom website design and development](#/services/web-design-development) page explains how ownership is handled inside a project.',
       },
       {
         t: 'h2',
@@ -240,21 +256,29 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       },
       {
         t: 'p',
-        x: 'A trustworthy provider will answer all five without flinching. Our own answers are on the [about page](#/about): your assets stay yours, care plans are optional, and there is always a clear way to take everything in-house. If the problem is an existing site with no accountable owner, see [website maintenance and support](#/services/website-maintenance).',
+        x: 'A trustworthy provider will answer all five without flinching. Our own answers are on the [about page](#/about): your assets stay yours, care plans are optional, and there is always a clear way to take everything in-house. If the problem is an existing site with no accountable owner, see [website maintenance and support](#/services/website-maintenance). If the answers reveal a site you cannot safely move or extend, that is often where a [website redesign](#/services/website-redesign) starts.',
       },
     ],
   },
   {
     slug: 'custom-website-wordpress-or-webflow',
-    title: 'Choosing between a custom website, WordPress and Webflow',
-    seoTitle: 'Custom website, WordPress or Webflow: how to choose — UI Forge Studio',
+    title: 'WordPress vs Webflow vs a custom website: how to choose',
+    seoTitle: 'WordPress vs Webflow vs Custom Website | UI Forge Studio',
     metaDescription:
-      'The honest differences between a custom build, WordPress and Webflow — editing, flexibility, performance and running costs — and how to decide which fits your business.',
+      'Compare WordPress, Webflow and custom website development by editing workflow, flexibility, running cost, ownership and room to grow.',
     excerpt:
       'The honest differences between the three most common ways to build a business website — and how to work out which one fits.',
+    summary:
+      'WordPress suits content-heavy sites with frequent publishing, Webflow suits design-led marketing sites edited visually, and a custom build suits businesses that need performance, distinctive design and room to add functionality. The right answer depends on who edits the site, what it must do and your three-year plans.',
     category: 'Websites',
     date: '2026-05-19',
+    updated: '2026-10-07',
     published: true,
+    relatedService: {
+      label: 'Explore custom website design and development',
+      href: '#/services/web-design-development',
+      note: 'Next.js, WordPress, Webflow and HubSpot are all on the table — the service page explains how the recommendation is made.',
+    },
     cta: {
       title: 'Get a recommendation instead of a sales pitch',
       text: 'Tell us what your business does and what you want to achieve. We will recommend a platform and approach, and explain the reasoning in plain language — even when the answer is not a custom build.',
@@ -271,6 +295,43 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
         x: 'This guide explains the three approaches we recommend most often — WordPress, Webflow and a custom build — without pretending one of them is right for everyone.',
       },
       {
+        t: 'table',
+        headers: [
+          'Option',
+          'Strongest fit',
+          'Editing model',
+          'Flexibility',
+          'Maintenance',
+          'Main trade-off',
+        ],
+        rows: [
+          [
+            '**WordPress**',
+            'Content-heavy sites with regular publishing',
+            'Familiar CMS editor',
+            'Depends on the theme and plugins',
+            'Regular updates required',
+            'Quality and speed vary widely with build quality',
+          ],
+          [
+            '**Webflow**',
+            'Design-led marketing sites',
+            'Visual editor',
+            'High, within platform limits',
+            'Minimal, handled by the platform',
+            'Permanent hosting cost and a site tied to Webflow',
+          ],
+          [
+            '**Custom build**',
+            'Growth-focused sites and bespoke functionality',
+            'CMS chosen for your workflow',
+            'Unlimited',
+            'Low, agreed with your developer',
+            'Higher initial investment; structural changes go through a developer',
+          ],
+        ],
+      },
+      {
         t: 'h2',
         x: 'What you are actually choosing',
       },
@@ -283,7 +344,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
         x: [
           '**Editing workflow** — who updates content, how often, and how comfortable they are doing it.',
           '**Flexibility** — how far the design and functionality can stretch before the platform pushes back.',
-          '**Running costs and ownership** — licences, hosting, maintenance, and which parts of the build are portable. ([Website ownership and hosting explained](#/insights/website-ownership-and-hosting-explained) covers this in detail.)',
+          '**Running costs and ownership** — licences, hosting, maintenance, and which parts of the build are portable. ([Website ownership and hosting: what should your business own?](#/insights/website-ownership-and-hosting-explained) covers this in detail.)',
         ],
       },
       {
@@ -339,44 +400,9 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
         x: 'A custom build tends to suit businesses that treat the website as a growth asset: it needs to be fast, rank well, look like no one else and keep absorbing new functionality for years.',
       },
       {
-        t: 'h2',
-        x: 'The three side by side',
-      },
-      {
-        t: 'table',
-        headers: ['', 'WordPress', 'Webflow', 'Custom build'],
-        rows: [
-          [
-            'Best suited to',
-            'Content-heavy sites with regular publishing',
-            'Design-led marketing sites',
-            'Growth-focused sites and anything bespoke',
-          ],
-          [
-            'Content editing',
-            'Familiar CMS editor',
-            'Visual editor',
-            'CMS chosen for your workflow',
-          ],
-          [
-            'Design flexibility',
-            'Depends on the theme',
-            'High, within platform limits',
-            'Unlimited',
-          ],
-          ['Performance', 'Varies with build quality', 'Good', 'Engineered to be fast'],
-          [
-            'Maintenance',
-            'Regular updates required',
-            'Minimal, handled by the platform',
-            'Low, agreed with your developer',
-          ],
-        ],
-      },
-      {
         t: 'callout',
         title: 'A note on switching costs',
-        x: 'Moving platforms later is possible but never free — content, design and search rankings all need careful migration. Choose with your three-to-five-year plans in mind, not just the site you need this month.',
+        x: 'Moving platforms later is possible but never free — content, design and search rankings all need careful migration, which is why a [website redesign](#/services/website-redesign) starts with an inventory of what must be protected. Choose with your three-to-five-year plans in mind, not just the site you need this month.',
       },
       {
         t: 'h2',
@@ -392,7 +418,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
           'Who will edit the site, and how often?',
           'Is the website mostly communicating, or does it need to do things — bookings, portals, accounts?',
           'How important are speed and search rankings to how you win customers?',
-          'What is the realistic budget, initial and ongoing? ([What affects the cost of a website project](#/insights/what-affects-the-cost-of-a-website) breaks this down.)',
+          'What is the realistic budget, initial and ongoing? ([Website cost in Australia: what actually affects the price?](#/insights/what-affects-the-cost-of-a-website) breaks this down.)',
           'Where do you want the business to be in three years, and will the site need to grow with it?',
         ],
       },
