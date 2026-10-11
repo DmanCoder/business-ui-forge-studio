@@ -5,10 +5,9 @@ import type { Metadata } from 'next';
 
 import Eyebrow from '@src/components/ui/Eyebrow';
 import Cta from '@src/components/ui/Cta';
-import StudioImage from '@src/components/media/StudioImage';
 import ServiceIndex from '@src/components/services/ServiceIndex';
+import ServiceDiagram, { isServiceDiagramSlug } from '@src/components/services/ServiceDiagram';
 
-import { SERVICE_ASSETS } from '@src/lib/assets';
 import { ALLOWED_LOCALES } from '@src/typescriptGlobals/constants';
 import { buildMetadata, webPageSchema, breadcrumbSchema, jsonLd } from '@src/lib/seo';
 import {
@@ -108,15 +107,12 @@ export default async function ServicesPage(props: PageTypes) {
                     </li>
                   ))}
                 </ul>
-                {SERVICE_ASSETS[category.name] && (
-                  <figure className='border-edge mt-[3.6rem] border'>
-                    <StudioImage
-                      asset={SERVICE_ASSETS[category.name]}
-                      sizes='(min-width: 1024px) 62vw, 100vw'
-                      className='h-auto w-full'
-                    />
-                  </figure>
-                )}
+                {(() => {
+                  const slug = category.href.replace('/services/', '');
+                  return isServiceDiagramSlug(slug) ? (
+                    <ServiceDiagram slug={slug} className='mt-[3.6rem]' />
+                  ) : null;
+                })()}
                 <p className='mt-[3.2rem]'>
                   <Link
                     href={category.href}

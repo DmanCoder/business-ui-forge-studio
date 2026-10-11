@@ -5,9 +5,8 @@ import type { Metadata } from 'next';
 
 import Eyebrow from '@src/components/ui/Eyebrow';
 import Cta from '@src/components/ui/Cta';
-import StudioImage from '@src/components/media/StudioImage';
+import StudioArtefacts from '@src/components/about/StudioArtefacts';
 
-import { ABOUT_ARTEFACTS } from '@src/lib/assets';
 import { AUTHOR_NAME } from '@src/config/site';
 import { ALLOWED_LOCALES } from '@src/typescriptGlobals/constants';
 import { buildMetadata, webPageSchema, breadcrumbSchema, jsonLd } from '@src/lib/seo';
@@ -92,16 +91,7 @@ export default async function AboutPage(props: PageTypes) {
 
           {/* Studio artefacts + ledger — evidence of the work, never a fake portrait */}
           <div className='self-start lg:col-span-5 lg:col-start-8'>
-            <figure className='border-edge border'>
-              <StudioImage
-                asset={ABOUT_ARTEFACTS}
-                sizes='(min-width: 1024px) 40vw, 100vw'
-                className='h-auto w-full'
-              />
-              <figcaption className='meta-label border-edge border-t px-[1.6rem] py-[1.2rem]'>
-                Studio artefacts — the work, not a stock portrait
-              </figcaption>
-            </figure>
+            <StudioArtefacts />
             <dl className='mt-[3.2rem]'>
               {STUDIO_LEDGER.map((fact) => (
                 <div key={fact.label} className='border-edge border-t py-[2rem] last:border-b'>

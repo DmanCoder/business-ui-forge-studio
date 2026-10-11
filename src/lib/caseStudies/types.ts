@@ -17,6 +17,18 @@ export const CASE_STUDY_STATUS_LABELS: Record<CaseStudyStatus, string> = {
   concept: 'Concept project',
 };
 
+/**
+ * A generated figure drawn from the repository itself (never a mock-up):
+ * the design-system specimen or the real route tree. Only meaningful for
+ * the studio's own projects; client studies use real media instead.
+ */
+export type CaseStudyFigure = {
+  kind: 'system-crop' | 'route-tree';
+  caption: string;
+  /** Which numbered section the figure closes. */
+  placement: 'approach' | 'design-and-build';
+};
+
 export type CaseStudyMedia = {
   /** Public path (e.g. '/static/work/...') or absolute URL. */
   src: string;
@@ -122,6 +134,8 @@ export type CaseStudySource = {
   approach?: CaseStudyApproachItem[];
   /** Design and implementation story with real visuals and decisions. */
   designAndBuild?: InsightBlock[];
+  /** Repository-derived figures (system specimen, route tree). */
+  figures?: CaseStudyFigure[];
   /**
    * Verified qualitative outcomes. Labelled 'Outcomes' for finished work and
    * 'Current progress' for in-progress work.

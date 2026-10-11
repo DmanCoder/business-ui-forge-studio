@@ -65,3 +65,21 @@ export const PROCESS_CLOSING = {
   body: 'The process starts with a short enquiry. No commitment, no jargon.',
   cta: { label: 'Start a project', href: '/start-a-project' },
 };
+
+/** Process-map groups — the same vocabulary as the homepage rail. */
+export const PROCESS_MAP_GROUPS = [
+  { label: 'Plan & design', span: 3 },
+  { label: 'Build & launch', span: 3 },
+  { label: 'After launch', span: 1 },
+] as const;
+
+/** One short note per phase, in PROCESS_PHASES order. */
+export const PROCESS_MAP_NOTES = [
+  'Goals & scope',
+  'Plan & structure',
+  'Interface & system',
+  'Engineering',
+  'Quality & review',
+  'Go live',
+  'Care & iterate',
+] as const;

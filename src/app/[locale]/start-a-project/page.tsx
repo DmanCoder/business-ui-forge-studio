@@ -4,9 +4,7 @@ import type { Metadata } from 'next';
 
 import Eyebrow from '@src/components/ui/Eyebrow';
 import StartProjectForm from '@src/components/forms/StartProjectForm';
-import StudioImage from '@src/components/media/StudioImage';
 
-import { START_PROJECT_VISUAL } from '@src/lib/assets';
 import { CONTACT_EMAIL, RESPONSE_TIME } from '@src/config/site';
 import { ALLOWED_LOCALES } from '@src/typescriptGlobals/constants';
 import { buildMetadata, webPageSchema, breadcrumbSchema, jsonLd } from '@src/lib/seo';
@@ -99,15 +97,6 @@ export default async function StartProjectPage(props: PageTypes) {
               </p>
               <p className='text-muted mt-[1rem] text-[1.45rem] leading-[1.6]'>{START_INTRO.p2}</p>
             </div>
-
-            {/* Restrained supporting schematic — brief → recommendation → proposal */}
-            <figure className='border-edge mt-[2.4rem] hidden border lg:block'>
-              <StudioImage
-                asset={START_PROJECT_VISUAL}
-                sizes='(min-width: 1024px) 30vw, 100vw'
-                className='h-auto w-full'
-              />
-            </figure>
           </aside>
 
           <div className='lg:col-span-7 lg:col-start-6'>

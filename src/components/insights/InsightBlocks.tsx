@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
+import InsightFigure from '@src/components/insights/InsightFigure';
 import { normalizeInsightHref, slugify } from '@src/lib/insights';
 import type { InsightBlock } from '@src/lib/insights/types';
 
@@ -152,6 +153,9 @@ const renderBlock = (block: InsightBlock, index: number): React.ReactNode => {
           {block.x}
         </pre>
       );
+
+    case 'figure':
+      return <InsightFigure key={index} kind={block.x} caption={block.caption} />;
 
     case 'img':
       /* Images render only when a real asset exists — no placeholder panels */

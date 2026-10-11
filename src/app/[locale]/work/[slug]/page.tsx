@@ -11,6 +11,9 @@ import TestimonialQuote from '@src/components/work/TestimonialQuote';
 import RelatedWork from '@src/components/work/RelatedWork';
 import DemoBadge from '@src/components/work/DemoBadge';
 import DemoNotice from '@src/components/work/DemoNotice';
+import RouteTree from '@src/components/work/RouteTree';
+import SystemCrop from '@src/components/graphics/SystemCrop';
+import type { CaseStudyFigure } from '@src/lib/caseStudies/types';
 
 import { ALLOWED_LOCALES } from '@src/typescriptGlobals/constants';
 import {
@@ -125,6 +128,21 @@ export default async function CaseStudyPage(props: PageTypes) {
       : 'Outcomes';
   const verifiedMetrics = (study.verifiedMetrics ?? []).filter((metric) => metric.verified);
 
+  /** Repository-derived figures for a given section (studio projects only). */
+  const figuresFor = (placement: CaseStudyFigure['placement']) =>
+    (study.figures ?? [])
+      .filter((figure) => figure.placement === placement)
+      .map((figure) =>
+        figure.kind === 'system-crop' ? (
+          <figure key={figure.kind}>
+            <SystemCrop label='The system as shipped' />
+            <figcaption className='meta-label mt-[1.2rem]'>{figure.caption}</figcaption>
+          </figure>
+        ) : (
+          <RouteTree key={figure.kind} caption={figure.caption} />
+        )
+      );
+
   /** Numbered editorial sections — only sections with real content render. */
   const sections: { key: string; label: string; content: React.ReactNode }[] = [];
 
@@ -183,23 +201,47 @@ export default async function CaseStudyPage(props: PageTypes) {
               </p>
             </article>
           ))}
+          {figuresFor('approach').map((figure, index) => (
+            <div key={index} className='mt-[3.2rem]'>
+              {figure}
+            </div>
+          ))}
         </div>
       ),
     });
   }
 
-  if (study.designAndBuild?.length || study.gallery?.length) {
+  const designFigures = figuresFor('design-and-build');
+
+  if (study.designAndBuild?.length || study.gallery?.length || designFigures.length) {
     sections.push({
       key: 'design-and-build',
       label: 'Design & build',
       content: (
         <>
           {study.designAndBuild?.length ? <InsightBlocks blocks={study.designAndBuild} /> : null}
+          {designFigures.map((figure, index) => (
+            <div key={index} className='mt-[3.2rem]'>
+              {figure}
+            </div>
+          ))}
           {study.gallery?.length ? (
-            <div className='mt-[3.2rem] flex flex-col gap-[3.2rem]'>
-              {study.gallery.map((media) => (
-                <CaseStudyMediaFigure key={media.src} media={media} />
-              ))}
+            /* Landscape media spans eight columns, portrait (mobile) media four,
+               so a desktop + mobile capture reads as one responsive pair. */
+            <div className='mt-[3.2rem] grid gap-[3.2rem] md:grid-cols-12 md:items-start'>
+              {study.gallery.map((media) => {
+                const portrait = media.height > media.width;
+                return (
+                  <CaseStudyMediaFigure
+                    key={media.src}
+                    media={media}
+                    sizes={
+                      portrait ? '(min-width: 768px) 30vw, 100vw' : '(min-width: 768px) 60vw, 100vw'
+                    }
+                    className={portrait ? 'md:col-span-4' : 'md:col-span-8'}
+                  />
+                );
+              })}
             </div>
           ) : null}
         </>

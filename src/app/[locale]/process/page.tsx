@@ -4,9 +4,8 @@ import type { Metadata } from 'next';
 
 import Eyebrow from '@src/components/ui/Eyebrow';
 import Cta from '@src/components/ui/Cta';
-import StudioImage from '@src/components/media/StudioImage';
+import ProcessMap from '@src/components/process/ProcessMap';
 
-import { PROCESS_MAP } from '@src/lib/assets';
 import { ALLOWED_LOCALES } from '@src/typescriptGlobals/constants';
 import { buildMetadata, webPageSchema, breadcrumbSchema, jsonLd } from '@src/lib/seo';
 import {
@@ -60,15 +59,9 @@ export default async function ProcessPage(props: PageTypes) {
       {/* Process map — one schematic overview of all seven phases */}
       <section className='border-edge border-t'>
         <figure className='container-site section-pad'>
-          <div className='border-edge border'>
-            <StudioImage
-              asset={PROCESS_MAP}
-              sizes='(min-width: 1280px) 1200px, 100vw'
-              className='h-auto w-full'
-            />
-          </div>
+          <ProcessMap />
           <figcaption className='meta-label mt-[1.6rem]'>
-            The seven phases at a glance — design, development and care as one line.
+            The seven phases at a glance — plan, build and launch, then support, as one line.
           </figcaption>
         </figure>
       </section>

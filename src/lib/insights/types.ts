@@ -3,8 +3,13 @@
 // text strings use [label](href) and **bold** markdown-style syntax and are
 // parsed at render time (see components/insights/InsightBlocks.tsx).
 
+/** In-body editorial figures rendered by components/insights/InsightFigure.tsx. */
+export type InsightFigureKind =
+  'same-pages-different-scope' | 'ownership-layers' | 'three-architectures';
+
 export type InsightBlock =
   | { t: 'p'; x: string }
+  | { t: 'figure'; x: InsightFigureKind; caption?: string }
   | { t: 'h2'; x: string }
   | { t: 'h3'; x: string }
   | { t: 'ul'; x: string[] }

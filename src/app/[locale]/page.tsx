@@ -9,8 +9,8 @@ import LatestInsights from '@src/components/insights/LatestInsights';
 import ProcessRail from '@src/components/home/ProcessRail';
 import SelectedWork from '@src/components/work/SelectedWork';
 import TestimonialsSection from '@src/components/work/TestimonialsSection';
-import StudioImage from '@src/components/media/StudioImage';
-import { HOMEPAGE_SIGNATURE } from '@src/lib/assets';
+import HeroSpecimen from '@src/components/home/HeroSpecimen';
+import PlatformDecision from '@src/components/graphics/PlatformDecision';
 
 import { SITE_NAME, RESPONSE_TIME } from '@src/config/site';
 import { ALLOWED_LOCALES } from '@src/typescriptGlobals/constants';
@@ -62,29 +62,31 @@ export default async function HomePage(props: PageTypes) {
     <>
       {/* Hero — editorial statement + credits ledger */}
       <section className='container-site pt-[clamp(6.4rem,10vh,11.2rem)] pb-[clamp(4.8rem,8vh,8rem)]'>
-        <Eyebrow>{HERO.eyebrow}</Eyebrow>
-        <h1 className='font-display mt-[3.2rem] max-w-[14ch] text-[clamp(4.6rem,8.5vw,10.4rem)] leading-[1.02] font-normal tracking-[-0.015em]'>
-          Custom websites and digital products, <em className='text-blue'>designed and built</em>{' '}
-          around your business.
-        </h1>
-        <div className='mt-[4rem] grid gap-[3.2rem] lg:grid-cols-12'>
-          <p className='text-muted max-w-[52ch] text-[clamp(1.7rem,2vw,2rem)] leading-[1.6] lg:col-span-7'>
-            {HERO.lead}
-          </p>
-          <div className='flex flex-wrap items-start gap-[1.6rem] lg:col-span-5 lg:justify-end'>
-            <Cta href='/start-a-project' withArrow>
-              Start a project
-            </Cta>
-            <Cta href='/work' variant='secondary' withArrow>
-              View our work
-            </Cta>
+        {/* ≥1280px: copy in columns 1–7, the Design → Build specimen in 8–12.
+            Below that the specimen follows the copy at a controlled width. */}
+        <div className='xl:grid xl:grid-cols-12 xl:gap-x-[4.8rem]'>
+          <div className='xl:col-span-7'>
+            <Eyebrow>{HERO.eyebrow}</Eyebrow>
+            <h1 className='font-display mt-[3.2rem] max-w-[14ch] text-[clamp(4.6rem,8.5vw,10.4rem)] leading-[1.02] font-normal tracking-[-0.015em] xl:text-[clamp(4.6rem,6.6vw,9.2rem)]'>
+              Custom websites and digital products,{' '}
+              <em className='text-blue'>designed and built</em> around your business.
+            </h1>
+            <p className='text-muted mt-[4rem] max-w-[52ch] text-[clamp(1.7rem,2vw,2rem)] leading-[1.6]'>
+              {HERO.lead}
+            </p>
+            <div className='mt-[3.2rem] flex flex-wrap items-start gap-[1.6rem]'>
+              <Cta href='/start-a-project' withArrow>
+                Start a project
+              </Cta>
+              <Cta href='/work' variant='secondary' withArrow>
+                View our work
+              </Cta>
+            </div>
           </div>
-        </div>
 
-        {/* Signature visual — design precision + technical implementation as one system */}
-        <figure className='border-edge mt-[6.4rem] border'>
-          <StudioImage asset={HOMEPAGE_SIGNATURE} className='h-auto w-full' />
-        </figure>
+          {/* Design → Build specimen — the system this site is built from */}
+          <HeroSpecimen className='mt-[5.6rem] md:max-w-[88rem] xl:col-span-5 xl:mt-[4.6rem] xl:max-w-none xl:self-start' />
+        </div>
 
         {/* Studio facts */}
         <dl className='border-edge mt-[6.4rem] grid grid-cols-2 gap-y-[2.4rem] border-t pt-[2.4rem] md:grid-cols-4'>
@@ -236,6 +238,9 @@ export default async function HomePage(props: PageTypes) {
               ))}
             </ol>
           </div>
+
+          {/* How the recommendation is reached — inputs → criteria → one answer */}
+          <PlatformDecision className='mt-[1.6rem] lg:col-span-12' />
         </div>
       </section>
 

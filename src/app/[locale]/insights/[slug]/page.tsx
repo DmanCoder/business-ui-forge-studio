@@ -8,9 +8,8 @@ import InsightCard from '@src/components/insights/InsightCard';
 import InsightBlocks from '@src/components/insights/InsightBlocks';
 import TableOfContents from '@src/components/insights/TableOfContents';
 import ShareThisArticle from '@src/components/Shared/ShareThisArticle';
-import StudioImage from '@src/components/media/StudioImage';
 
-import { insightCoverFor } from '@src/lib/assets';
+import { insightOgImageFor } from '@src/lib/assets';
 import { AUTHOR_NAME } from '@src/config/site';
 import { ALLOWED_LOCALES } from '@src/typescriptGlobals/constants';
 import { buildMetadata, articleSchema, breadcrumbSchema, jsonLd, absoluteUrl } from '@src/lib/seo';
@@ -41,13 +40,13 @@ export async function generateMetadata(props: PageTypes): Promise<Metadata> {
   const article = await getArticleBySlug(slug);
   if (!article) notFound();
 
-  const cover = insightCoverFor(article.slug);
+  const ogImage = insightOgImageFor(article.slug);
   return buildMetadata({
     title: article.seoTitle,
     description: article.metaDescription,
     path: `/insights/${article.slug}`,
     ogType: 'article',
-    ogImage: cover ? absoluteUrl(cover.ogImage) : undefined,
+    ogImage: ogImage ? absoluteUrl(ogImage) : undefined,
   });
 }
 
@@ -63,7 +62,7 @@ export default async function InsightArticlePage(props: PageTypes) {
     getAdjacent(article),
   ]);
   const headings = extractH2s(article.blocks);
-  const cover = insightCoverFor(article.slug);
+  const ogImage = insightOgImageFor(article.slug);
 
   return (
     <>
@@ -105,20 +104,6 @@ export default async function InsightArticlePage(props: PageTypes) {
           </p>
         </div>
       </header>
-
-      {/* Editorial cover — original diagram artwork for the article */}
-      {cover && (
-        <figure className='container-site mt-[clamp(3.2rem,5vh,4.8rem)]'>
-          <div className='border-edge border'>
-            <StudioImage
-              asset={cover.hero}
-              priority
-              sizes='(min-width: 1280px) 1200px, 100vw'
-              className='h-auto w-full'
-            />
-          </div>
-        </figure>
-      )}
 
       <article className='container-prose pt-[1.6rem] pb-[clamp(4.8rem,8vh,8rem)]'>
         {/* Short answer — the article's conclusion for readers who skim */}
@@ -266,7 +251,7 @@ export default async function InsightArticlePage(props: PageTypes) {
               path: `/insights/${article.slug}`,
               datePublished: article.date,
               dateModified: article.updated,
-              image: cover ? absoluteUrl(cover.ogImage) : undefined,
+              image: ogImage ? absoluteUrl(ogImage) : undefined,
             })
           ),
         }}

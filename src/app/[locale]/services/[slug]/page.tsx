@@ -5,6 +5,7 @@ import type { Metadata } from 'next';
 
 import Cta from '@src/components/ui/Cta';
 import Eyebrow from '@src/components/ui/Eyebrow';
+import ServiceDiagram, { isServiceDiagramSlug } from '@src/components/services/ServiceDiagram';
 import { ALLOWED_LOCALES } from '@src/typescriptGlobals/constants';
 import { SERVICE_PAGES, getServicePage } from '@src/content/service-pages';
 import {
@@ -85,6 +86,13 @@ export default async function ServicePage(props: ServicePageProps) {
           </div>
         </div>
       </header>
+
+      {/* The same diagram the visitor saw on the services index */}
+      {isServiceDiagramSlug(service.slug) && (
+        <section className='container-site pb-[clamp(4.8rem,8vh,8rem)]'>
+          <ServiceDiagram slug={service.slug} />
+        </section>
+      )}
 
       <section className='bg-ink text-white'>
         <div className='container-site grid gap-[4rem] py-[clamp(5.6rem,9vh,9.6rem)] lg:grid-cols-12'>

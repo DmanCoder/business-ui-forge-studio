@@ -16,8 +16,8 @@
 export const P = {
   paper: '#faf9f6',
   ink: '#0b1220',
-  blue: '#1e6fff',
-  blueDeep: '#1554cb',
+  blue: '#1554cb', // --color-blue, the one accent used in the UI
+  blueDeep: '#0f3f9e',
   blueBright: '#4c8bff',
   blueSoft: '#7fa8ff',
   blueWash: '#e8f0ff', // --color-primary--light
@@ -29,12 +29,27 @@ export const P = {
   ink70: '#3a4150',
 };
 
-/** Font stacks that render identically without web fonts loaded. */
+/**
+ * Font stacks: the site's real faces first (bundled in scripts/fonts/ and
+ * registered through fonts.conf for the rasteriser), then system fallbacks.
+ */
 export const F = {
-  serif: "Georgia, 'Times New Roman', serif",
-  sans: "'Helvetica Neue', Helvetica, Arial, sans-serif",
+  serif: "'Instrument Serif', Georgia, 'Times New Roman', serif",
+  sans: "'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif",
   mono: "'SF Mono', ui-monospace, Menlo, Consolas, monospace",
 };
+
+/**
+ * The brand mark — a forge frame (U) with the cobalt bar. Geometry mirrors
+ * src/components/brand/Logo.tsx exactly, scaled to `s` px.
+ */
+export function mark(x, y, s = 24, { body = P.ink, bar = P.blue } = {}) {
+  const k = s / 100;
+  return [
+    `  <path transform="translate(${x} ${y}) scale(${k})" fill="${body}" d="M20 20V75L25 80H75L80 75V20H100V86L86 100H14L0 86V20H20Z"/>`,
+    `  <path transform="translate(${x} ${y}) scale(${k})" fill="${bar}" d="M40 20 60 0V60H40Z"/>`,
+  ].join('\n');
+}
 
 const esc = (s) =>
   String(s)

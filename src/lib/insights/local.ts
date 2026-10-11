@@ -59,6 +59,10 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
         x: 'The factors that move the price',
       },
       {
+        t: 'figure',
+        x: 'same-pages-different-scope',
+      },
+      {
         t: 'h3',
         x: 'Scope: how many pages, how many layouts',
       },
@@ -176,6 +180,10 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       {
         t: 'quote',
         x: 'If your website vanished tomorrow, whose name is on everything needed to bring it back?',
+      },
+      {
+        t: 'figure',
+        x: 'ownership-layers',
       },
       {
         t: 'h2',
@@ -350,6 +358,10 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       {
         t: 'p',
         x: 'Hold those three in mind and the comparison below becomes much easier to apply to your own situation.',
+      },
+      {
+        t: 'figure',
+        x: 'three-architectures',
       },
       {
         t: 'h2',

@@ -32,15 +32,16 @@ const UI_FORGE_STUDIO_SITE: CaseStudySource = {
   technologies: ['Next.js App Router', 'React Server Components', 'TypeScript', 'Tailwind CSS'],
   heroMedia: {
     src: '/static/work/ui-forge-studio-home-desktop.png',
-    alt: 'UI Forge Studio homepage at desktop width: the serif hero headline “Websites and digital products forged around your business”, plain-language lead, and Start a project call to action.',
-    caption: 'The homepage hero — display serif statement, plain-language lead, one clear action.',
+    alt: 'UI Forge Studio homepage at 1440 pixels wide: the serif headline “Custom websites and digital products, designed and built around your business”, the plain-language lead and two calls to action, beside the Design → Build specimen of the site’s own system.',
+    caption:
+      'The homepage at 1440px — display serif statement, plain-language lead, one clear action, and the system specimen beside it.',
     width: 2880,
     height: 1800,
   },
   gallery: [
     {
       src: '/static/work/ui-forge-studio-insights-desktop.png',
-      alt: 'An Insights article page at desktop width, showing the editorial article header with category label, date, reading time and author line above the article body.',
+      alt: 'The article “Website cost in Australia: what actually affects the price?” at desktop width: category label, dates and reading time, the serif headline, the author line and the short-answer summary.',
       caption:
         'The same editorial system carries the Insights articles: ledger metadata, controlled measure, no decoration.',
       width: 2880,
@@ -48,10 +49,24 @@ const UI_FORGE_STUDIO_SITE: CaseStudySource = {
     },
     {
       src: '/static/work/ui-forge-studio-home-mobile.png',
-      alt: 'UI Forge Studio homepage on a 375-pixel-wide mobile viewport, with the hero headline and calls to action stacked in a single column.',
+      alt: 'UI Forge Studio homepage on a 375-pixel-wide mobile viewport: the headline, lead and calls to action stacked in a single column — the first screen a phone visitor sees.',
       caption: 'Mobile is designed, not shrunk — hierarchy and reading order are re-set at 375px.',
       width: 750,
       height: 1624,
+    },
+  ],
+  figures: [
+    {
+      kind: 'route-tree',
+      placement: 'approach',
+      caption:
+        'Content architecture — every route, read from the same typed modules the pages use.',
+    },
+    {
+      kind: 'system-crop',
+      placement: 'design-and-build',
+      caption:
+        'The system as shipped — type scale, palette and tokens printed from the stylesheet values.',
     },
   ],
   featured: true,
@@ -157,7 +172,7 @@ const UI_FORGE_STUDIO_SITE: CaseStudySource = {
   ],
   published: true,
   publishedAt: '2026-07-15',
-  updatedAt: '2026-10-07',
+  updatedAt: '2026-10-08',
 };
 
 export const LOCAL_CASE_STUDIES: CaseStudySource[] = [UI_FORGE_STUDIO_SITE];
