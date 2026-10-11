@@ -1,0 +1,74 @@
+{
+  "enabledPlugins": {
+    "expo@claude-plugins-official": true
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|Write|NotebookEdit|Grep|Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/no-env-access.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "deny": [
+      "Read(/node_modules/**)",
+      "Read(/.next/**)",
+      "Read(/dist/**)",
+      "Read(/build/**)",
+      "Read(/coverage/**)",
+      "Read(/.turbo/**)",
+      "Read(/.vercel/**)",
+      "Read(/.cache/**)",
+      "Read(/out/**)",
+
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(**/.env)",
+      "Read(**/.env.*)",
+      "Edit(**/.env)",
+      "Edit(**/.env.*)",
+      "Write(**/.env)",
+      "Write(**/.env.*)",
+
+      "Bash(cat .env:*)",
+      "Bash(cat .env.*:*)",
+
+      "Bash(*.next*)",
+      "Bash(*node_modules*)",
+
+      "Edit(docs/decisions/**)",
+      "Write(docs/decisions/**)",
+      "Edit(docs/acceptance/**)",
+      "Write(docs/acceptance/**)",
+      "Write(docs/reviews/**)",
+
+      "Bash(git commit:*)",
+      "Bash(git merge:*)",
+      "Bash(git rebase:*)",
+      "Bash(git cherry-pick:*)",
+      "Bash(git revert:*)",
+      "Bash(git am:*)",
+      "Bash(git push:*)",
+      "Bash(git tag:*)",
+      "Bash(gh pr merge:*)",
+      "Bash(gh pr create:*)"
+    ],
+    "allow": [
+      "Read(./env.example)",
+
+      "Bash(git status)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch)",
+      "Bash(git blame:*)"
+    ]
+  },
+  "includeCoAuthoredBy": false
+}
