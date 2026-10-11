@@ -9,7 +9,7 @@ export const SITE_DESCRIPTION =
   'Founder-led web design and development studio, based in Australia and working worldwide: custom websites, Shopify, HubSpot, web apps, mobile apps and support.';
 
 /** The brand's production origin. Never a preview or local hostname. */
-export const PRODUCTION_ORIGIN = 'https://uiforgestudio.com.au';
+export const PRODUCTION_ORIGIN = 'https://uiforgestudio.com';
 
 const isLocalOrigin = (value: string) => /localhost|127\.0\.0\.1|0\.0\.0\.0/.test(value);
 

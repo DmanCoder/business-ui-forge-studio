@@ -19,18 +19,18 @@ and clear contact details.
 The terms below are intent clusters, not instructions to repeat exact phrases. Page copy uses the
 language naturally and includes platform terms only where they help a buyer make a decision.
 
-| Cluster | Intent | Primary page | Supporting page or content |
-| --- | --- | --- | --- |
-| web design agency Australia; website design Australia; web development Australia; custom website development | Broad commercial investigation | `/` and `/services/web-design-development` | `/services`, cost and platform articles |
-| website redesign Australia; website migration; improve an existing website | Commercial problem/solution | `/services/website-redesign` | ownership/hosting article, `/process` |
-| Shopify developer Australia; Shopify web design; e-commerce website development | Platform-specific commercial | `/services/shopify-development` | future Shopify planning and migration articles |
-| HubSpot website development Australia; HubSpot CMS/Content Hub developer; HubSpot landing pages | Platform-specific commercial | `/services/hubspot-websites` | future HubSpot redesign and module articles |
-| web application development Australia; React/Next.js web app development; customer portal development | Product commercial | `/services/web-app-development` | `/process`, future build-vs-buy article |
-| React Native app development Australia; cross-platform mobile app development | Product commercial | `/services/mobile-app-development` | future MVP and app-planning articles |
-| website maintenance Australia; website support; ongoing website improvements | Ongoing-service commercial | `/services/website-maintenance` | ownership/hosting article |
-| website cost Australia; what affects a website quote | Informational with commercial transition | `/insights/what-affects-the-cost-of-a-website` | web-design service, `/process` |
-| website ownership; domains and hosting; avoiding website lock-in | Informational/trust | `/insights/website-ownership-and-hosting-explained` | maintenance service, `/about` |
-| custom website vs WordPress vs Webflow | Comparative investigation | `/insights/custom-website-wordpress-or-webflow` | web-design service |
+| Cluster                                                                                                      | Intent                                   | Primary page                                        | Supporting page or content                     |
+| ------------------------------------------------------------------------------------------------------------ | ---------------------------------------- | --------------------------------------------------- | ---------------------------------------------- |
+| web design agency Australia; website design Australia; web development Australia; custom website development | Broad commercial investigation           | `/` and `/services/web-design-development`          | `/services`, cost and platform articles        |
+| website redesign Australia; website migration; improve an existing website                                   | Commercial problem/solution              | `/services/website-redesign`                        | ownership/hosting article, `/process`          |
+| Shopify developer Australia; Shopify web design; e-commerce website development                              | Platform-specific commercial             | `/services/shopify-development`                     | future Shopify planning and migration articles |
+| HubSpot website development Australia; HubSpot CMS/Content Hub developer; HubSpot landing pages              | Platform-specific commercial             | `/services/hubspot-websites`                        | future HubSpot redesign and module articles    |
+| web application development Australia; React/Next.js web app development; customer portal development        | Product commercial                       | `/services/web-app-development`                     | `/process`, future build-vs-buy article        |
+| React Native app development Australia; cross-platform mobile app development                                | Product commercial                       | `/services/mobile-app-development`                  | future MVP and app-planning articles           |
+| website maintenance Australia; website support; ongoing website improvements                                 | Ongoing-service commercial               | `/services/website-maintenance`                     | ownership/hosting article                      |
+| website cost Australia; what affects a website quote                                                         | Informational with commercial transition | `/insights/what-affects-the-cost-of-a-website`      | web-design service, `/process`                 |
+| website ownership; domains and hosting; avoiding website lock-in                                             | Informational/trust                      | `/insights/website-ownership-and-hosting-explained` | maintenance service, `/about`                  |
+| custom website vs WordPress vs Webflow                                                                       | Comparative investigation                | `/insights/custom-website-wordpress-or-webflow`     | web-design service                             |
 
 Landing-page design and WordPress/Webflow development are not separate service pages yet. They
 can be addressed inside the broader website service until the studio has enough distinct offer,
@@ -98,7 +98,7 @@ Anchor wording should describe the destination; repeated generic “learn more�
 
 ## Technical search rules
 
-- Canonicals use `https://uiforgestudio.com.au` as the safe repository fallback and can be
+- Canonicals use `https://uiforgestudio.com` as the safe repository fallback and can be
   overridden by the production environment variable.
 - The sitemap contains indexable static routes, seven services, published Insights articles and
   eligible case studies—not legal, utility, thank-you or thin category pages.

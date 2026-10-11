@@ -27,7 +27,7 @@ const LegalPage: React.FC<LegalPageProps> = ({ title, intro, updated, sections }
       <dl className='border-edge mt-[3.2rem] grid gap-[2.4rem] border-t pt-[2rem] sm:grid-cols-2'>
         <div>
           <dt className='meta-label'>Applies to</dt>
-          <dd className='mt-[0.6rem] text-[1.45rem]'>uiforgestudio.com.au and this website</dd>
+          <dd className='mt-[0.6rem] text-[1.45rem]'>uiforgestudio.com and this website</dd>
         </div>
         <div>
           <dt className='meta-label'>Last updated</dt>

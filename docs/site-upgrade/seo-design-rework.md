@@ -13,7 +13,7 @@ Brief: `ui-forge-seo-design-rework.md` (supplied by the owner)
   variants exist and none were invented.
 - `BASE_URL` (`src/config/site.ts`) ignores a `localhost` value outside `next dev`. The Netlify
   preview was observed emitting `<link rel="canonical" href="http://localhost:3000">`; a hosted
-  build now falls back to `https://uiforgestudio.com.au`.
+  build now falls back to `https://uiforgestudio.com`.
 - Site-wide JSON-LD is `Organization` (was `ProfessionalService`, a LocalBusiness subtype that
   expects a postal address the remote-first studio does not publish). `WebSite`, `WebPage`,
   `Service`, `BreadcrumbList`, `BlogPosting` and `CreativeWork` are unchanged in shape.
@@ -23,7 +23,7 @@ Brief: `ui-forge-seo-design-rework.md` (supplied by the owner)
 - Staging: `ui-forge-studio-agency.netlify.app` serves `noindex, nofollow` (meta + header) and
   `Disallow: /` because `NEXT_PUBLIC_ENVIRONMENT` is not `production` there. That is correct for a
   preview host. Production must set `NEXT_PUBLIC_ENVIRONMENT=production` and
-  `NEXT_PUBLIC_BASE_URL=https://uiforgestudio.com.au` in the Netlify production context only.
+  `NEXT_PUBLIC_BASE_URL=https://uiforgestudio.com` in the Netlify production context only.
 
 ### Copy and metadata
 

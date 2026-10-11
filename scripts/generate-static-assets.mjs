@@ -19,7 +19,19 @@
 import { writeFileSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, resolve } from 'node:path';
-import { P, F, svg, rect, line, circle, text, label, forgeSpark, registration, mark } from './asset-lib.mjs';
+import {
+  P,
+  F,
+  svg,
+  rect,
+  line,
+  circle,
+  text,
+  label,
+  forgeSpark,
+  registration,
+  mark,
+} from './asset-lib.mjs';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = (p) => resolve(ROOT, 'public/static', p);
@@ -34,13 +46,18 @@ function emit(path, markup) {
   written.push(path);
 }
 
-
 /** A labelled flow node (box + centred mono label). */
 function node(x, y, w, h, str, { fill = P.white, stroke = P.ink, accent = false, textFill } = {}) {
   const tc = textFill || (accent ? P.blueDeep : P.ink);
   return [
     rect(x, y, w, h, fill, { stroke: accent ? P.blue : stroke, sw: 2, r: 6 }),
-    text(x + w / 2, y + h / 2 + 4, str, { font: F.mono, size: 13, fill: tc, anchor: 'middle', ls: 0.5 }),
+    text(x + w / 2, y + h / 2 + 4, str, {
+      font: F.mono,
+      size: 13,
+      fill: tc,
+      anchor: 'middle',
+      ls: 0.5,
+    }),
   ].join('\n');
 }
 
@@ -52,7 +69,6 @@ function connector(x1, y, x2, { stroke = P.edge } = {}) {
   ].join('\n');
 }
 
-
 // --- 5. INSIGHTS OPEN GRAPH COVERS ----------------------------------------
 // One shared editorial family; each article gets a distinct diagram that
 // restates a claim the article makes, with no invented figures. Only the
@@ -61,7 +77,13 @@ function connector(x1, y, x2, { stroke = P.edge } = {}) {
 function brandMark(x, y, { onDark = false } = {}) {
   return [
     mark(x, y - 11, 22, { body: onDark ? P.white : P.ink, bar: P.blue }),
-    text(x + 34, y + 5, 'UI FORGE STUDIO', { font: F.sans, size: 14, fill: onDark ? P.white : P.ink, ls: 2, weight: 600 }),
+    text(x + 34, y + 5, 'UI FORGE STUDIO', {
+      font: F.sans,
+      size: 14,
+      fill: onDark ? P.white : P.ink,
+      ls: 2,
+      weight: 600,
+    }),
   ].join('\n');
 }
 
@@ -91,7 +113,9 @@ function costDiagram(x, y, w) {
 }
 
 function ownershipDiagram(x, y, w) {
-  const parts = [label(x, y, 'THE FIVE THINGS THAT MAKE UP A WEBSITE', { fill: P.muted, size: 12 })];
+  const parts = [
+    label(x, y, 'THE FIVE THINGS THAT MAKE UP A WEBSITE', { fill: P.muted, size: 12 }),
+  ];
   const layers = [
     ['Domain', 'your business, always'],
     ['Hosting', 'yours, or managed with a handover'],
@@ -104,9 +128,23 @@ function ownershipDiagram(x, y, w) {
     const ly = y + 18 + i * (sh + 6);
     const accent = i === 0;
     parts.push(rect(x, ly, w, sh, P.white, { stroke: accent ? P.blue : P.edge, sw: 1.5 }));
-    parts.push(text(x + 18, ly + sh / 2 + 4, String(i + 1).padStart(2, '0'), { font: F.sans, size: 12, fill: P.blue, weight: 600 }));
+    parts.push(
+      text(x + 18, ly + sh / 2 + 4, String(i + 1).padStart(2, '0'), {
+        font: F.sans,
+        size: 12,
+        fill: P.blue,
+        weight: 600,
+      })
+    );
     parts.push(text(x + 52, ly + sh / 2 + 6, name, { font: F.serif, size: 19, fill: P.ink }));
-    parts.push(text(x + w - 16, ly + sh / 2 + 5, note, { font: F.sans, size: 13, fill: P.muted, anchor: 'end' }));
+    parts.push(
+      text(x + w - 16, ly + sh / 2 + 5, note, {
+        font: F.sans,
+        size: 13,
+        fill: P.muted,
+        anchor: 'end',
+      })
+    );
   });
   return parts.join('\n');
 }
@@ -123,11 +161,21 @@ function platformDiagram(x, y, w) {
   cols.forEach(([name, slabs, accent], c) => {
     const cx = x + c * (cw + gap);
     parts.push(rect(cx, y + 20, cw, 38, P.white, { stroke: accent ? P.blue : P.ink, sw: 1.5 }));
-    parts.push(text(cx + cw / 2, y + 45, name, { font: F.sans, size: 15, fill: accent ? P.blue : P.ink, anchor: 'middle', weight: 600 }));
+    parts.push(
+      text(cx + cw / 2, y + 45, name, {
+        font: F.sans,
+        size: 15,
+        fill: accent ? P.blue : P.ink,
+        anchor: 'middle',
+        weight: 600,
+      })
+    );
     slabs.forEach((s, i) => {
       const sy = y + 66 + i * 44;
       parts.push(rect(cx, sy, cw, 36, P.white, { stroke: P.line, sw: 1.5 }));
-      parts.push(text(cx + cw / 2, sy + 23, s, { font: F.sans, size: 13, fill: P.muted, anchor: 'middle' }));
+      parts.push(
+        text(cx + cw / 2, sy + 23, s, { font: F.sans, size: 13, fill: P.muted, anchor: 'middle' })
+      );
     });
   });
   return parts.join('\n');
@@ -140,21 +188,45 @@ function insightCover(W, H, { category, titleLines, diagram }) {
   parts.push(label(64, 158, `INSIGHT · ${category.toUpperCase()}`, { fill: P.blue, size: 13 }));
   const tSize = 44;
   const tGap = tSize + 8;
-  titleLines.forEach((l, i) => parts.push(text(64, 206 + i * tGap, l, { font: F.serif, size: tSize, fill: P.ink })));
+  titleLines.forEach((l, i) =>
+    parts.push(text(64, 206 + i * tGap, l, { font: F.serif, size: tSize, fill: P.ink }))
+  );
   const titleBottom = 206 + (titleLines.length - 1) * tGap + 24;
   parts.push(line(64, titleBottom, W - 64, titleBottom, P.line, 1.5));
   parts.push(diagram(64, titleBottom + 40, W - 128));
-  parts.push(label(64, H - 40, 'uiforgestudio.com.au', { fill: P.muted, size: 12 }));
+  parts.push(label(64, H - 40, 'uiforgestudio.com', { fill: P.muted, size: 12 }));
   parts.push(label(W - 64, H - 40, 'INSIGHTS', { fill: P.mutedDark, size: 11, anchor: 'end' }));
-  return svg({ w: W, h: H, title: `UI Forge Studio insight cover — ${titleLines.join(' ')}.`, children: parts.join('\n') });
+  return svg({
+    w: W,
+    h: H,
+    title: `UI Forge Studio insight cover — ${titleLines.join(' ')}.`,
+    children: parts.join('\n'),
+  });
 }
 
 const INSIGHTS = [
-  { key: 'website-cost', category: 'Websites', title: ['What affects the', 'cost of a website'], diagram: costDiagram, tag: 'INS / COST' },
-  { key: 'ownership-hosting', category: 'Ownership', title: ['Website ownership', '& hosting explained'], diagram: ownershipDiagram, tag: 'INS / OWN' },
-  { key: 'platform-comparison', category: 'Websites', title: ['Custom, WordPress', 'or Webflow'], diagram: platformDiagram, tag: 'INS / PLAT' },
+  {
+    key: 'website-cost',
+    category: 'Websites',
+    title: ['What affects the', 'cost of a website'],
+    diagram: costDiagram,
+    tag: 'INS / COST',
+  },
+  {
+    key: 'ownership-hosting',
+    category: 'Ownership',
+    title: ['Website ownership', '& hosting explained'],
+    diagram: ownershipDiagram,
+    tag: 'INS / OWN',
+  },
+  {
+    key: 'platform-comparison',
+    category: 'Websites',
+    title: ['Custom, WordPress', 'or Webflow'],
+    diagram: platformDiagram,
+    tag: 'INS / PLAT',
+  },
 ];
-
 
 // --- 7. DEMO PROJECT GALLERIES --------------------------------------------
 // Original fictional interface compositions for the clearly-labelled demo
@@ -163,13 +235,33 @@ const INSIGHTS = [
 
 function themeOf(dark) {
   return dark
-    ? { bg: '#0d1526', page: '#101a2c', stroke: '#22304a', ink: '#ffffff', muted: '#8fa3c4', card: '#16233b', wash: '#1b2942', stamp: '#8fa3c4' }
-    : { bg: P.paper, page: P.white, stroke: P.edge, ink: P.ink, muted: P.mutedDark, card: P.paper, wash: '#eef1f4', stamp: '#6b675c' };
+    ? {
+        bg: '#0d1526',
+        page: '#101a2c',
+        stroke: '#22304a',
+        ink: '#ffffff',
+        muted: '#8fa3c4',
+        card: '#16233b',
+        wash: '#1b2942',
+        stamp: '#8fa3c4',
+      }
+    : {
+        bg: P.paper,
+        page: P.white,
+        stroke: P.edge,
+        ink: P.ink,
+        muted: P.mutedDark,
+        card: P.paper,
+        wash: '#eef1f4',
+        stamp: '#6b675c',
+      };
 }
 
 function demoFrame(parts, t, x, y, w, h, brand, accent) {
   parts.push(rect(x, y, w, h, t.page, { stroke: t.stroke, sw: 2 }));
-  parts.push(rect(x, y, w, 44, t.bg === P.paper ? P.paper : '#0b1424', { stroke: t.stroke, sw: 2 }));
+  parts.push(
+    rect(x, y, w, 44, t.bg === P.paper ? P.paper : '#0b1424', { stroke: t.stroke, sw: 2 })
+  );
   parts.push(circle(x + 26, y + 22, 6, t.stroke));
   parts.push(circle(x + 48, y + 22, 6, t.stroke));
   parts.push(circle(x + 70, y + 22, 6, t.stroke));
@@ -193,16 +285,31 @@ function demoDesktop(cfg, kind) {
   if (kind === 'app') {
     // application shell — sidebar + workflow + placeholder content (no metrics)
     parts.push(rect(x, y + 120, 190, h - 120, t.card, { stroke: t.stroke, sw: 1.5 }));
-    for (let i = 0; i < 6; i++) parts.push(rect(x + 28, y + 160 + i * 42, 130, 12, i === 1 ? cfg.accent : t.stroke, { r: 6 }));
+    for (let i = 0; i < 6; i++)
+      parts.push(
+        rect(x + 28, y + 160 + i * 42, 130, 12, i === 1 ? cfg.accent : t.stroke, { r: 6 })
+      );
     const wx = x + 240;
     parts.push(text(wx, y + 190, 'Training overview', { font: F.serif, size: 30, fill: t.ink }));
-    parts.push(node(wx, y + 220, 150, 44, 'PLAN', { fill: t.page, stroke: cfg.accent, accent: true }));
+    parts.push(
+      node(wx, y + 220, 150, 44, 'PLAN', { fill: t.page, stroke: cfg.accent, accent: true })
+    );
     parts.push(connector(wx + 150, y + 242, wx + 210, { stroke: t.stroke }));
-    parts.push(node(wx + 210, y + 220, 150, 44, 'SESSION', { fill: t.page, stroke: t.muted, textFill: t.ink }));
+    parts.push(
+      node(wx + 210, y + 220, 150, 44, 'SESSION', {
+        fill: t.page,
+        stroke: t.muted,
+        textFill: t.ink,
+      })
+    );
     parts.push(connector(wx + 360, y + 242, wx + 420, { stroke: t.stroke }));
-    parts.push(node(wx + 420, y + 220, 150, 44, 'REVIEW', { fill: t.page, stroke: t.muted, textFill: t.ink }));
+    parts.push(
+      node(wx + 420, y + 220, 150, 44, 'REVIEW', { fill: t.page, stroke: t.muted, textFill: t.ink })
+    );
     for (let i = 0; i < 3; i++) {
-      parts.push(rect(wx, y + 320 + i * 110, 1000, 90, t.card, { stroke: t.stroke, sw: 1.5, r: 6 }));
+      parts.push(
+        rect(wx, y + 320 + i * 110, 1000, 90, t.card, { stroke: t.stroke, sw: 1.5, r: 6 })
+      );
       parts.push(rect(wx + 28, y + 348 + i * 110, 220, 12, t.ink, { r: 6 }));
       parts.push(rect(wx + 28, y + 372 + i * 110, 420, 8, t.muted, { r: 4 }));
       parts.push(rect(wx + 900, y + 348 + i * 110, 60, 34, t.wash, { r: 6 }));
@@ -212,12 +319,20 @@ function demoDesktop(cfg, kind) {
     parts.push(rect(cx, y + 230, 560, 10, t.muted, { r: 5 }));
     // steps
     for (let i = 0; i < 3; i++) {
-      parts.push(circle(cx + 20 + i * 90, y + 300, 18, i === 0 ? cfg.accent : t.card, { stroke: t.stroke, sw: 2 }));
+      parts.push(
+        circle(cx + 20 + i * 90, y + 300, 18, i === 0 ? cfg.accent : t.card, {
+          stroke: t.stroke,
+          sw: 2,
+        })
+      );
     }
     parts.push(line(cx + 38, y + 300, cx + 200, y + 300, t.stroke, 2));
     // form panel
     parts.push(rect(cx, y + 360, 620, 380, t.card, { stroke: t.stroke, sw: 1.5, r: 6 }));
-    for (let i = 0; i < 4; i++) parts.push(rect(cx + 30, y + 400 + i * 66, 560, 40, t.page, { stroke: t.stroke, sw: 1.5, r: 4 }));
+    for (let i = 0; i < 4; i++)
+      parts.push(
+        rect(cx + 30, y + 400 + i * 66, 560, 40, t.page, { stroke: t.stroke, sw: 1.5, r: 4 })
+      );
     parts.push(rect(cx + 30, y + 668, 200, 44, cfg.accent, { r: 22 }));
     // summary card
     parts.push(rect(cx + 700, y + 360, 500, 380, t.wash, { r: 6 }));
@@ -262,7 +377,9 @@ function demoMobile(cfg) {
     const h = 720;
     parts.push(rect(x, y, w, h, t.page, { stroke: t.stroke, sw: 2, r: 30 }));
     parts.push(rect(x + w / 2 - 30, y + 16, 60, 8, t.stroke, { r: 4 }));
-    parts.push(text(x + 22, y + 66, cfg.brand.split(' ')[0], { font: F.serif, size: 20, fill: t.ink }));
+    parts.push(
+      text(x + 22, y + 66, cfg.brand.split(' ')[0], { font: F.serif, size: 20, fill: t.ink })
+    );
     parts.push(rect(x + w - 60, y + 50, 40, 16, cfg.accent, { r: 8 }));
     parts.push(rect(x + 22, y + 92, w - 44, i === 1 ? 300 : 150, t.wash, { r: 6 }));
     if (i === 1) parts.push(forgeSpark(x + w / 2, y + 240, 18, cfg.accent));
@@ -272,7 +389,9 @@ function demoMobile(cfg) {
     parts.push(rect(x + 22, oy + 42, w - 60, 8, t.muted, { r: 4 }));
     parts.push(rect(x + 22, y + h - 90, w - 44, 40, cfg.accent, { r: 20 }));
     parts.push(line(x, y + h - 42, x + w, y + h - 42, t.stroke, 1.5));
-    [0.25, 0.5, 0.75].forEach((f, k) => parts.push(circle(x + w * f, y + h - 22, 5, k === 0 ? cfg.accent : t.stroke)));
+    [0.25, 0.5, 0.75].forEach((f, k) =>
+      parts.push(circle(x + w * f, y + h - 22, 5, k === 0 ? cfg.accent : t.stroke))
+    );
   });
   parts.push(demoStampT(parts, t, 60, 958, cfg.stamp));
   return svg({ w: W, h: H, title: cfg.altMobile, children: parts.join('\n') });
@@ -289,7 +408,13 @@ function demoDetail(cfg) {
   parts.push(line(96, 202, W - 96, 202, t.stroke, 1.5));
   // swatches
   const sy = 250;
-  [[cfg.accent, 'ACCENT'], [t.ink, 'INK'], [t.muted, 'MUTED'], [t.wash, 'WASH'], [t.stroke, 'LINE']].forEach(([c, n], i) => {
+  [
+    [cfg.accent, 'ACCENT'],
+    [t.ink, 'INK'],
+    [t.muted, 'MUTED'],
+    [t.wash, 'WASH'],
+    [t.stroke, 'LINE'],
+  ].forEach(([c, n], i) => {
     parts.push(rect(96 + i * 130, sy, 100, 100, c, { stroke: t.stroke, sw: 1.5, r: 4 }));
     parts.push(label(96 + i * 130, sy + 128, n, { fill: t.muted, size: 11 }));
   });
@@ -305,7 +430,16 @@ function demoDetail(cfg) {
     const yy = cy + Math.floor(i / 3) * 240;
     parts.push(rect(cx, yy, 380, 200, t.page, { stroke: t.stroke, sw: 1.5, r: 6 }));
     parts.push(label(cx + 24, yy + 34, c.toUpperCase(), { fill: t.muted, size: 11 }));
-    parts.push(rect(cx + 24, yy + 60, 160, 44, i % 2 ? 'none' : cfg.accent, i % 2 ? { r: 22, stroke: cfg.accent, sw: 2 } : { r: 22 }));
+    parts.push(
+      rect(
+        cx + 24,
+        yy + 60,
+        160,
+        44,
+        i % 2 ? 'none' : cfg.accent,
+        i % 2 ? { r: 22, stroke: cfg.accent, sw: 2 } : { r: 22 }
+      )
+    );
     parts.push(rect(cx + 24, yy + 128, 320, 10, t.muted, { r: 5 }));
     parts.push(rect(cx + 24, yy + 152, 260, 10, t.stroke, { r: 5 }));
   });
@@ -316,7 +450,14 @@ function demoDetail(cfg) {
 
 // demo stamp respecting theme (returns '' — pushes into parts)
 function demoStampT(parts, t, x, y, color) {
-  parts.push(text(x, y, 'DEMO — FICTIONAL BRAND · NOT CLIENT WORK', { font: F.sans, size: 22, fill: color, ls: 4 }));
+  parts.push(
+    text(x, y, 'DEMO — FICTIONAL BRAND · NOT CLIENT WORK', {
+      font: F.sans,
+      size: 22,
+      fill: color,
+      ls: 4,
+    })
+  );
   return '';
 }
 
@@ -378,7 +519,10 @@ const DEMOS = [
 
 // --- render ----------------------------------------------------------------
 for (const ins of INSIGHTS) {
-  emit(`insights/${ins.key}-og.svg`, insightCover(1200, 630, { category: ins.category, titleLines: ins.title, diagram: ins.diagram }));
+  emit(
+    `insights/${ins.key}-og.svg`,
+    insightCover(1200, 630, { category: ins.category, titleLines: ins.title, diagram: ins.diagram })
+  );
 }
 for (const d of DEMOS) {
   d.kinds.forEach((k, i) => {
