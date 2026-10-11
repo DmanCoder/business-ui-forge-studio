@@ -36,8 +36,9 @@ const Footer: React.FC = () => (
             <Logo variant='white' height={5.2} title='' />
           </Link>
           <p className='text-muted-dark mt-[1.6rem] text-[1.45rem] leading-[1.65]'>
-            A founder-led Australian web design and development studio. Websites, commerce and
-            digital products — designed and built by the same hands.
+            A founder-led web design and development studio, based in Australia and working with
+            clients worldwide. Websites, commerce and digital products — designed and built by the
+            same hands.
           </p>
         </div>
 

@@ -1,9 +1,9 @@
 // UI Forge Studio — home page content (source: new-design/ export).
 
 export const HERO = {
-  eyebrow: 'Founder-led digital studio · Australia',
+  eyebrow: 'Founder-led digital studio · Based in Australia, working worldwide',
   heading: 'Custom websites and digital products, designed and built around your business.',
-  lead: 'UI Forge Studio is an Australian web design and development studio for businesses that need a clearer website, a stronger online store or a digital product shaped around a real workflow.',
+  lead: 'UI Forge Studio is a founder-led web design and development studio for businesses that need a clearer website, a stronger online store or a digital product shaped around a real workflow. Based in Australia, working with clients worldwide.',
 };
 
 export const STATEMENT =
@@ -191,7 +191,7 @@ export const SCOPING = {
   heading: 'Every project is scoped around what your business actually needs',
   body: 'Rather than forcing different businesses into the same package, we begin with your goals, required functionality and long-term plans. After an initial discovery conversation you receive a clear proposal outlining the recommended approach, project scope, timeline and investment. What affects the investment: number of unique layouts, design complexity, content, functionality, e-commerce and application features, integrations and ongoing support.',
   link: {
-    label: 'Read: Website cost in Australia — what actually affects the price?',
+    label: 'Read: Website cost — what actually affects the price?',
     href: '/insights/what-affects-the-cost-of-a-website',
   },
 };

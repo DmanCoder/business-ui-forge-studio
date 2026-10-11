@@ -10,10 +10,10 @@ import type { InsightArticleSource } from './types';
 export const LOCAL_ARTICLES: InsightArticleSource[] = [
   {
     slug: 'what-affects-the-cost-of-a-website',
-    title: 'Website cost in Australia: what actually affects the price?',
-    seoTitle: 'Website Cost in Australia: What Affects the Price? | UI Forge Studio',
+    title: 'Website cost: what actually affects the price?',
+    seoTitle: 'Website Cost: What Affects the Price? | UI Forge Studio',
     metaDescription:
-      'Understand what changes the cost of a website project in Australia, including scope, design, content, functionality, integrations and ongoing support.',
+      'Understand what changes the cost of a website project, including scope, design, content, functionality, integrations and ongoing support.',
     excerpt:
       'Why quotes for the same website can differ by tens of thousands of dollars — and the factors that actually move the price.',
     summary:
@@ -191,7 +191,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
       },
       {
         t: 'p',
-        x: 'The domain is your address on the internet — yourbusiness.com.au — and it is the single most important thing to own outright. If someone else registers it in their name, they control it, whatever the goodwill between you.',
+        x: 'The domain is your address on the internet — yourbusiness.com — and it is the single most important thing to own outright. If someone else registers it in their name, they control it, whatever the goodwill between you.',
       },
       {
         t: 'p',
@@ -430,7 +430,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
           'Who will edit the site, and how often?',
           'Is the website mostly communicating, or does it need to do things — bookings, portals, accounts?',
           'How important are speed and search rankings to how you win customers?',
-          'What is the realistic budget, initial and ongoing? ([Website cost in Australia: what actually affects the price?](#/insights/what-affects-the-cost-of-a-website) breaks this down.)',
+          'What is the realistic budget, initial and ongoing? ([Website cost: what actually affects the price?](#/insights/what-affects-the-cost-of-a-website) breaks this down.)',
           'Where do you want the business to be in three years, and will the site need to grow with it?',
         ],
       },

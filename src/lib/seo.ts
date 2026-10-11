@@ -5,7 +5,6 @@ import {
   SITE_NAME,
   SITE_DESCRIPTION,
   CONTACT_EMAIL,
-  STUDIO_REGION,
   AUTHOR_NAME,
 } from '@src/config/site';
 import { IS_PREVIEW } from '@src/typescriptGlobals/constants';
@@ -80,9 +79,10 @@ export const buildMetadata = ({
 };
 
 /**
- * Site-wide Organization schema. Remote-first studio — street address
- * intentionally omitted (never fabricate one), which is also why this is a
- * plain Organization rather than a LocalBusiness subtype.
+ * Site-wide Organization schema. Remote-first studio based in Australia and
+ * working with clients worldwide — street address intentionally omitted (never
+ * fabricate one), which is also why this is a plain Organization rather than
+ * a LocalBusiness subtype. Only the country is stated.
  */
 export const organizationSchema = () => ({
   '@context': 'https://schema.org',
@@ -93,7 +93,8 @@ export const organizationSchema = () => ({
   logo: absoluteUrl(LOGO_PRIMARY.src),
   description: SITE_DESCRIPTION,
   email: CONTACT_EMAIL,
-  areaServed: STUDIO_REGION ? ['Australia', STUDIO_REGION] : 'Australia',
+  address: { '@type': 'PostalAddress', addressCountry: 'AU' },
+  areaServed: 'Worldwide',
   knowsAbout: [
     'Web design',
     'Web development',
@@ -147,7 +148,7 @@ export const serviceSchema = ({
   name,
   description,
   url: absoluteUrl(path),
-  areaServed: STUDIO_REGION ? ['Australia', STUDIO_REGION] : 'Australia',
+  areaServed: 'Worldwide',
   provider: { '@id': `${BASE_URL}/#organization` },
 });
 

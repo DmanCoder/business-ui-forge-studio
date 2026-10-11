@@ -2,7 +2,8 @@
 
 export const ABOUT_HEADER = {
   eyebrow: 'About',
-  heading: 'A founder-led web design and development studio in Australia',
+  heading:
+    'A founder-led web design and development studio, based in Australia and working worldwide',
   statement:
     'Design and development stay in the same conversation, so what is planned, approved and built remains one coherent system.',
   intro:
@@ -29,9 +30,9 @@ export const BENEFITS = {
 
 export const REMOTE = {
   eyebrow: 'Location and ways of working',
-  heading: 'An Australian studio, working remotely by design',
-  p1: 'An independent Australian studio, working remotely with clients across Australia and beyond. Projects run through structured video calls, clear written updates and shared project tools — so progress never waits for a meeting room.',
-  p2: 'That model is deliberate. It gives you senior-level attention without big-agency overheads, flexible scheduling, and every decision documented in writing — and it means we can work with clients anywhere in Australia and internationally.',
+  heading: 'Based in Australia, working remotely with clients worldwide',
+  p1: 'An independent studio based in Australia, working remotely with clients around the world. Projects run through structured video calls, clear written updates and shared project tools — so progress never waits for a meeting room.',
+  p2: 'That model is deliberate. It gives you senior-level attention without big-agency overheads, flexible scheduling, and every decision documented in writing — and it means where you are based is never a barrier to working together.',
   p3Before: 'Getting in touch is simple: ',
   p3LinkLabel: 'the enquiry form',
   p3LinkHref: '/start-a-project',
@@ -50,7 +51,7 @@ export const HOW_PROJECTS_RUN = {
 
 export const LOCATION_CARD = {
   heading: 'Where are you located — and can we meet in person?',
-  body: 'UI Forge Studio is a remote-first Australian studio, so there is no client-facing office. Collaboration happens over video calls and shared tools — decisions are documented, progress is visible, and nothing waits for a meeting room.',
+  body: 'UI Forge Studio is based in Australia and works remotely, so there is no client-facing office. Wherever you are, collaboration happens over video calls and shared tools — decisions are documented, progress is visible, and nothing waits for a meeting room.',
 };
 
 export const OWNERSHIP = {

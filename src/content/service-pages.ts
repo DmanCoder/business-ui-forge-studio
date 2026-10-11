@@ -56,14 +56,14 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     slug: 'web-design-development',
     shortName: 'Web design & development',
-    eyebrow: 'Custom websites · Australia',
-    seoTitle: 'Custom Website Design & Development Australia | UI Forge Studio',
+    eyebrow: 'Custom websites',
+    seoTitle: 'Custom Website Design & Development | UI Forge Studio',
     metaDescription:
-      'Custom website design and development for Australian businesses, including Next.js, WordPress, Webflow and HubSpot with SEO and accessibility built in.',
-    heading: 'Custom website design and development for Australian businesses',
+      'Custom website design and development for growing businesses, including Next.js, WordPress, Webflow and HubSpot with SEO and accessibility built in.',
+    heading: 'Custom website design and development for growing businesses',
     lead: 'UI Forge Studio plans the structure, designs the interface and builds the finished website as one system, so content, usability, performance and search visibility support the same business goal.',
     serviceNote:
-      'Remote delivery across Australia. Next.js, WordPress, Webflow or HubSpot — recommended after discovery, not before.',
+      'Remote delivery, wherever you are based. Next.js, WordPress, Webflow or HubSpot — recommended after discovery, not before.',
     sections: {
       fit: { eyebrow: 'Who it is for', heading: 'Who custom website design is for' },
       problems: { eyebrow: 'Problems we solve', heading: 'Website problems we help solve' },
@@ -181,7 +181,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         href: '/insights/custom-website-wordpress-or-webflow',
       },
       {
-        label: 'Website cost in Australia: what actually affects the price?',
+        label: 'Website cost: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
       {
@@ -198,14 +198,14 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     slug: 'website-redesign',
     shortName: 'Website redesign',
-    eyebrow: 'Website redesign · Australia',
-    seoTitle: 'Website Redesign Services Australia | UI Forge Studio',
+    eyebrow: 'Website redesign',
+    seoTitle: 'Website Redesign Services | UI Forge Studio',
     metaDescription:
       'Redesign an existing website without losing valuable content, URLs or search equity. Improve UX, mobile performance, structure and maintainability.',
     heading: 'Website redesigns that improve clarity without losing what works',
     lead: 'A website redesign should do more than replace the visual layer. We review content, UX, mobile behaviour, platform constraints and technical SEO, then keep, improve, combine or replace what the evidence supports.',
     serviceNote:
-      'Remote delivery across Australia. Existing URLs, content and search value are inventoried before anything is replaced.',
+      'Remote delivery, wherever you are based. Existing URLs, content and search value are inventoried before anything is replaced.',
     sections: {
       fit: { eyebrow: 'Who it is for', heading: 'When a website redesign makes sense' },
       problems: { eyebrow: 'Problems we solve', heading: 'Website problems a redesign should fix' },
@@ -339,14 +339,14 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     slug: 'shopify-development',
     shortName: 'Shopify development',
-    eyebrow: 'Shopify design & development · Australia',
-    seoTitle: 'Shopify Development Australia | UI Forge Studio',
+    eyebrow: 'Shopify design & development',
+    seoTitle: 'Shopify Design & Development | UI Forge Studio',
     metaDescription:
-      'Shopify design and development for Australian brands, from custom theme work and subscriptions to integrations and Hydrogen storefronts where justified.',
+      'Shopify design and development for growing brands, from custom theme work and subscriptions to integrations and Hydrogen storefronts where justified.',
     heading: 'Shopify design and development for growing stores',
     lead: 'From a focused theme build to a custom Hydrogen storefront, the right Shopify approach depends on how customers buy, how the team operates and whether custom development creates a genuine commercial advantage.',
     serviceNote:
-      'Remote delivery across Australia. Theme-led work serves most stores; Hydrogen only where the business case is proven.',
+      'Remote delivery, wherever you are based. Theme-led work serves most stores; Hydrogen only where the business case is proven.',
     sections: {
       fit: { eyebrow: 'Who it is for', heading: 'When Shopify development is a good fit' },
       problems: { eyebrow: 'Problems we solve', heading: 'Shopify problems we help solve' },
@@ -465,7 +465,7 @@ export const SERVICE_PAGES: ServicePage[] = [
     ],
     relatedInsights: [
       {
-        label: 'Website cost in Australia: what actually affects the price?',
+        label: 'Website cost: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
       {
@@ -482,14 +482,14 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     slug: 'hubspot-websites',
     shortName: 'HubSpot websites',
-    eyebrow: 'HubSpot website development · Australia',
-    seoTitle: 'HubSpot Website Development Australia | UI Forge Studio',
+    eyebrow: 'HubSpot website development',
+    seoTitle: 'HubSpot Website Development | UI Forge Studio',
     metaDescription:
       'HubSpot Content Hub website design and frontend development, including themes, reusable modules, landing pages, forms and content migration.',
     heading: 'HubSpot website design and development for marketing teams',
     lead: 'For businesses already invested in HubSpot, the website should work as part of the marketing system. We design and build reusable Content Hub experiences around publishing, campaigns, forms and the way enquiries move into the CRM.',
     serviceNote:
-      'Remote delivery across Australia. Website and frontend work inside HubSpot; CRM architecture is scoped separately.',
+      'Remote delivery, wherever you are based. Website and frontend work inside HubSpot; CRM architecture is scoped separately.',
     sections: {
       fit: { eyebrow: 'Who it is for', heading: 'When HubSpot Content Hub is a good fit' },
       problems: { eyebrow: 'Problems we solve', heading: 'HubSpot website problems we help solve' },
@@ -614,7 +614,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         href: '/insights/website-ownership-and-hosting-explained',
       },
       {
-        label: 'Website cost in Australia: what actually affects the price?',
+        label: 'Website cost: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
     ],
@@ -627,14 +627,14 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     slug: 'web-app-development',
     shortName: 'Web application development',
-    eyebrow: 'Web application design & development · Australia',
-    seoTitle: 'Web Application Development Australia | UI Forge Studio',
+    eyebrow: 'Web application design & development',
+    seoTitle: 'Web Application Development | UI Forge Studio',
     metaDescription:
       'Design and development for portals, dashboards, booking systems and internal tools, with product UX, React/Next.js frontend work and integrations.',
     heading: 'Web application design and development for real business workflows',
     lead: 'UI Forge Studio turns defined workflows into focused web applications — from client portals and dashboards to booking systems and internal tools — with product design and frontend implementation planned together.',
     serviceNote:
-      'Remote delivery across Australia. Product UX and React or Next.js frontend delivery; backend responsibility is agreed in scoping.',
+      'Remote delivery, wherever you are based. Product UX and React or Next.js frontend delivery; backend responsibility is agreed in scoping.',
     sections: {
       fit: {
         eyebrow: 'Who it is for',
@@ -753,7 +753,7 @@ export const SERVICE_PAGES: ServicePage[] = [
     ],
     relatedInsights: [
       {
-        label: 'Website cost in Australia: what actually affects the price?',
+        label: 'Website cost: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
       {
@@ -770,14 +770,14 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     slug: 'mobile-app-development',
     shortName: 'React Native app development',
-    eyebrow: 'React Native app development · Australia',
-    seoTitle: 'React Native App Development Australia | UI Forge Studio',
+    eyebrow: 'React Native app development',
+    seoTitle: 'React Native App Development | UI Forge Studio',
     metaDescription:
       'React Native app design and development for iOS and Android, including product UX, APIs, authentication, testing and release support.',
     heading: 'React Native app development for iOS and Android',
     lead: 'React Native can give many products one coherent cross-platform codebase without treating iOS and Android as separate projects. We first confirm that an installed app is genuinely the right product surface, then design and build the core experience.',
     serviceNote:
-      'Remote delivery across Australia. If a better mobile website is the honest answer, that is the recommendation you will get.',
+      'Remote delivery, wherever you are based. If a better mobile website is the honest answer, that is the recommendation you will get.',
     sections: {
       fit: { eyebrow: 'Who it is for', heading: 'When a mobile app is worth building' },
       problems: { eyebrow: 'Problems we solve', heading: 'Mobile product problems we help solve' },
@@ -897,7 +897,7 @@ export const SERVICE_PAGES: ServicePage[] = [
     ],
     relatedInsights: [
       {
-        label: 'Website cost in Australia: what actually affects the price?',
+        label: 'Website cost: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
       {
@@ -914,14 +914,14 @@ export const SERVICE_PAGES: ServicePage[] = [
   {
     slug: 'website-maintenance',
     shortName: 'Website maintenance',
-    eyebrow: 'Website maintenance & support · Australia',
-    seoTitle: 'Website Maintenance & Support Australia | UI Forge Studio',
+    eyebrow: 'Website maintenance & support',
+    seoTitle: 'Website Maintenance & Support | UI Forge Studio',
     metaDescription:
-      'Website maintenance and support for Australian businesses, including technical checks, content updates, performance monitoring and planned improvements.',
+      'Website maintenance and support for business websites, including technical checks, content updates, performance monitoring and planned improvements.',
     heading: 'Website maintenance and support with a clear owner and plan',
     lead: 'A useful website care plan does more than install updates. It protects important forms and journeys, keeps content accurate, catches deterioration and creates a practical path for ongoing improvements.',
     serviceNote:
-      'Remote support across Australia. Care plans are optional, documented and never a condition of working together.',
+      'Remote support, wherever you are based. Care plans are optional, documented and never a condition of working together.',
     sections: {
       fit: { eyebrow: 'Who it is for', heading: 'When website maintenance support makes sense' },
       problems: {
@@ -1051,7 +1051,7 @@ export const SERVICE_PAGES: ServicePage[] = [
         href: '/insights/website-ownership-and-hosting-explained',
       },
       {
-        label: 'Website cost in Australia: what actually affects the price?',
+        label: 'Website cost: what actually affects the price?',
         href: '/insights/what-affects-the-cost-of-a-website',
       },
     ],

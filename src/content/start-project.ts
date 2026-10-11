@@ -4,7 +4,7 @@ export const START_INTRO = {
   eyebrow: 'Start a project',
   heading: 'Start a website or digital product project',
   p1: 'No jargon needed. Tell us about your business, what is not working and what you want to make possible. We will come back with questions and a recommended next step.',
-  p2: 'We work remotely with clients across Australia and beyond. After your enquiry, we will suggest a video call to talk it through.',
+  p2: 'We work remotely with clients anywhere in the world. After your enquiry, we will suggest a video call to talk it through.',
   emailPrefix: 'Prefer email? ',
 };
 
@@ -26,8 +26,8 @@ export const LABELS = {
     'A short answer is enough. Helpful context includes what your business does, what is not working, the outcome you want and any must-have functionality.',
   users: 'Who are your customers or users?',
   timeline: 'Desired timeline',
-  budget: 'Approximate budget',
-  budgetHint: '(AUD, helps us recommend the right approach)',
+  budget: 'Approximate budget in AUD',
+  budgetHint: '(a rough conversion is fine — it helps us recommend the right approach)',
   heard: 'How did you hear about us?',
   optional: '(optional)',
 };

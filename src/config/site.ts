@@ -3,10 +3,10 @@
 
 export const SITE_NAME = 'UI Forge Studio';
 
-export const SITE_TAGLINE = 'Web design and development for Australian businesses';
+export const SITE_TAGLINE = 'Web design and development studio';
 
 export const SITE_DESCRIPTION =
-  'Founder-led Australian web design and development studio for custom websites, Shopify, HubSpot, web applications, mobile apps and ongoing support.';
+  'Founder-led web design and development studio, based in Australia and working worldwide: custom websites, Shopify, HubSpot, web apps, mobile apps and support.';
 
 /** The brand's production origin. Never a preview or local hostname. */
 export const PRODUCTION_ORIGIN = 'https://uiforgestudio.com.au';

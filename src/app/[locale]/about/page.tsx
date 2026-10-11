@@ -23,14 +23,14 @@ import {
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Founder-Led Web Design Studio Australia | UI Forge Studio';
+const PAGE_TITLE = 'Founder-Led Web Design Studio | UI Forge Studio';
 const PAGE_DESCRIPTION =
-  'Meet the founder-led Australian studio combining website design and frontend development across Next.js, Shopify, HubSpot and React Native.';
+  'Meet the founder-led studio, based in Australia, combining website design and frontend development across Next.js, Shopify, HubSpot and React Native.';
 
 /** Honest studio facts — no invented scale. */
 const STUDIO_LEDGER = [
   { label: 'Structure', value: 'Independent, founder-led' },
-  { label: 'Location', value: 'Australia · remote-first' },
+  { label: 'Location', value: 'Australia · remote-first · clients worldwide' },
   { label: 'Disciplines', value: 'Design and frontend development, same hands' },
   { label: 'Platforms', value: 'Next.js · React Native · Shopify · WordPress · Webflow · HubSpot' },
 ];

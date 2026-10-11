@@ -31,7 +31,7 @@ import { PageTypes } from '@src/typescriptGlobals/types';
 /** Credits-style studio facts under the hero. */
 const STUDIO_FACTS = [
   { label: 'Model', value: 'Founder-led' },
-  { label: 'Base', value: 'Australia · remote' },
+  { label: 'Base', value: 'Australia · clients worldwide' },
   { label: 'Craft', value: 'Design + development' },
   { label: 'Response', value: `Within ${RESPONSE_TIME}` },
 ];
@@ -40,9 +40,9 @@ export async function generateStaticParams() {
   return ALLOWED_LOCALES.map((locale) => ({ locale }));
 }
 
-const PAGE_TITLE = `Web Design & Development Australia | ${SITE_NAME}`;
+const PAGE_TITLE = `Web Design & Development Studio | ${SITE_NAME}`;
 const PAGE_DESCRIPTION =
-  'UI Forge Studio is a founder-led Australian studio designing and building custom websites, Shopify stores, web applications and mobile products.';
+  'UI Forge Studio is a founder-led studio designing and building custom websites, Shopify stores, web applications and mobile products for clients worldwide.';
 
 export async function generateMetadata(): Promise<Metadata> {
   return buildMetadata({

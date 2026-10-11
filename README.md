@@ -1,7 +1,7 @@
 # UI Forge Studio
 
-Founder-led Australian digital studio website — websites, e-commerce, web applications and
-mobile apps, designed and built by the same hands.
+Founder-led digital studio website, based in Australia and working with clients worldwide —
+websites, e-commerce, web applications and mobile apps, designed and built by the same hands.
 
 Built with **Next.js 16 (App Router, Turbopack)**, **React 19**, **TypeScript**,
 **Tailwind CSS v4**, **Contentful** (Insights articles), deployed on **Netlify**.

@@ -15,7 +15,7 @@ export type ServiceCategory = {
 export const SERVICES_HEADING = 'Web design, e-commerce and application development services';
 
 export const SERVICES_INTRO =
-  'UI Forge Studio designs and builds websites, online stores and digital products for Australian businesses. You do not need to choose the technology first: describe the problem, users and workflow, and we will recommend the approach that fits your budget and long-term plans.';
+  'UI Forge Studio designs and builds websites, online stores and digital products for businesses in Australia and around the world. You do not need to choose the technology first: describe the problem, users and workflow, and we will recommend the approach that fits your budget and long-term plans.';
 
 export const SERVICE_CATEGORIES: ServiceCategory[] = [
   {

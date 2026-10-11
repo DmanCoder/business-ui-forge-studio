@@ -19,9 +19,9 @@ import {
 
 import { PageTypes } from '@src/typescriptGlobals/types';
 
-const PAGE_TITLE = 'Web Design & Development Services Australia | UI Forge Studio';
+const PAGE_TITLE = 'Web Design & Development Services | UI Forge Studio';
 const PAGE_DESCRIPTION =
-  'Explore custom website, Shopify, HubSpot, web app, mobile app and website maintenance services from a founder-led Australian studio.';
+  'Explore custom website, Shopify, HubSpot, web app, mobile app and website maintenance services from a founder-led studio working with clients worldwide.';
 const PAGE_PATH = '/services';
 
 export async function generateStaticParams() {
