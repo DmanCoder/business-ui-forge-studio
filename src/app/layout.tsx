@@ -1,5 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
+import { GoogleTagManager } from '@next/third-parties/google';
 
 import { displayFont, bodyFont } from './font';
 
@@ -56,6 +57,8 @@ const RootLayout = async (props: {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: jsonLd(webSiteSchema()) }}
         />
+
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
       </body>
     </html>
   );
