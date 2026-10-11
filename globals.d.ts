@@ -15,5 +15,7 @@ declare global {
         process: () => void;
       };
     };
+    /** Google Tag Manager dataLayer (created by GTM, or lazily by pushDataLayerEvent). */
+    dataLayer?: Record<string, unknown>[];
   }
 }

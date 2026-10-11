@@ -20,6 +20,8 @@ import {
   SUBMIT,
 } from '@src/content/start-project';
 
+import pushDataLayerEvent from '@src/utils/pushDataLayerEvent';
+
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
 
 const EMAIL_REGEX = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -210,6 +212,14 @@ const StartProjectForm: React.FC = () => {
       });
 
       if (!response.ok) throw new Error(`Form submission failed: ${response.status}`);
+
+      // GA4 lead conversion (via GTM). Fires once per accepted submission: this
+      // branch runs only after Netlify returned 2xx, inside a single submit
+      // handler call, so re-renders and Strict Mode cannot repeat it. No PII.
+      pushDataLayerEvent('generate_lead', {
+        form_name: 'project_enquiry',
+        form_location: 'start_a_project',
+      });
 
       router.push('/thank-you');
     } catch {
