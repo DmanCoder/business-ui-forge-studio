@@ -28,7 +28,7 @@ export const BASE_URL = (() => {
   return configured;
 })();
 
-export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'hello@uiforgestudio.com.au';
+export const CONTACT_EMAIL = process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? 'uiforgeagency@gmail.com';
 
 /** Enquiry response-time promise, used in the CTA band, footer and form. */
 export const RESPONSE_TIME = 'two business days';
