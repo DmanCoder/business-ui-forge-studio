@@ -33,6 +33,10 @@ const RootLayout = async (props: {
 
   return (
     <html lang={locale} className={`${displayFont.variable} ${bodyFont.variable}`}>
+      {!IS_PREVIEW && process.env.NEXT_PUBLIC_GTM_ID && (
+        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID} />
+      )}
+
       <body className='flex min-h-screen flex-col'>
         <a
           href='#main-content'
@@ -57,11 +61,8 @@ const RootLayout = async (props: {
           type='application/ld+json'
           dangerouslySetInnerHTML={{ __html: jsonLd(webSiteSchema()) }}
         />
-
-        <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID!} />
       </body>
     </html>
   );
 };
-
 export default RootLayout;
