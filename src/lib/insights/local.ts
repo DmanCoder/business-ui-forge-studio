@@ -19,9 +19,15 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
     summary:
       'Website cost is driven less by page count than by the number of unique layouts, content work, functionality, integrations, e-commerce requirements and the amount of custom design and development involved.',
     category: 'Websites',
+    tags: ['Pricing and budgets', 'Project scoping', 'Custom websites', 'Integrations'],
     date: '2026-06-30',
     updated: '2026-10-07',
     published: true,
+    art: {
+      cover: '/static/insights/art/cost-factors-cover.svg',
+      wide: '/static/insights/art/cost-factors-wide.svg',
+      alt: 'Diagram: a website brief branching into six modules of rising size and complexity — layouts, content, functionality, integrations, e-commerce and after-launch care.',
+    },
     relatedService: {
       label: 'Explore custom website design and development',
       href: '#/services/web-design-development',
@@ -154,9 +160,15 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
     summary:
       'Your business should control the domain, business accounts, content and data. Hosting can be managed by you or a provider, but the arrangement should be documented, portable and reversible.',
     category: 'Ownership and support',
+    tags: ['Ownership', 'Hosting', 'Domains', 'Contracts and handover'],
     date: '2026-06-09',
     updated: '2026-10-07',
     published: true,
+    art: {
+      cover: '/static/insights/art/ownership-ring-cover.svg',
+      wide: '/static/insights/art/ownership-ring-wide.svg',
+      alt: 'Illustration: five tagged asset cards hung on one ring, the front card in cobalt, with a dashed route leaving the ring for an empty slot.',
+    },
     relatedService: {
       label: 'Explore website maintenance and support',
       href: '#/services/website-maintenance',
@@ -279,9 +291,15 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
     summary:
       'WordPress suits content-heavy sites with frequent publishing, Webflow suits design-led marketing sites edited visually, and a custom build suits businesses that need performance, distinctive design and room to add functionality. The right answer depends on who edits the site, what it must do and your three-year plans.',
     category: 'Websites',
+    tags: ['Platform choice', 'WordPress', 'Webflow', 'Custom websites'],
     date: '2026-05-19',
     updated: '2026-10-07',
     published: true,
+    art: {
+      cover: '/static/insights/art/platform-architectures-cover.svg',
+      wide: '/static/insights/art/platform-architectures-wide.svg',
+      alt: 'Illustration: three builds of the same website side by side — a themed block system, a visual canvas with one selected block, and a component grid on a code layer.',
+    },
     relatedService: {
       label: 'Explore custom website design and development',
       href: '#/services/web-design-development',
@@ -449,6 +467,7 @@ export const LOCAL_ARTICLES: InsightArticleSource[] = [
     excerpt:
       'The handful of things every website brief should cover, and why they make the quotes you receive more accurate.',
     category: 'Websites',
+    tags: ['Project scoping', 'Briefing a studio'],
     date: '2026-07-20',
     published: false,
     blocks: [

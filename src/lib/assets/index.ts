@@ -53,14 +53,16 @@ export const LOGO_MARK: StudioAsset = {
 };
 
 // --- Insight Open Graph covers (keyed by article slug) ---------------------
-// 1200×630 PNGs rasterised by scripts/generate-static-assets.mjs — social
-// platforms do not render SVG og:image. On-page article figures are HTML
-// (components/insights/InsightFigure.tsx), not images.
+// 1200×630 PNGs rasterised from the article artwork by
+// scripts/generate-insight-art.mjs — social platforms do not render SVG
+// og:image. The on-page covers are the SVG crops referenced from each
+// article's `art` field (src/lib/insights/local.ts); in-body figures are
+// HTML (components/insights/InsightFigure.tsx), not images.
 
 export const INSIGHT_OG_IMAGES: Record<string, string> = {
-  'what-affects-the-cost-of-a-website': '/static/insights/website-cost-og.png',
-  'website-ownership-and-hosting-explained': '/static/insights/ownership-hosting-og.png',
-  'custom-website-wordpress-or-webflow': '/static/insights/platform-comparison-og.png',
+  'what-affects-the-cost-of-a-website': '/static/insights/art/cost-factors-og.png',
+  'website-ownership-and-hosting-explained': '/static/insights/art/ownership-ring-og.png',
+  'custom-website-wordpress-or-webflow': '/static/insights/art/platform-architectures-og.png',
 };
 
 /** Open Graph image path for an article slug, if one exists. */

@@ -8,7 +8,15 @@
 // only guitar content.
 
 import { LOCAL_ARTICLES } from './local';
-import type { InsightArticle, InsightArticleSource, InsightBlock, InsightCategory } from './types';
+import type {
+  InsightArticle,
+  InsightArticleSource,
+  InsightBlock,
+  InsightCategory,
+  InsightReadBucket,
+  InsightSummary,
+  InsightTopic,
+} from './types';
 
 export const PAGE_SIZE = 9;
 
@@ -59,7 +67,7 @@ export const formatInsightDate = (iso: string): string =>
   }).format(new Date(`${iso}T00:00:00Z`));
 
 /**
- * Shared slug rule for categories and heading anchors:
+ * Shared slug rule for categories, topics and heading anchors:
  * lowercase, '&' → 'and', everything non-alphanumeric collapses to '-'.
  */
 export const slugify = (value: string): string =>
@@ -152,8 +160,78 @@ export async function getCategoryBySlug(slug: string): Promise<InsightCategory |
   return categories.find((category) => category.slug === slug) ?? null;
 }
 
+/** Unique topic tags across published articles, with counts, A→Z. */
+export async function getTopics(): Promise<InsightTopic[]> {
+  const counts = new Map<string, number>();
+
+  for (const article of publishedSorted()) {
+    for (const tag of article.tags ?? []) {
+      counts.set(tag, (counts.get(tag) ?? 0) + 1);
+    }
+  }
+
+  return [...counts.entries()]
+    .map(([name, count]) => ({ name, slug: slugify(name), count }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+/** The reading-time scale. Counts are filled per call from published articles. */
+const READ_BUCKET_SCALE: Omit<InsightReadBucket, 'count'>[] = [
+  { slug: 'quick', label: 'Quick read', hint: 'under 5 minutes' },
+  { slug: 'medium', label: 'Medium read', hint: '5 to 9 minutes' },
+  { slug: 'deep', label: 'In depth', hint: '10 minutes or more' },
+];
+
+export const readBucketFor = (readMins: number): InsightReadBucket['slug'] =>
+  readMins < 5 ? 'quick' : readMins < 10 ? 'medium' : 'deep';
+
+/**
+ * Reading-time buckets with counts. Empty buckets are returned too (count 0)
+ * so the UI can decide whether the facet is worth showing at all.
+ */
+export async function getReadBuckets(): Promise<InsightReadBucket[]> {
+  const counts = new Map<InsightReadBucket['slug'], number>();
+  for (const article of publishedSorted()) {
+    const bucket = readBucketFor(article.readMins);
+    counts.set(bucket, (counts.get(bucket) ?? 0) + 1);
+  }
+  return READ_BUCKET_SCALE.map((bucket) => ({ ...bucket, count: counts.get(bucket.slug) ?? 0 }));
+}
+
 /** h2 headings with the same ids InsightBlocks renders — used for the TOC. */
 export const extractH2s = (blocks: InsightBlock[]): { id: string; text: string }[] =>
   blocks
     .filter((block): block is Extract<InsightBlock, { t: 'h2' }> => block.t === 'h2')
     .map((block) => ({ id: slugify(block.x), text: block.x }));
+
+/** Plain heading text (h2 and h3) — the searchable section index of an article. */
+const extractHeadingText = (blocks: InsightBlock[]): string[] =>
+  blocks
+    .filter(
+      (block): block is Extract<InsightBlock, { t: 'h2' | 'h3' }> =>
+        block.t === 'h2' || block.t === 'h3'
+    )
+    .map((block) => block.x.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\*\*/g, ''));
+
+/** The listing shape of an article — what cards and the discovery system use. */
+export const toSummary = (article: InsightArticle): InsightSummary => ({
+  slug: article.slug,
+  title: article.title,
+  excerpt: article.excerpt,
+  summary: article.summary,
+  category: article.category,
+  categorySlug: slugify(article.category),
+  tags: article.tags ?? [],
+  tagSlugs: (article.tags ?? []).map(slugify),
+  date: article.date,
+  updated: article.updated,
+  readMins: article.readMins,
+  readBucket: readBucketFor(article.readMins),
+  headings: extractHeadingText(article.blocks),
+  art: article.art,
+});
+
+/** Published articles as summaries, newest first. */
+export async function getInsightSummaries(): Promise<InsightSummary[]> {
+  return publishedSorted().map(toSummary);
+}
